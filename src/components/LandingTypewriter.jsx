@@ -5,31 +5,30 @@ const textStyle = {
   position: "absolute",
   color: "white",
   fontFamily: "Big Caslon",
-  fontWeight: "normal",
+  fontWeight: "bold",
   fontSize: "24px",
   textAlign: "left",
-  lineHeight: "36px",
+  lineHeight: "40px",
   top: "40%",
   left: "60%",
-  width: "10%"
+  wordSpacing: "9999rem"
 };
 
 let LandingTypewriter = () => {
   return (
     <div style={textStyle}>
       <Typewriter
-        onInit={typewriter => {
-          typewriter
-            .typeString("SCRAPERS GONNA SCRAPE")
-            .callFunction(() => {
-              console.log("String typed out!");
-            })
-            .pauseFor(2500)
-            .deleteAll()
-            .callFunction(() => {
-              console.log("All strings were deleted");
-            })
-            .start();
+        options={{
+          strings: [
+            "SCRAPERS GONNA SCRAPE",
+            "ARE YOU A BOT YOURSELF?",
+            "I HAVE NOTHING TO HIDE",
+            "YOU CAN'T FIGHT MICROSOFT"
+          ],
+          autoStart: true,
+          loop: true,
+          pauseFor: 2500,
+          cursor: "*/"
         }}
       />
     </div>
