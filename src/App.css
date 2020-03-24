@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Typewriter";
+  src: url("./fonts/typewcond_regular.otf");
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #2f303a;
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Title-text {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  font-family: "Big Caslon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 58px;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
