@@ -8,6 +8,7 @@ const textStyle = {
   fontSize: "24px",
   textAlign: "left",
   lineHeight: "36px",
+  justifyContent: "center",
   top: "40%",
   left: "8%",
   width: "33%"

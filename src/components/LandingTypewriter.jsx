@@ -2,7 +2,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 
 const textStyle = {
-  position: "absolute",
+  position: "fixed",
   color: "white",
   fontFamily: "Big Caslon",
   fontWeight: "bold",

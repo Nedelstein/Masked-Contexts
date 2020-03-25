@@ -4,6 +4,7 @@ import LandingText from "./components/LandingText";
 import LandingTypeWriter from "./components/LandingTypewriter";
 import Burger from "./components/Burger";
 import Menu from "./components/Menu";
+import LandingMasonry from "./components/LandingMasonry";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -16,6 +17,7 @@ function App() {
         <Menu open={open} setOpen={setOpen} />
         <LandingText />
         <LandingTypeWriter />
+        <LandingMasonry />
       </header>
     </div>
   );

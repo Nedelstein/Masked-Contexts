@@ -36,9 +36,8 @@ const StyledMenu = styled.nav`
       font-size: 1.5rem;
       text-align: center;
     }
-
     &:hover {
-      color: #430354;
+      color: #00000;
     }
   }
 `;
