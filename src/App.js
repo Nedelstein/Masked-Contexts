@@ -1,25 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import LandingText from "./components/LandingText";
-import LandingTypeWriter from "./components/LandingTypewriter";
-import Burger from "./components/Burger";
-import Menu from "./components/Menu";
-import LandingMasonry from "./components/LandingMasonry";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from "react-router-dom";
+
+// pages
+import MainPage from "./pages";
+import NotFoundPage from "./pages/404";
 
 function App() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="Title-text">Masked Contexts</div>
-        <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
-        <LandingText />
-        <LandingTypeWriter />
-        <LandingMasonry />
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/404" component={NotFoundPage} />
+        <Redirect to="/404" />
+      </Switch>
+    </Router>
   );
 }
 
