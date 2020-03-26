@@ -16,9 +16,8 @@ const StyledMenu = styled.nav`
   top: 0;
   right: 0;
   z-index: 9998;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(100%);
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  transition: transform 0.3s ease-in-out;
 
   @media (max-width: 600px) {
     width: 100%;
@@ -31,7 +30,7 @@ const StyledMenu = styled.nav`
     padding: 1rem 0;
     font-weight: bold;
     letter-spacing: 0.2rem;
-    color: #430354;
+    color: ${({ theme }) => theme.purple};
     text-decoration: none;
     transition: color 0.3s linear;
 
@@ -45,19 +44,21 @@ const StyledMenu = styled.nav`
   }
 `;
 
-const Menu = ({ open }) => {
+const Menu = ({ open, ...props }) => {
+  const isHidden = open ? true : false;
+  const tabIndex = isHidden ? 0 : -1;
   return (
-    <StyledMenu open={open}>
-      <Link to="/about">
-        {/* <span aria-label="about"></span> */}
+    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+      <Link to="/about" tabIndex={tabIndex}>
+        <span aria-hidden="true"></span>
         About
       </Link>
-      <a href="/">
-        <span aria-label="conversations"></span>
+      <a href="/" tabIndex={tabIndex}>
+        <span aria-hidden="true"></span>
         Conversations
       </a>
-      <a href="/">
-        <span aria-label="masks"></span>
+      <a href="/" tabIndex={tabIndex}>
+        <span aria-hidden="true"></span>
         Masks
       </a>
     </StyledMenu>

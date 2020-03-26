@@ -21,7 +21,7 @@ const StyledBurger = styled.button`
     outline: none;
   }
 
-  div {
+  span {
     width: 2rem;
     height: 0.25rem;
     background: ${({ open }) => (open ? "#0D0C1D" : "#effffa")};
@@ -45,12 +45,21 @@ const StyledBurger = styled.button`
   }
 `;
 
-const Burger = ({ open, setOpen }) => {
+const Burger = ({ open, setOpen, ...props }) => {
+  const isExpanded = open ? true : false;
+
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
+    <StyledBurger
+      aria-label="Toggle menu"
+      open={open}
+      aria-expanded={isExpanded}
+      open={open}
+      onClick={() => setOpen(!open)}
+      {...props}
+    >
+      <span />
+      <span />
+      <span />
     </StyledBurger>
   );
 };
