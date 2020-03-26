@@ -11,7 +11,8 @@ const textStyle = {
   lineHeight: "40px",
   top: "40%",
   left: "60%",
-  wordSpacing: "9999rem"
+  wordSpacing: "9999rem",
+  zIndex: "100"
 };
 
 let LandingTypewriter = () => {

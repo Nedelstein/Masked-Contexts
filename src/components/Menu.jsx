@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { bool } from "prop-types";
 
+import { Link } from "react-router-dom";
+
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -13,6 +15,7 @@ const StyledMenu = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 9998;
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
@@ -45,10 +48,10 @@ const StyledMenu = styled.nav`
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span aria-label="about"></span>
+      <Link to="/about">
+        {/* <span aria-label="about"></span> */}
         About
-      </a>
+      </Link>
       <a href="/">
         <span aria-label="conversations"></span>
         Conversations

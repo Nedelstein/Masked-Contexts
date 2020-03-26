@@ -10,6 +10,7 @@ import {
 
 // pages
 import MainPage from "./pages";
+import About from "./pages/About";
 import NotFoundPage from "./pages/404";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/404" component={NotFoundPage} />
+        <Route exact path="/about" component={About} />
         <Redirect to="/404" />
       </Switch>
     </Router>

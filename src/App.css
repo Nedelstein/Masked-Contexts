@@ -31,6 +31,19 @@
   text-align: center;
 }
 
+.Subtitle-text {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  font-family: "Big Caslon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 58px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
 .my-masonry-grid {
   display: flex;
   /* margin-left: -30px; */
