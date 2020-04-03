@@ -1,17 +1,22 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { theme } from "../theme";
 
 const textStyle = {
   position: "fixed",
+  // display : "inline-block",
+  // width: 0.1,
   color: "white",
+  backgroundColor: theme.purple,
   fontFamily: "Big Caslon",
   fontWeight: "bold",
   fontSize: "24px",
   textAlign: "left",
+  // textTransform: "uppercase",
   lineHeight: "40px",
   top: "40%",
   left: "60%",
-  wordSpacing: "9999rem",
+  wordSpacing: "5px",
   zIndex: "100"
 };
 

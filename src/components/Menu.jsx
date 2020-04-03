@@ -53,7 +53,7 @@ const Menu = ({ open, ...props }) => {
         <span aria-hidden="true"></span>
         About
       </Link>
-      <a href="/" tabIndex={tabIndex}>
+      <a href="/conversations" tabIndex={tabIndex}>
         <span aria-hidden="true"></span>
         Conversations
       </a>
