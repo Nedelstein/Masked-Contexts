@@ -12,8 +12,8 @@ const ModalStyle = {
     left: "60%",
     right: "auto",
     bottom: "auto",
-    width: "40%",
-    marginRight: "-50%",
+    width: "100vw",
+    // marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     backgroundColor: "gainsboro",
     overflowY: "auto",
@@ -23,6 +23,9 @@ const ModalStyle = {
 };
 
 const buttonStyle = {
+  position: "-webkit-sticky",
+  position: "sticky",
+  top: "0.8%",
   margin: "10px 10px 10px 0",
   background: "white",
   color: "black",

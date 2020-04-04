@@ -1,10 +1,25 @@
 import React from "react";
 
 const ModalTextStyle = {
-  marginLeft: "10%",
-  marginRight: "10%",
+  top: "0",
+  marginLeft: "40%",
+  marginRight: "12%",
+  marginTop: "-25%",
   whiteSpace: "pre-wrap",
-  color: "black"
+  color: "black",
+  fontFamily: "Big Caslon",
+  fontSize: "24px",
+  lineHeight: "30px"
+};
+
+const imgStyle = {
+  position: "-webkit-sticky",
+  position: "sticky",
+  top: "-50px",
+  //   paddingRight: "30px",
+  paddingTop: "6%",
+  margin: "-10px",
+  left: "10px"
 };
 
 const ConversationModal = props => {
@@ -20,9 +35,8 @@ const ConversationModal = props => {
   // const setOverlay = props.set
   return (
     <div>
-      {/* <h1>This is working?</h1> */}
+      <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
       <p style={ModalTextStyle}>{text}</p>
-      <img src={IMG(image)} alt={props.details.id} />
     </div>
   );
 };
