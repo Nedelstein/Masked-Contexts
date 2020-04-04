@@ -77,6 +77,18 @@ body {
   padding: 2px;
   margin-left: 4px;
   /* margin-right: 4px; */
-
   /* margin-bottom: 15px; */
+}
+
+.ReactModal__Overlay {
+  transition: opacity 500ms ease-in-out;
+  opacity: 0;
+
+  &--after-open {
+    opacity: 1;
+  }
+
+  &--before-close {
+    opacity: 0;
+  }
 }

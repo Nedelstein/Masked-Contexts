@@ -4,20 +4,38 @@ import Masonry from "react-masonry-css";
 import Modal from "react-modal";
 
 import ConversationModal from "../components/ConversationModal";
+import conversations from "../conversations_lookup";
 
 const ModalStyle = {
   content: {
     top: "50%",
-    left: "50%",
+    left: "60%",
     right: "auto",
     bottom: "auto",
+    width: "40%",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "gainsboro",
+    overflowY: "auto",
+    maxHeight: "80vh"
+    // overflow
   }
+};
+
+const buttonStyle = {
+  margin: "10px 10px 10px 0",
+  background: "white",
+  color: "black",
+  border: "2px solid black",
+  fontSize: "16px"
 };
 
 let ConversationsMasonry = () => {
   //dynamically import all images from folder
+  let filename;
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modal, setModal] = useState(null);
+
   function importAll(r) {
     return r.keys().map(r);
   }
@@ -26,11 +44,19 @@ let ConversationsMasonry = () => {
   );
 
   const imagesDiv = new Array(images.length).fill().map((item, i) => {
+    filename = images[i].replace("/static/media/", "");
+    filename = filename.substring(0, filename.indexOf("_"));
     return (
       <div key={i}>
-        <div id={i}>
-          <img src={images[i]} style={{ width: "60%" }} alt="whoops"></img>
-        </div>
+        {/* <div > */}
+        <img
+          id={filename}
+          src={images[i]}
+          style={{ width: "60%" }}
+          alt="whoops"
+          onClick={openModal}
+        ></img>
+        {/* </div> */}
       </div>
     );
   });
@@ -42,12 +68,20 @@ let ConversationsMasonry = () => {
     500: 2
   };
 
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = useState(false);
+  let activeContent;
+  for (let i in conversations) {
+    if (filename === conversations[i].id) {
+      activeContent = conversations[i];
+    }
+  }
 
   function openModal() {
     setIsOpen(true);
+    setModal(activeContent);
+    // console.log(text);
   }
+
+  let subtitle;
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -63,7 +97,7 @@ let ConversationsMasonry = () => {
         breakpointCols={breakpointColumbsObj}
         className="my-masony-grid"
         columnClassName="my-masonry-grid_column"
-        onClick={openModal}
+        // onClick={openModal}
       >
         {imagesDiv}
       </Masonry>
@@ -74,12 +108,11 @@ let ConversationsMasonry = () => {
         style={ModalStyle}
         contentLabel={"Conversation"}
       >
-        {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-        <div>I am a modal</div> */}
         <div ref={_subtitle => (subtitle = _subtitle)}>
-          <button onClick={closeModal}>close</button>
-
-          <ConversationModal />
+          <button style={buttonStyle} onClick={closeModal}>
+            Close
+          </button>
+          <ConversationModal details={modal} />
         </div>
       </Modal>
     </div>
