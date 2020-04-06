@@ -4,12 +4,12 @@ const ModalTextStyle = {
   top: "0",
   marginLeft: "40%",
   marginRight: "12%",
-  marginTop: "-25%",
+  marginTop: "-35%",
   whiteSpace: "pre-wrap",
   color: "black",
   fontFamily: "Big Caslon",
   fontSize: "24px",
-  lineHeight: "30px"
+  lineHeight: "30px",
 };
 
 const imgStyle = {
@@ -17,22 +17,22 @@ const imgStyle = {
   position: "sticky",
   top: "-50px",
   //   paddingRight: "30px",
-  paddingTop: "6%",
+  paddingTop: "10%",
   margin: "-10px",
-  left: "10px"
+  left: "10px",
+  width: "37%",
+  height: "auto",
 };
 
-const ConversationModal = props => {
+const ConversationModal = (props) => {
   console.log(props);
   let text = props.details.text;
   let image = props.details.filename;
-  const setModal = props.setModal;
 
-  const IMG = imgName => {
+  const IMG = (imgName) => {
     return require(`../assets/images/conversations/original_imgs/${imgName}`);
   };
 
-  // const setOverlay = props.set
   return (
     <div>
       <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
