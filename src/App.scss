@@ -80,6 +80,12 @@ body {
   /* margin-bottom: 15px; */
 }
 
+.ReactModalPortal > * {
+  // When the modal is closed, overlay div has no css class
+  // This selector should be overridden by the `&--after-open` class below
+  opacity: 0;
+}
+
 .ReactModal__Overlay {
   transition: opacity 500ms ease-in-out;
   opacity: 0;
