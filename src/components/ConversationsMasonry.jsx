@@ -140,7 +140,6 @@ let ConversationsMasonry = () => {
   function openModal() {
     setIsOpen(true);
     setModal(activeContent);
-    // console.log(text);
   }
 
   let subtitle;

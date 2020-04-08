@@ -8,8 +8,12 @@ const ModalTextStyle = {
   whiteSpace: "pre-wrap",
   color: "black",
   fontFamily: "Big Caslon",
-  fontSize: "20px",
-  lineHeight: "30px",
+  fontSize: "16px",
+  lineHeight: "25px",
+};
+
+const ModalHeaderStyle = {
+  fontSize: "12px",
 };
 
 const imgStyle = {
@@ -27,6 +31,8 @@ const ConversationModal = (props) => {
   console.log(props);
   let text = props.details.text;
   let image = props.details.filename;
+  let date = props.details.date;
+  let subject = props.details.subject;
 
   const IMG = (imgName) => {
     return require(`../assets/images/conversations/original_imgs/${imgName}`);
@@ -35,7 +41,23 @@ const ConversationModal = (props) => {
   return (
     <div>
       <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
-      <p style={ModalTextStyle}>{text}</p>
+      <div style={ModalTextStyle}>
+        <div style={ModalHeaderStyle}>
+          <p style={{ marginBottom: 0 }}>{date}</p>
+          <p style={{ marginTop: 0 }}>{subject}</p>
+          <hr
+            style={{
+              // color: "black",
+              borderWidth: "1px",
+              borderColor: "black",
+              // size: "1px",
+              // width: "700px",
+              // height: "5px",
+            }}
+          />
+        </div>
+        <p>{text}</p>
+      </div>
     </div>
   );
 };

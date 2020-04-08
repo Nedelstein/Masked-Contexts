@@ -1,3 +1,3 @@
 export const theme = {
-  purple: "#430354"
+  purple: "#430354",
 };
