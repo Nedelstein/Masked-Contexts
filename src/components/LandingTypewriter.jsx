@@ -4,8 +4,6 @@ import { theme } from "../theme";
 
 const textStyle = {
   position: "fixed",
-  // display : "inline-block",
-  // width: 0.1,
   color: "white",
   backgroundColor: theme.purple,
   fontFamily: "Big Caslon",
@@ -15,9 +13,10 @@ const textStyle = {
   // textTransform: "uppercase",
   lineHeight: "40px",
   top: "40%",
-  left: "60%",
+  left: "52%",
   wordSpacing: "5px",
-  zIndex: "100"
+  textTransform: "uppercase",
+  zIndex: "100",
 };
 
 let LandingTypewriter = () => {
@@ -29,12 +28,13 @@ let LandingTypewriter = () => {
             "SCRAPERS GONNA SCRAPE",
             "ARE YOU A BOT YOURSELF?",
             "I HAVE NOTHING TO HIDE",
-            "YOU CAN'T FIGHT MICROSOFT"
+            "YOU CAN'T FIGHT MICROSOFT",
+            "I really hope the Coco thing is only a game",
           ],
           autoStart: true,
           loop: true,
           pauseFor: 2500,
-          cursor: "*/"
+          cursor: "*/",
         }}
       />
     </div>

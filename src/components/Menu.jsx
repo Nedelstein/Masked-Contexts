@@ -39,7 +39,8 @@ const StyledMenu = styled.nav`
       text-align: center;
     }
     &:hover {
-      color: #00000;
+      color: #000000;
+      f
     }
   }
 `;
@@ -49,24 +50,28 @@ const Menu = ({ open, ...props }) => {
   const tabIndex = isHidden ? 0 : -1;
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+      <Link to="/" tabIndex={tabIndex}>
+        <span aria-hidden="true"></span>
+        Home
+      </Link>
       <Link to="/about" tabIndex={tabIndex}>
         <span aria-hidden="true"></span>
         About
       </Link>
-      <a href="/conversations" tabIndex={tabIndex}>
+      <Link to="/conversations" tabIndex={tabIndex}>
         <span aria-hidden="true"></span>
         Conversations
-      </a>
-      <a href="/" tabIndex={tabIndex}>
+      </Link>
+      <Link to="/masks" tabIndex={tabIndex}>
         <span aria-hidden="true"></span>
         Masks
-      </a>
+      </Link>
     </StyledMenu>
   );
 };
 
 Menu.propTypes = {
-  open: bool.isRequired
+  open: bool.isRequired,
 };
 
 export default Menu;

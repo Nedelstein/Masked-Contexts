@@ -1,7 +1,7 @@
 import React from "react";
 
 const textStyle = {
-  position: "absolute",
+  position: "fixed",
   color: "white",
   fontFamily: "Big Caslon",
   fontWeight: "normal",
@@ -11,7 +11,7 @@ const textStyle = {
   justifyContent: "center",
   top: "40%",
   left: "8%",
-  width: "33%"
+  width: "33%",
 };
 
 let LandingText = () => {

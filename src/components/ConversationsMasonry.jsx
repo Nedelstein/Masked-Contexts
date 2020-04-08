@@ -25,11 +25,10 @@ const ModalStyle = {
     // marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     marginLeft: "50%",
-    backgroundColor: "#825B56",
+    backgroundColor: "rgba(130,91,86,1)",
     overflowY: "auto",
     maxHeight: "80vh",
     border: "none",
-    // overflow
   },
   overlay: {
     background: "rgba(86,126,130,0.3)",
@@ -40,11 +39,12 @@ const buttonStyle = {
   position: "-webkit-sticky",
   position: "sticky",
   top: "0.8%",
-  margin: "10px 10px 10px 0",
-  background: "white",
+  margin: "1%, 1%, 1%, 0",
+  background: "none",
   color: "black",
-  border: "2px solid black",
-  fontSize: "16px",
+  border: "none",
+  fontSize: "30px",
+  cursor: "pointer",
 };
 
 let ConversationsMasonry = () => {
@@ -71,7 +71,12 @@ let ConversationsMasonry = () => {
         <img
           id={filename}
           src={images[i]}
-          style={{ width: "60%", objectFit: "cover", objectPosition: "center" }}
+          style={{
+            width: "60%",
+            objectFit: "cover",
+            objectPosition: "center",
+            cursor: "pointer",
+          }}
           alt="whoops"
           // onMouseEnter={MasktoImg}
           onClick={openModal}
@@ -211,7 +216,7 @@ let ConversationsMasonry = () => {
       >
         <div ref={(_subtitle) => (subtitle = _subtitle)}>
           <button style={buttonStyle} onClick={closeModal}>
-            Close
+            &times;
           </button>
           <ConversationModal details={modal} />
         </div>
