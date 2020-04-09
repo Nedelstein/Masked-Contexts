@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { LinearCopy } from "gl-react";
+// import { LinearCopy } from "gl-react";
 import { Surface } from "gl-react-dom";
 import Masonry from "react-masonry-css";
 import Modal from "react-modal";
-import GLTransition from "react-gl-transition";
 import GLTransitions from "gl-transitions";
+import GLTransition from "react-gl-transition";
 import timeLoop from "./timeLoop";
 
 import ConversationModal from "../components/ConversationModal";
@@ -48,13 +48,20 @@ const buttonStyle = {
 };
 
 let ConversationsMasonry = () => {
-  //dynamically import all images from folder
   let filename;
+  const totalImages = 5;
+  const imagesArray = [
+    "myfilepath.png",
+    "myfilepath.png",
+    "myfilepath.png",
+    "myfilepath.png",
+    "myfilepath.png",
+  ];
+  const masksArray = ["mymaskpath.png"];
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
   const [progress, setProgress] = useState(0);
-  // const [ref, hovered] = useHover();
-
+  const [isHover, setHover] = useState(new Array(totalImages).fill(false));
   function importAll(r) {
     return r.keys().map(r);
   }
@@ -78,7 +85,6 @@ let ConversationsMasonry = () => {
             cursor: "pointer",
           }}
           alt="whoops"
-          // onMouseEnter={MasktoImg}
           onClick={openModal}
         ></img>
         {/* </div> */}
@@ -86,54 +92,44 @@ let ConversationsMasonry = () => {
     );
   });
 
-  // let transNum = 0;
-  // function transitionIn() {
-  //   console.log("mouse in the house");
-  //   transNum += 0.4;
-  //   console.log(transNum);
-  // }
+  let shouldReset = false;
+  const MasktoImg = timeLoop(
+    ({ delay, duration, maskPath, imagePath, time }) => {
+      // console.log(time);
+      const from = "masks/209842_mask.png";
+      const to = "original_imgs/000000209842.jpg";
+      const index = Math.floor(time / (delay + duration));
+      const total = delay + duration;
+      const transition = GLTransitions[47];
+      const progress = shouldReset
+        ? 0.001
+        : (Math.min(time, duration) - index * total - delay) / duration;
+      // console.log(progress);
+      // console.log(delay);
+      return progress > 0 ? (
+        <GLTransition
+          from={IMG(from)}
+          to={IMG(to)}
+          progress={progress}
+          transition={transition}
+        />
+      ) : null;
+    }
+  );
 
-  // const increaseTransProgress = timeLoop(({ delay, duration, time }) => {
-  //   const index = Math.floor(time / (delay + duration));
-  //   const total = delay + duration;
-  //   const progress = (time - index * total - delay) / duration;
-  //   return progress;
-  // });
-
-  // const MasktoImg = () => {
-  //   const from = "masks/209842_mask.png";
-  //   const to = "original_imgs/000000209842.jpg";
-  //   // let progress = 0.2 + transNum;
-  //   const transition = GLTransitions[13];
-  //   return (
-  //     <GLTransition
-  //       from={IMG(from)}
-  //       to={IMG(to)}
-  //       progress={transProgress}
-  //       transition={transition}
-  //     />
-  //   );
-  // };
-
-  const MasktoImg = timeLoop(({ delay, duration, time }) => {
-    // console.log(time);
+  const JustMask = ({ maskPath }) => {
     const from = "masks/209842_mask.png";
     const to = "original_imgs/000000209842.jpg";
-    const index = Math.floor(time / (delay + duration));
-    const total = delay + duration;
-    const transition = GLTransitions[3];
-    const progress = (time - index * total - delay) / duration;
-    return progress > 0 ? (
+    const transition = GLTransitions[2];
+    return (
       <GLTransition
         from={IMG(from)}
         to={IMG(to)}
-        progress={progress}
+        progress={0}
         transition={transition}
       />
-    ) : (
-      <LinearCopy>{from}</LinearCopy>
     );
-  });
+  };
 
   let activeContent;
   for (let i in conversations) {
@@ -163,20 +159,6 @@ let ConversationsMasonry = () => {
     500: 2,
   };
 
-  // let num = 0;
-  // let interval;
-  // const increaseTransProgress = () => {
-  //   console.log("mouse in the house");
-  //   // num = 0;
-  //   num += 0.1;
-  //   num = num;
-  //   console.log(num);
-  //   return num;
-  //   // console.log(num);
-  // };
-
-  // interval = () => setInterval(increaseTransProgress, 100);
-
   return (
     <div style={{ marginLeft: "15%", marginTop: "15%" }}>
       <Masonry
@@ -188,23 +170,41 @@ let ConversationsMasonry = () => {
         {imagesDiv}
       </Masonry>
       <div>
-        <Surface
-          // ref={ref}
-          width={400}
-          height={200}
-          // onMouseEnter={() => {
-          // interval();
-          // setTransNum(increaseTransProgress);
-          // console.log(transProgress);
-          // }}
-          // onMouseLeave={() => {
-          // num = 0;
-          // setTransNum(0);
-          // }}
-        >
-          {/* <MasktoImg delay={2000} duration={1500} /> */}
-          {/* <MasktoImg /> */}
-        </Surface>
+        {/* This is our canvas which contains our image, */}
+        {/* and we have a nice little mask animation :) */}
+        {imagesArray.map((item, index) => {
+          return (
+            <Surface
+              key={index}
+              width={400}
+              height={200}
+              onMouseEnter={() => {
+                shouldReset = false;
+                let arr = new Array(totalImages).fill(false);
+                arr[index] = true;
+                setHover(arr);
+              }}
+              onMouseLeave={() => {
+                shouldReset = true;
+                setTimeout(() => {
+                  let arr = new Array(totalImages).fill(false);
+                  setHover(arr);
+                }, 10);
+              }}
+            >
+              {isHover[index] == true ? (
+                <MasktoImg
+                  delay={0}
+                  duration={1500}
+                  maskPath={masksArray[index]}
+                  imagePath={imagesArray[index]}
+                />
+              ) : (
+                <JustMask maskPath={masksArray[index]} />
+              )}
+            </Surface>
+          );
+        })}
       </div>
       <Modal
         isOpen={modalIsOpen}
