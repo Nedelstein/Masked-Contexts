@@ -60,7 +60,7 @@ let ConversationsMasonry = () => {
   const masksArray = ["mymaskpath.png"];
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
-  const [progress, setProgress] = useState(0);
+  // const [progress, setProgress] = useState(0);
   const [isHover, setHover] = useState(new Array(totalImages).fill(false));
   function importAll(r) {
     return r.keys().map(r);
@@ -176,8 +176,9 @@ let ConversationsMasonry = () => {
           return (
             <Surface
               key={index}
-              width={400}
-              height={200}
+              // width={200}
+              // height={100}
+              style={{ margin: "15px", cursor: "pointer" }}
               onMouseEnter={() => {
                 shouldReset = false;
                 let arr = new Array(totalImages).fill(false);
@@ -189,13 +190,13 @@ let ConversationsMasonry = () => {
                 setTimeout(() => {
                   let arr = new Array(totalImages).fill(false);
                   setHover(arr);
-                }, 10);
+                }, 20);
               }}
             >
               {isHover[index] == true ? (
                 <MasktoImg
                   delay={0}
-                  duration={1500}
+                  duration={500}
                   maskPath={masksArray[index]}
                   imagePath={imagesArray[index]}
                 />
