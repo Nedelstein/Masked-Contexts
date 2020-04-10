@@ -32,16 +32,13 @@ body {
 
 .emptyBox {
   background-size: cover;
-  // position: fixed;
-  // height: 200px;
-  // width: 200px;
 }
 
 .Title-text {
   position: fixed;
   background-color: rgba(67, 3, 84, 1);
-  background-color: white;
-  color: black;
+  // background-color: white;
+  color: white;
   // position: absolute;
   // -webkit-text-stroke: 0.5px black;
   // display: inline-block;
@@ -50,13 +47,19 @@ body {
   font-family: "Big Caslon";
   font-style: normal;
   overflow: hidden;
-  padding: 5px;
+  padding: 2px;
   font-weight: bold;
-  line-height: 58px;
-  font-size: 55px;
+  line-height: 50px;
+  font-size: 40px;
   letter-spacing: 0.1em;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   z-index: 999999;
+  transition: background-color 0.5s;
+}
+.Title-text:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
 }
 
 .Subtitle-text {
