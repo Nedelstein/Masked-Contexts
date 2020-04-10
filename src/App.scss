@@ -30,17 +30,33 @@ body {
   color: white;
 }
 
+.emptyBox {
+  background-size: cover;
+  // position: fixed;
+  // height: 200px;
+  // width: 200px;
+}
+
 .Title-text {
-  position: absolute;
+  position: fixed;
+  background-color: rgba(67, 3, 84, 1);
+  background-color: white;
+  color: black;
+  // position: absolute;
+  // -webkit-text-stroke: 0.5px black;
+  // display: inline-block;
   top: 5%;
   left: 8%;
   font-family: "Big Caslon";
   font-style: normal;
-  font-weight: normal;
+  overflow: hidden;
+  padding: 5px;
+  font-weight: bold;
   line-height: 58px;
-  font-size: 36px;
-  color: white;
-  text-align: center;
+  font-size: 55px;
+  letter-spacing: 0.1em;
+  mix-blend-mode: screen;
+  z-index: 999999;
 }
 
 .Subtitle-text {
@@ -113,8 +129,4 @@ body {
   color: black;
   background-color: yellow;
   z-index: 9999999;
-}
-
-br {
-  line-height: 100px;
 }

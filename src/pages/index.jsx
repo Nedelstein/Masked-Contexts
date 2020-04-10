@@ -19,14 +19,16 @@ const MainPage = () => {
   return (
     <div ref={node}>
       <header className="App-header">
-        <div className="Title-text">Masked Contexts</div>
+        <div className="emptyBox">
+          <div className="Title-text">Masked Contexts</div>
+        </div>
         <FocusLock disabled={!open}>
           <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
           <Menu open={open} setOpen={setOpen} id={menuId} />
         </FocusLock>
         {/* <LandingText /> */}
         <LandingTypeWriter />
-        <LandingMasonry />
+        <LandingMasonry></LandingMasonry>
       </header>
     </div>
   );
