@@ -24,7 +24,7 @@ const MainPage = () => {
           <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
           <Menu open={open} setOpen={setOpen} id={menuId} />
         </FocusLock>
-        <LandingText />
+        {/* <LandingText /> */}
         <LandingTypeWriter />
         <LandingMasonry />
       </header>

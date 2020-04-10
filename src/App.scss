@@ -58,26 +58,27 @@ body {
 
 .my-masonry-grid {
   display: flex;
-  /* margin-left: -30px; */
-  margin-top: 150px;
-  margin-left: 47%;
-  margin-right: -7%;
+  margin-left: 0.5%;
+  margin-top: 0.3%;
 }
 .my-masonry-grid_column {
-  border-left: 15px solid transparent;
+  // flex: i;
+  // border-left: 5px solid transparent;
+  // border: none;
   background-clip: padding-box;
-  margin-left: -10px;
-  margin-right: -20px;
+  margin-left: 0px;
+  // padding-left: 10px;
+}
+.my-masonry-grid:last-child {
+  flex-grow: 1;
 }
 
 /* Style your items */
 .my-masonry-grid_column > div {
   /* change div to reference your elements in <masonry> */
-  /* background: #ddd; */
-  padding: 2px;
-  margin-left: 4px;
-  /* margin-right: 4px; */
-  /* margin-bottom: 15px; */
+  // background: #ddd;
+  padding-top: 2px;
+  // margin-left: 4px;
 }
 
 .ReactModalPortal > * {
@@ -112,4 +113,8 @@ body {
   color: black;
   background-color: yellow;
   z-index: 9999999;
+}
+
+br {
+  line-height: 100px;
 }

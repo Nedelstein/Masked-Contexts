@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
+// import ReactDom from "react-dom";
 import Masonry from "react-masonry-css";
 
 let MasonryGrid = () => {
@@ -19,7 +19,7 @@ let MasonryGrid = () => {
         <div>
           <img
             src={images[i]}
-            style={{ width: "60%" }}
+            style={{ width: "80%", height: "auto" }}
             alt="Whoopsieedasies"
           ></img>
         </div>
@@ -28,10 +28,10 @@ let MasonryGrid = () => {
   });
 
   const breakpointColumnsObj = {
-    default: 6,
-    1100: 4,
-    700: 3,
-    500: 2
+    default: 21,
+    1100: 15,
+    700: 7,
+    500: 4,
   };
   return (
     <Masonry

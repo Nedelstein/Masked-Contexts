@@ -47,7 +47,6 @@ const ConversationModal = (props) => {
           <p style={{ marginTop: 0 }}>{subject}</p>
           <hr
             style={{
-              // color: "black",
               borderWidth: "1px",
               borderColor: "black",
               // size: "1px",
