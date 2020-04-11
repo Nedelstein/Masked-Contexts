@@ -4,13 +4,14 @@ import Masonry from "react-masonry-css";
 
 let MasonryGrid = () => {
   //dynamically import all images from folder
+
   function importAll(r) {
     return r.keys().map(r);
   }
   const images = importAll(
     require.context("../assets/images/landing_masonry", false, /\.jpg$/)
   );
-  console.log(images);
+  // console.log(images);
 
   //   put each imgs in its own masonry div
   const imagesDiv = new Array(images.length).fill().map((item, i) => {
@@ -18,6 +19,7 @@ let MasonryGrid = () => {
       <div key={i}>
         <div>
           <img
+            draggable={false}
             src={images[i]}
             style={{ width: "80%", height: "auto" }}
             alt="Whoopsieedasies"
