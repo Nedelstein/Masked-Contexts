@@ -19,13 +19,6 @@ body {
   src: url("./assets/fonts/typewcond_regular.otf");
 }
 
-@mixin anime($time, $cubic) {
-  -webkit-transition: all $time $cubic;
-  -moz-transition: all $time $cubic;
-  -o-transition: all $time $cubic;
-  transition: all $time $cubic;
-}
-
 .App {
   text-align: center;
 }
@@ -91,6 +84,9 @@ body {
   display: flex;
   margin-left: 0.5%;
   margin-top: 0.3%;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
 }
 .my-masonry-grid_column {
   // border-left: 5px solid transparent;
