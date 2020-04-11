@@ -22,7 +22,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "set-interval-async": "^1.0.32",
-    "styled-components": "^5.0.1",
+    "styled-components": "^5.1.0",
     "typewriter-effect": "^2.13.0"
   },
   "scripts": {

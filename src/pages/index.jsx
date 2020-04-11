@@ -6,7 +6,6 @@ import LandingTypeWriter from "../components/LandingTypewriter";
 import Burger from "../components/Burger";
 import Menu from "../components/Menu";
 import LandingMasonry from "../components/LandingMasonry";
-
 import { useOnClickOutside } from "../hooks";
 import FocusLock from "react-focus-lock";
 

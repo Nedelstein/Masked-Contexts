@@ -1,44 +1,50 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import { theme } from "../theme";
+import "../App.scss";
 
-const quoteStyle = {
-  position: "fixed",
-  color: "white",
-  backgroundColor: theme.purple,
-  fontFamily: "Big Caslon",
-  fontWeight: "bold",
-  fontSize: "24px",
-  textAlign: "left",
-  // textTransform: "uppercase",
-  lineHeight: "40px",
-  top: "40%",
-  left: "52%",
-  wordSpacing: "5px",
-  textTransform: "uppercase",
-  zIndex: "100",
-};
+import Button from "./EnterButton";
+
+// import { theme } from "../theme";
+// const quoteStyle = {
+//   position: "fixed",
+//   color: "white",
+//   backgroundColor: theme.purple,
+//   fontFamily: "Big Caslon",
+//   fontWeight: "bold",
+//   fontSize: "24px",
+//   textAlign: "left",
+//   lineHeight: "40px",
+//   top: "40%",
+//   left: "52%",
+//   wordSpacing: "5px",
+//   textTransform: "uppercase",
+//   zIndex: "100",
+// };
 
 const letterStyle = {
-  position: "fixed",
+  position: "absolute",
+  overflow: "auto",
   color: "white",
-  backgroundColor: "rgba(67,3,84,0.85)",
-  fontFamily: "Big Caslon",
+  backgroundColor: "rgba(0,0,0,0.7)",
+  fontFamily: "Typewriter",
   fontSize: "24px",
   textAlign: "left",
-  wordSpacing: "3px",
+  // wordSpacing: "3px",
   // lineHeight: "30px",
   transform: "translate(-50%, 0%)",
-  top: "20%",
+  top: "15%",
   left: "50%",
-  width: "40%",
+  width: "55%",
+  // height: "100%",
   padding: "7px",
 };
 
-let LandingTypewriter = () => {
-  // const letterText =
-  //   "Hi (flickr user), \n\nI just wanted to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: http://cocodataset.org/#explore?id=. I thought it was important that you know your image was used for this. \n\n Now that you are aware, I was wondering if you could tell me a little more about the photo. What was the original context for it being taken? Where/why did you shoot it? If there is any backstory, I would love to hear about it. \n\n Lastly, if you have any opinions about your image being used in this regard, I’d love to hear from you about that as well.\n\n Thanks";
+let buttonAppear = () => {
+  let btnElement = document.querySelector(".enterButton");
+  btnElement.classList.add("button-fade-in");
+};
 
+let LandingTypewriter = () => {
   return (
     <div>
       <div style={letterStyle}>
@@ -46,21 +52,20 @@ let LandingTypewriter = () => {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                '<span>"Hi __________, </br></br>I just wanted to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: http://cocodataset.org/#explore?id=_______. I thought it was important that you know your image was used for this. </br></br> Now that you are aware, I was wondering if you could tell me a little more about the photo. What was the original context for it being taken? Where/why did you shoot it? If there is any backstory, I would love to hear about it. </br></br>Lastly, if you have any opinions about your image being used in this regard, I’d love to hear from you about that as well.</br></br>Thanks,</br>Noah"</span>'
+                "<span>Hi __________</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here:_________________. I thought it was important that you know your image was used for this. </br></br> Now that you are aware, I was wondering if you could tell me a little more about the photo. What was the original context for it being taken? Where/why did you shoot it? If there is any backstory, I would love to hear about it. </br></br>Lastly, if you have any opinions about your image being used in this regard, I’d love to hear from you about that as well.</br></br>Thanks,</br>Noah</span>"
               )
+              .callFunction(buttonAppear)
               .pauseFor(9999999999999)
               .start();
           }}
           options={{
-            //   strings: [
-            //     '<span>"Hi __________, </br></br>I just wanted to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: http://cocodataset.org/#explore?id=_______. I thought it was important that you know your image was used for this. </br></br> Now that you are aware, I was wondering if you could tell me a little more about the photo. What was the original context for it being taken? Where/why did you shoot it? If there is any backstory, I would love to hear about it. </br></br>Lastly, if you have any opinions about your image being used in this regard, I’d love to hear from you about that as well.</br></br>Thanks"</span>',
-            //   ],
-            delay: 40,
+            delay: 3,
             autoStart: true,
             loop: false,
             cursor: "*/",
           }}
         />
+        <Button />
       </div>
 
       {/* <div style={quoteStyle}>
