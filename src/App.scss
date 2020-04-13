@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
 }
 ::selection {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   color: black;
 }
 *,
@@ -126,6 +126,29 @@ body {
   &--before-close {
     opacity: 0;
   }
+}
+
+.swiper-button-next {
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-right: 30%;
+  margin-top: 15% !important;
+  transition: color 0.5s;
+}
+
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-left: 30%;
+  margin-top: 15% !important;
+
+  transition: color 0.5s;
+}
+
+.swiper-button-next:hover {
+  color: white !important;
+}
+
+.swiper-button-prev:hover {
+  color: white !important;
 }
 
 #maskTextDiv {

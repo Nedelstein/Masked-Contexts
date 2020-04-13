@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Swiper from "react-id-swiper";
+import "../App.scss";
 import "swiper/swiper.scss";
+import "swiper/css/swiper.css";
+
 import Modal from "react-modal";
+import { Surface } from "gl-react-dom";
+import GLTransitions from "gl-transitions";
+import GLTransition from "react-gl-transition";
+import timeLoop from "./timeLoop";
 
 import ConversationModal from "../components/ConversationModal";
 import conversations from "../conversations_lookup";
@@ -12,8 +19,19 @@ const IMG = (imgName) => {
 
 const ConversationsGallery = () => {
   let filename;
+  const totalImages = 5;
+  const imagesArray = [
+    "myfilepath.png",
+    "myfilepath.png",
+    "myfilepath.png",
+    "myfilepath.png",
+    "myfilepath.png",
+  ];
+  const masksArray = ["mymaskpath.png"];
+
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
+  const [isHover, setHover] = useState(new Array(totalImages).fill(false));
 
   function importAll(r) {
     return r.keys().map(r);
@@ -52,12 +70,15 @@ const ConversationsGallery = () => {
   };
 
   const ImageDivStyle = {
-    display: "block",
+    // display: "block",
     width: "auto",
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "20%",
     marginBottom: "25%",
+    fontFamily: "Big Caslon",
+    fontSize: "20px",
+    textAlign: "center",
   };
   const ImageStyle = {
     width: "100%",
@@ -87,6 +108,43 @@ const ConversationsGallery = () => {
     );
   });
 
+  let shouldReset = false;
+  const MasktoImg = timeLoop(
+    ({ delay, duration, maskPath, imagePath, time }) => {
+      // console.log(time);
+      const from = "masks/209842_mask.png";
+      const to = "original_imgs/000000209842.jpg";
+      const index = Math.floor(time / (delay + duration));
+      const total = delay + duration;
+      const transition = GLTransitions[47];
+      const progress = shouldReset
+        ? 0.001
+        : (Math.min(time, duration) - index * total - delay) / duration;
+      return progress > 0 ? (
+        <GLTransition
+          from={IMG(from)}
+          to={IMG(to)}
+          progress={progress}
+          transition={transition}
+        />
+      ) : null;
+    }
+  );
+
+  const JustMask = ({ maskPath }) => {
+    const from = "masks/209842_mask.png";
+    const to = "original_imgs/000000209842.jpg";
+    const transition = GLTransitions[2];
+    return (
+      <GLTransition
+        from={IMG(from)}
+        to={IMG(to)}
+        progress={0}
+        transition={transition}
+      />
+    );
+  };
+
   let activeContent;
   for (let i in conversations) {
     if (filename === conversations[i].id) {
@@ -110,7 +168,7 @@ const ConversationsGallery = () => {
 
   const galleryParams = {
     effect: "coverflow",
-    grabCursor: "true",
+    // grabCursor: "true",
     centeredSlides: "true",
     slidesPerView: 3,
     // spaceBetween: 20,
@@ -121,14 +179,18 @@ const ConversationsGallery = () => {
       modifier: 1,
       slideShadows: true,
     },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   //   type: "bullets",
+    //   clickable: true,
+    // },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+      enabled: "true",
+      onlyInViewport: "false",
     },
   };
 
@@ -136,8 +198,9 @@ const ConversationsGallery = () => {
     <>
       <Swiper {...galleryParams}>
         <div style={ImageDivStyle}>
-          {/* <img style={ImageStyle} src={IMG("masks/209842_mask.png")} /> */}
-          {imagesDiv}
+          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+          {/* {imagesDiv} */}
+          she turned out to be a real gold digger
         </div>
         <div style={ImageDivStyle}>
           <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
