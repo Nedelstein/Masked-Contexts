@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Swiper from "react-id-swiper";
 import "swiper/swiper.scss";
+import Modal from "react-modal";
 
 import ConversationModal from "../components/ConversationModal";
-import { autoDetectRenderer } from "pixi.js";
+import conversations from "../conversations_lookup";
 
 const IMG = (imgName) => {
   return require(`../assets/images/conversations/${imgName}`);
@@ -11,20 +12,53 @@ const IMG = (imgName) => {
 
 const ConversationsGallery = () => {
   let filename;
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modal, setModal] = useState(null);
 
   function importAll(r) {
     return r.keys().map(r);
   }
 
+  const buttonStyle = {
+    position: "-webkit-sticky",
+    position: "sticky",
+    top: "0.8%",
+    margin: "1%, 1%, 1%, 0",
+    background: "none",
+    color: "black",
+    border: "none",
+    fontSize: "30px",
+    cursor: "pointer",
+  };
+
+  const ModalStyle = {
+    content: {
+      top: "50%",
+      // left: "60%",
+      right: "auto",
+      bottom: "auto",
+      width: "80vw",
+      // marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      marginLeft: "50%",
+      backgroundColor: "rgba(130,91,86,1)",
+      overflowY: "auto",
+      maxHeight: "80vh",
+      border: "none",
+    },
+    overlay: {
+      background: "rgba(86,126,130,0.3)",
+    },
+  };
+
   const ImageDivStyle = {
     display: "block",
-    width: "auto%",
+    width: "auto",
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "20%",
     marginBottom: "25%",
   };
-
   const ImageStyle = {
     width: "100%",
   };
@@ -41,19 +75,40 @@ const ConversationsGallery = () => {
           id={filename}
           src={images[i]}
           style={{
-            width: "30%",
+            width: "100%",
             objectFit: "cover",
             objectPosition: "center",
             cursor: "pointer",
           }}
           alt="whoops"
-          //   onClick={openModal}
+          onClick={openModal}
         ></img>
       </div>
     );
   });
 
-  const params = {
+  let activeContent;
+  for (let i in conversations) {
+    if (filename === conversations[i].id) {
+      activeContent = conversations[i];
+    }
+  }
+
+  function openModal() {
+    setIsOpen(true);
+    setModal(activeContent);
+  }
+
+  let subtitle;
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  const galleryParams = {
     effect: "coverflow",
     grabCursor: "true",
     centeredSlides: "true",
@@ -78,26 +133,44 @@ const ConversationsGallery = () => {
   };
 
   return (
-    <Swiper {...params}>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-    </Swiper>
+    <>
+      <Swiper {...galleryParams}>
+        <div style={ImageDivStyle}>
+          {/* <img style={ImageStyle} src={IMG("masks/209842_mask.png")} /> */}
+          {imagesDiv}
+        </div>
+        <div style={ImageDivStyle}>
+          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+        </div>
+        <div style={ImageDivStyle}>
+          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+        </div>
+        <div style={ImageDivStyle}>
+          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+        </div>
+        <div style={ImageDivStyle}>
+          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+        </div>
+        <div style={ImageDivStyle}>
+          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+        </div>
+      </Swiper>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={ModalStyle}
+        contentLabel={"Conversation"}
+        closeTimeoutMS={300}
+      >
+        <div ref={(_subtitle) => (subtitle = _subtitle)}>
+          <button style={buttonStyle} onClick={closeModal}>
+            &times;
+          </button>
+          <ConversationModal details={modal} />
+        </div>
+      </Modal>
+    </>
   );
 };
 

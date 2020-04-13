@@ -120,6 +120,7 @@ body {
 
   &--after-open {
     opacity: 1;
+    z-index: 9999999;
   }
 
   &--before-close {
