@@ -7,7 +7,9 @@ const About = () => {
 
   return (
     <header className="App-header">
-      <div className="Title-text">Masked Contexts</div>
+      <a href="/">
+        <div className="Title-text">Masked Contexts</div>
+      </a>{" "}
       <div className="Subtitle-text">This will be my about page</div>
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} setOpen={setOpen} />

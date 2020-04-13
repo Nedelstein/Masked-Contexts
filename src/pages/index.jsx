@@ -19,7 +19,9 @@ const MainPage = () => {
     <div ref={node}>
       <header className="App-header">
         <div className="emptyBox">
-          <div className="Title-text">Masked Contexts</div>
+          <a href="/">
+            <div className="Title-text">Masked Contexts</div>
+          </a>
         </div>
         <FocusLock disabled={!open}>
           <Burger open={open} setOpen={setOpen} aria-controls={menuId} />

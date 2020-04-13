@@ -20,7 +20,7 @@ margin-top:1%;
   z-index: 999999999;
   cursor: pointer;
   opacity: 0;
-  transition: color 0.5s, opacity 3s;
+  transition: color 1s, background-color 1s, opacity 3s;
 
   &:hover{
       color:black;
