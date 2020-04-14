@@ -19,7 +19,7 @@ const IMG = (imgName) => {
 
 const ConversationsGallery = () => {
   let filename;
-  const totalImages = 5;
+  const totalImages = 1;
   const imagesArray = [
     "myfilepath.png",
     "myfilepath.png",
@@ -116,7 +116,7 @@ const ConversationsGallery = () => {
       const to = "original_imgs/000000209842.jpg";
       const index = Math.floor(time / (delay + duration));
       const total = delay + duration;
-      const transition = GLTransitions[47];
+      const transition = GLTransitions[41];
       const progress = shouldReset
         ? 0.001
         : (Math.min(time, duration) - index * total - delay) / duration;
@@ -198,9 +198,37 @@ const ConversationsGallery = () => {
     <>
       <Swiper {...galleryParams}>
         <div style={ImageDivStyle}>
-          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-          {/* {imagesDiv} */}
-          she turned out to be a real gold digger
+          {/* <img style={ImageStyle} src={IMG("masks/209842_mask.png")} /> */}
+          {imagesDiv}
+          She turned out to be a real gold digger
+          {/* <Surface
+            style={ImageStyle}
+            onClick={openModal}
+            onMouseEnter={() => {
+              shouldReset = false;
+              let arr = false;
+              arr = true;
+              setHover(arr);
+            }}
+            onMouseLeave={() => {
+              shouldReset = true;
+              setTimeout(() => {
+                let arr = false;
+                setHover(arr);
+              }, 20);
+            }}
+          >
+            {isHover == true ? (
+              <MasktoImg
+                delay={0}
+                duration={3000}
+                maskPath={IMG("masks/209842_mask.png")}
+                imagePath={IMG("original_imgs/000000209842.jpg")}
+              />
+            ) : (
+              <JustMask maskPath={IMG("masks/209842_mask.png")} />
+            )}
+          </Surface> */}
         </div>
         <div style={ImageDivStyle}>
           <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
