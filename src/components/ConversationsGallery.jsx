@@ -18,7 +18,7 @@ const IMG = (imgName) => {
 };
 
 const ConversationsGallery = () => {
-  let filename;
+  let filename_orig;
   const totalImages = 1;
   const imagesArray = [
     "myfilepath.png",
@@ -88,12 +88,12 @@ const ConversationsGallery = () => {
   );
 
   const imagesDiv = new Array(images.length).fill().map((item, i) => {
-    filename = images[i].replace("/static/media/", "");
-    filename = filename.substring(0, filename.indexOf("_"));
+    filename_orig = images[i].replace("/static/media/", "");
+    filename_orig = filename_orig.substring(0, filename_orig.indexOf("_"));
     return (
       <div key={i}>
         <img
-          id={filename}
+          id={filename_orig}
           src={images[i]}
           style={{
             width: "100%",
@@ -147,7 +147,7 @@ const ConversationsGallery = () => {
 
   let activeContent;
   for (let i in conversations) {
-    if (filename === conversations[i].id) {
+    if (filename_orig === conversations[i].id) {
       activeContent = conversations[i];
     }
   }
