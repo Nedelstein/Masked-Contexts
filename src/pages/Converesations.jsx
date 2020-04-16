@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ConversationsMasonry from "../components/ConversationsMasonry";
 import ConversationsGallery from "../components/ConversationsGallery";
+import ConversationEntryModal from "../components/ConversationEntryModal";
+
 //menu
 import Burger from "../components/Burger";
 import Menu from "../components/Menu";
@@ -14,6 +16,7 @@ const Conversations = () => {
         <div className="Title-text">Masked Contexts</div>
       </a>
       {/* <ConversationsMasonry /> */}
+      <ConversationEntryModal />
       <ConversationsGallery />
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} setOpen={setOpen} />

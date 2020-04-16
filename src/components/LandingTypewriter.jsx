@@ -26,7 +26,7 @@ const letterStyle = {
   overflow: "auto",
   color: "white",
   backgroundColor: "rgba(0,0,0,0.7)",
-  fontFamily: "Typewriter",
+  fontFamily: "Big Caslon",
   fontSize: "24px",
   textAlign: "left",
   // wordSpacing: "3px",
