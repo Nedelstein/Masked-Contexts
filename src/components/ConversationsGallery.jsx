@@ -70,7 +70,7 @@ const ConversationsGallery = () => {
     width: "auto",
     marginLeft: "auto",
     marginRight: "auto",
-    marginTop: "20%",
+    marginTop: "15%",
     marginBottom: "25%",
     fontFamily: "Big Caslon",
     fontSize: "20px",
@@ -86,30 +86,6 @@ const ConversationsGallery = () => {
   // let images = importAll(
   //   require.context("../assets/images/conversations/masks", false, /\.png$/)
   // );
-
-  const galleryParams = {
-    effect: "coverflow",
-    // grabCursor: "true",
-    centeredSlides: "true",
-    slidesPerView: 3,
-    // spaceBetween: 20,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 250,
-      modifier: 1,
-      slideShadows: true,
-    },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    keyboard: {
-      enabled: "true",
-      onlyInViewport: "false",
-    },
-  };
 
   let images = [];
   for (let i in conversations) {
@@ -205,6 +181,31 @@ const ConversationsGallery = () => {
       />
     );
   };
+
+  const galleryParams = {
+    effect: "coverflow",
+    // grabCursor: "true",
+    centeredSlides: "true",
+    slidesPerView: 3,
+    // spaceBetween: 20,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 250,
+      modifier: 1,
+      slideShadows: true,
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+      enabled: "true",
+      onlyInViewport: "false",
+    },
+  };
+
   return (
     <>
       <Swiper {...galleryParams}>
@@ -241,21 +242,6 @@ const ConversationsGallery = () => {
             )}
           // </Surface> */}
         {/* </div> */}
-        {/* <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div>
-      <div style={ImageDivStyle}>
-        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-      </div> */}
       </Swiper>
       <Modal
         isOpen={modalIsOpen}
