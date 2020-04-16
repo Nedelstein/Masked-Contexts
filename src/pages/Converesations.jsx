@@ -9,7 +9,7 @@ const Conversations = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="App-header">
+    <div className="App-header">
       <a href="/">
         <div className="Title-text">Masked Contexts</div>
       </a>
@@ -17,7 +17,7 @@ const Conversations = () => {
       <ConversationsGallery />
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} setOpen={setOpen} />
-    </header>
+    </div>
   );
 };
 

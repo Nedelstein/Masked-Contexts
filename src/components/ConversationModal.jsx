@@ -6,7 +6,7 @@ const ModalTextStyle = {
   marginRight: "12%",
   marginTop: "-37%",
   whiteSpace: "pre-wrap",
-  color: "black",
+  color: "white",
   fontFamily: "Big Caslon",
   fontSize: "16px",
   lineHeight: "25px",

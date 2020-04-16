@@ -55,13 +55,13 @@ const ConversationsGallery = () => {
       // marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       marginLeft: "50%",
-      backgroundColor: "rgba(130,91,86,1)",
+      backgroundColor: "rgba(0,0,0,1)",
       overflowY: "auto",
       maxHeight: "80vh",
       border: "none",
     },
     overlay: {
-      background: "rgba(86,126,130,0.3)",
+      background: "rgba(67,3,84,0.5)",
     },
   };
 
@@ -110,7 +110,7 @@ const ConversationsGallery = () => {
           id={filenames[i]}
           src={images[i]}
           style={{
-            width: "100%",
+            width: "70%",
             objectFit: "cover",
             objectPosition: "center",
             cursor: "pointer",
@@ -118,6 +118,7 @@ const ConversationsGallery = () => {
           alt="whoops"
           onClick={openModal}
         ></img>
+        <p style={{ fontWeight: "bold" }}>{conversations[i].keyphrase}</p>
       </div>
     );
   });
@@ -206,8 +207,28 @@ const ConversationsGallery = () => {
     },
   };
 
+  const descriptionStyleDiv = {
+    // display:""
+    textAlign: "center",
+    padding: "50px",
+    width: "100%",
+  };
+
+  const descriptionStyle = {
+    fontFamily: "Big Caslon",
+    display: "block",
+    fontSize: "24px",
+    // margin: "0 auto",
+  };
+
   return (
     <>
+      {/* <div style={descriptionStyleDiv}> */}
+      {/* <p style={descriptionStyle}>
+        The gallery below contains the responses and conversatioins that
+        occurred from my email exchanges with the photo authors.
+      </p> */}
+      {/* </div> */}
       <Swiper {...galleryParams}>
         {imagesDiv}
         {/* <div style={ImageDivStyle}> */}
@@ -259,6 +280,8 @@ const ConversationsGallery = () => {
         </div>
       </Modal>
     </>
+
+    // </>
   );
 };
 
