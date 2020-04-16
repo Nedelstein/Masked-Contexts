@@ -28,9 +28,9 @@ const imgStyle = {
 };
 
 const ConversationModal = (props) => {
-  console.log(props);
+  // console.log(props);
   let text = props.details.text;
-  let image = props.details.filename;
+  let image = props.details.filename_orig;
   let date = props.details.date;
   let subject = props.details.subject;
 

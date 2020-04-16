@@ -18,7 +18,7 @@ const IMG = (imgName) => {
 };
 
 const ConversationsGallery = () => {
-  let filename_orig;
+  let filenames = [];
   const totalImages = 1;
   const imagesArray = [
     "myfilepath.png",
@@ -32,10 +32,6 @@ const ConversationsGallery = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
   const [isHover, setHover] = useState(new Array(totalImages).fill(false));
-
-  function importAll(r) {
-    return r.keys().map(r);
-  }
 
   const buttonStyle = {
     position: "-webkit-sticky",
@@ -83,17 +79,59 @@ const ConversationsGallery = () => {
   const ImageStyle = {
     width: "100%",
   };
-  const images = importAll(
-    require.context("../assets/images/conversations/masks", false, /\.png$/)
-  );
+
+  // function importAll(r) {
+  //   return r.keys().map(r);
+  // }
+  // let images = importAll(
+  //   require.context("../assets/images/conversations/masks", false, /\.png$/)
+  // );
+
+  const galleryParams = {
+    effect: "coverflow",
+    // grabCursor: "true",
+    centeredSlides: "true",
+    slidesPerView: 3,
+    // spaceBetween: 20,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 250,
+      modifier: 1,
+      slideShadows: true,
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+      enabled: "true",
+      onlyInViewport: "false",
+    },
+  };
+
+  let images = [];
+  for (let i in conversations) {
+    images.push(
+      "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/develop/src/assets/images/conversations/masks/" +
+        conversations[i]["filename_mask"]
+    );
+  }
 
   const imagesDiv = new Array(images.length).fill().map((item, i) => {
-    filename_orig = images[i].replace("/static/media/", "");
-    filename_orig = filename_orig.substring(0, filename_orig.indexOf("_"));
+    // filename = images[i].replace("/static/media/", "");
+    // filename = filename.substring(0, filename.indexOf("_"));
+    filenames.push(
+      images[i].replace(
+        "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/develop/src/assets/images/conversations/masks/",
+        ""
+      )
+    );
     return (
-      <div key={i}>
+      <div style={ImageDivStyle}>
         <img
-          id={filename_orig}
+          id={filenames[i]}
           src={images[i]}
           style={{
             width: "100%",
@@ -107,6 +145,29 @@ const ConversationsGallery = () => {
       </div>
     );
   });
+
+  function openModal() {
+    let activeContent;
+    for (let i in conversations) {
+      for (let j in filenames) {
+        if (conversations[i].filename_mask === filenames[j]) {
+          activeContent = conversations[i];
+          console.log(conversations[i]);
+        }
+      }
+      setModal(activeContent);
+      setIsOpen(true);
+    }
+  }
+
+  let subtitle;
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   let shouldReset = false;
   const MasktoImg = timeLoop(
@@ -144,64 +205,14 @@ const ConversationsGallery = () => {
       />
     );
   };
-
-  let activeContent;
-  for (let i in conversations) {
-    if (filename_orig === conversations[i].id) {
-      activeContent = conversations[i];
-    }
-  }
-
-  function openModal() {
-    setIsOpen(true);
-    setModal(activeContent);
-  }
-
-  let subtitle;
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  const galleryParams = {
-    effect: "coverflow",
-    // grabCursor: "true",
-    centeredSlides: "true",
-    slidesPerView: 3,
-    // spaceBetween: 20,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 250,
-      modifier: 1,
-      slideShadows: true,
-    },
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   //   type: "bullets",
-    //   clickable: true,
-    // },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    keyboard: {
-      enabled: "true",
-      onlyInViewport: "false",
-    },
-  };
-
   return (
     <>
       <Swiper {...galleryParams}>
-        <div style={ImageDivStyle}>
-          {/* <img style={ImageStyle} src={IMG("masks/209842_mask.png")} /> */}
-          {imagesDiv}
-          She turned out to be a real gold digger
-          {/* <Surface
+        {imagesDiv}
+        {/* <div style={ImageDivStyle}> */}
+        {/* <img style={ImageStyle} src={IMG("masks/209842_mask.png")} /> */}
+
+        {/* <Surface
             style={ImageStyle}
             onClick={openModal}
             onMouseEnter={() => {
@@ -228,23 +239,23 @@ const ConversationsGallery = () => {
             ) : (
               <JustMask maskPath={IMG("masks/209842_mask.png")} />
             )}
-          </Surface> */}
-        </div>
-        <div style={ImageDivStyle}>
-          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-        </div>
-        <div style={ImageDivStyle}>
-          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-        </div>
-        <div style={ImageDivStyle}>
-          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-        </div>
-        <div style={ImageDivStyle}>
-          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-        </div>
-        <div style={ImageDivStyle}>
-          <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
-        </div>
+          // </Surface> */}
+        {/* </div> */}
+        {/* <div style={ImageDivStyle}>
+        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+      </div>
+      <div style={ImageDivStyle}>
+        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+      </div>
+      <div style={ImageDivStyle}>
+        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+      </div>
+      <div style={ImageDivStyle}>
+        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+      </div>
+      <div style={ImageDivStyle}>
+        <img style={ImageStyle} src={IMG("masks/209842_mask.png")} />
+      </div> */}
       </Swiper>
       <Modal
         isOpen={modalIsOpen}
