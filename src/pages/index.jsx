@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 
 //components
-import LandingText from "../components/LandingText";
+// import LandingText from "../components/LandingText";
 import LandingTypeWriter from "../components/LandingTypewriter";
 import Burger from "../components/Burger";
 import Menu from "../components/Menu";
@@ -23,13 +23,13 @@ const MainPage = () => {
             <div className="Title-text">Masked Contexts</div>
           </a>
         </div>
+        <LandingMasonry></LandingMasonry>
         <FocusLock disabled={!open}>
           <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
           <Menu open={open} setOpen={setOpen} id={menuId} />
         </FocusLock>
         {/* <LandingText /> */}
         <LandingTypeWriter />
-        <LandingMasonry></LandingMasonry>
       </header>
     </div>
   );

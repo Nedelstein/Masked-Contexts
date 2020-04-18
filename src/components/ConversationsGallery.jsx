@@ -118,7 +118,7 @@ const ConversationsGallery = () => {
           alt="whoops"
           onClick={openModal}
         ></img>
-        <p style={{ fontWeight: "bold" }}>{conversations[i].keyphrase}</p>
+        <p style={{ fontWeight: "bold" }}>"{conversations[i].keyphrase}"</p>
       </div>
     );
   });
