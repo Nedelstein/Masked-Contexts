@@ -172,3 +172,15 @@ body {
 .button-fade-in {
   opacity: 1 !important;
 }
+
+.keyphraseP {
+  margin-bottom: 30px;
+}
+
+.keyphraseP span {
+  color: #fff;
+  padding: 10px;
+  background-color: #430354;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}

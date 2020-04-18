@@ -101,7 +101,7 @@ const conversations = [
       "Noah,\n\nThanks for letting me know about this.\n\nThere isn't much backstory to the photo: I was at Yankee Stadium, in great seats provided by a friend, and I take a lot of photos.\n\nI am concerned about the photo being in the COCO collection, for two reasons:\n\nAs with all my public photos on Flickr, it is licensed under: https://creativecommons.org/licenses/by-nc-sa/3.0/ \nI don't see any attribution to me or a link to the license on the COCO site, as required by the license. While I'm guessing it doesn't technically violate the non-commercial use term of the license, it isn't quite the usage I had in mind.\n\nAs a software developer myself, I am very concerned with facial recognition and other surveillance technologies being misused, both by law enforcement and private companies/individuals. It's often difficult to separate 'good' use from 'bad' use, and in this case it's probably some of each.\n\nI believe we're in a world where these technologies are unavoidable and ubiquitous, and I don't see that changing. However, my hope is that we will move toward cultural and legal prohibitions against misuse of these tools, with severe penalties for violators. For example, restricting what types of warrant-less surveillance data is admissible in court or usable in commercial products.\n\nThanks again for letting me know about this. If you are doing research or publishing any conclusions about what you find, I'd be interested in seeing the results.",
     subject: "Re: Your '110925-RedSox-Yankees-041.jpg' photo",
     date: "02/25/2020 8:40AM",
-    keyphrase: " It's often difficult to separate 'good' use from 'bad' use",
+    keyphrase: "It's often difficult to separate 'good' use from 'bad' use",
   },
   // {
   //   "id": "575052",
@@ -240,7 +240,7 @@ const conversations = [
       "Thanks for the heads up. Had no idea and still not completely sure what the project is all about. But I do know the vast majority of my photos are set to a Creative Commons license, so there’s likely no foul for it being used as long as it’s credited.\n\nDon’t mind sharing a little context. Just a simple shot of my father, cousin’s husband, and cousin’s kids playing MK Wii.\n\nJust for curiosity sake may I ask your involvement with the project and/or my photo?",
     subject: "Re: Your photo 'Mario Kart Wii, Memorial Day Weekend Edition'",
     date: "03/02/2020 3:14PM",
-    keyphrase: "Fascinating indeed! ",
+    keyphrase: "Fascinating indeed!",
     noah_response: "lost",
     user_response:
       "Fascinating indeed! Clearly the generic caption wouldn't really have had any way to know the family unit in the photo, but other than the fact I think I said (or at least should have) cousin's kids (plural), that description would match the generic description for the four people. My more specific description was probably more for your interest than of any use for AI purposes.\n\nThanks for the update. Cheers!",
@@ -253,7 +253,7 @@ const conversations = [
       "Hello Noah,\n\nThanks for the note, it is much appreciated. The photo was taken from my album titled 'Are we there yet? Road Trip '08' I took the picture at an amateur rodeo at  Bryce Canyon Country Rodeo, Utah hosted by Ruby Inn. Here is a link to my photo and the album and it shows the camera I used and all the EXIF data.\n\nhttps://www.flickr.com/photos/atomichotlinks/2672069224/in/photostream\nhttps://www.flickr.com/photos/atomichotlinks/albums/72157606960109071\n\nIf Microsoft created the dataset was it them or another organization that used the Flickr community's photos?\n\nThe Creative Commons is pretty clear.\nhttps://creativecommons.org/licenses/by-nc-nd/2.0/\n\nIf you look at my photo and the link you sent me of how my photo was used they cropped the heck out of the image, changed it to black & white as well as not give me any credit.\n\nIf they want to continue to use my photo I would like to get credit and give me what they  think is fair $$. It's not the most clear photo because it was a wann-be DSLR point & shoot camera. I am surprised it was even considered because it's a medium-resolution image.\n\nI'm not trying to be a 'Dick' about it. The internet is still the wild wild west in my opinion and photographers are never going to be able to put a complete stop to their photos being used without their permission.\n\nA Film company doing a documentary recently took care of me because a staff member of a museum gave them a photo of mine to use without my permission.\nThanks, Brian Crawford aka Atomic Hot Links\n\nIf you want to call me- (***)***-****",
     subject: "Your photo from June 25, 2008",
     date: "02/24/2020 9:56PM",
-    keyphrase: "I'm not trying to be a 'Dick' about it.",
+    keyphrase: "I'm not trying to be a 'Dick' about it",
   },
 ];
 

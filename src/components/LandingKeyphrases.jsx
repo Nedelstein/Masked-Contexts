@@ -6,18 +6,20 @@ import { theme } from "../theme";
 
 const keyphraseStyle = {
   //   position: "absolute",
+  display: "block",
   overflow: "auto",
   fontFamily: "Big Caslon",
   fontWeight: "bold",
   fontSize: "20px",
   textAlign: "left",
   lineHeight: "30px",
-  marginTop: "10%",
+  marginTop: "5%",
   transform: "translate(-50%, 0)",
   marginLeft: "50%",
   wordSpacing: "5px",
   textTransform: "uppercase",
   zIndex: "100",
+  width: "70%",
 };
 
 const rowStyle = {
@@ -49,15 +51,8 @@ const KeyphraseText = () => {
         <div style={columnStyle}>
           <div>
             {left_side.map((keyphrase) => (
-              <p
-                style={{
-                  color: "white",
-                  backgroundColor: theme.purple,
-                  paddingLeft: "6px",
-                  paddingRight: "6px",
-                }}
-              >
-                {keyphrase}
+              <p className="keyphraseP">
+                <span>"{keyphrase}"</span>
               </p>
             ))}
           </div>
@@ -65,15 +60,8 @@ const KeyphraseText = () => {
         <div style={columnStyle}>
           <div>
             {keyphrases.map((keyphrase) => (
-              <p
-                style={{
-                  color: "white",
-                  backgroundColor: theme.purple,
-                  paddingLeft: "6px",
-                  paddingRight: "6px",
-                }}
-              >
-                {keyphrase}
+              <p className="keyphraseP">
+                <span>"{keyphrase}"</span>
               </p>
             ))}
           </div>
