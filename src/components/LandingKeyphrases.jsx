@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 
 import conversations from "../conversations_lookup";
-import { theme } from "../theme";
+// import { theme } from "../theme";
+
+import LandingHoverImg from "./LandingHoverImg";
 
 const keyphraseStyle = {
   //   position: "absolute",
@@ -37,82 +39,62 @@ const columnStyle = {
   margin: "20px",
 };
 
-const ImageDivStyle = {
-  position: "fixed",
-  width: "auto",
-};
-
 const KeyphraseText = () => {
-  const [isHover, setHover] = useState(false);
+  const [isHover, setHover] = useState(null);
 
-  let images = [];
   let keyphrases = [];
-  let filenames = [];
-
   for (let i in conversations) {
     keyphrases.push(conversations[i].keyphrase);
-    images.push(
-      "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/" +
-        conversations[i]["filename_orig"]
-    );
   }
-
-  const imagesDiv = new Array(images.length).fill().map((item, i) => {
-    // filename = images[i].replace("/static/media/", "");
-    // filename = filename.substring(0, filename.indexOf("_"));
-    filenames.push(
-      images[i].replace(
-        "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/",
-        ""
-      )
-    );
-    return (
-      <div style={ImageDivStyle}>
-        <img
-          id={filenames[i]}
-          src={images[i]}
-          alt="no find"
-          style={{
-            width: "70%",
-            position: "absolute",
-          }}
-        ></img>
-      </div>
-    );
-  });
 
   let half_keyphrases = Math.ceil(keyphrases.length / 2);
   let left_side = keyphrases.splice(0, half_keyphrases);
-  console.log(left_side);
+
   return (
     <div style={keyphraseStyle}>
       <div style={rowStyle}>
         <div style={columnStyle}>
           <div>
-            {left_side.map((keyphrase) => (
-              <p
-                onMouseEnter={() => {
-                  setHover(true);
-                  console.log("inside");
-                }}
-                className="keyphraseP"
-              >
-                <span>"{keyphrase}"</span>
+            {left_side.map((keyphrase, index) => (
+              <p className="keyphraseP">
+                <span
+                  onMouseEnter={() => {
+                    setHover(conversations[index]);
+                    console.log(conversations[index]);
+                  }}
+                  onMouseLeave={() => {
+                    setHover(null);
+                  }}
+                >
+                  "{keyphrase}"
+                </span>
               </p>
             ))}
           </div>
         </div>
         <div style={columnStyle}>
           <div>
-            {keyphrases.map((keyphrase) => (
+            {keyphrases.map((keyphrase, index) => (
               <p className="keyphraseP">
-                <span>"{keyphrase}"</span>
+                <span
+                  onMouseEnter={() => {
+                    setHover(conversations[index + 11]);
+                    console.log(conversations[index + 11]);
+                  }}
+                  onMouseLeave={() => {
+                    setHover(null);
+                  }}
+                >
+                  "{keyphrase}"
+                </span>
               </p>
             ))}
           </div>
         </div>
       </div>
-      {isHover && imagesDiv}
+      <div>
+        {isHover && <LandingHoverImg details={isHover} setHover={setHover} />}
+      </div>
     </div>
   );
 };
