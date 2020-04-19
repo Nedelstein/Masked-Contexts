@@ -179,8 +179,16 @@ body {
 
 .keyphraseP span {
   color: #fff;
-  padding: 10px;
+  padding: 5px;
   background-color: #430354;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  transition: color 400ms ease-out, background-color 400ms ease-out;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+.keyphraseP span:hover {
+  background-color: yellow;
+  color: black;
 }

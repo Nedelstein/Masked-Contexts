@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 
 import conversations from "../conversations_lookup";
@@ -10,7 +10,7 @@ const keyphraseStyle = {
   overflow: "auto",
   fontFamily: "Big Caslon",
   fontWeight: "bold",
-  fontSize: "20px",
+  fontSize: "18px",
   textAlign: "left",
   lineHeight: "30px",
   marginTop: "5%",
@@ -19,7 +19,7 @@ const keyphraseStyle = {
   wordSpacing: "5px",
   textTransform: "uppercase",
   zIndex: "100",
-  width: "70%",
+  width: "90%",
 };
 
 const rowStyle = {
@@ -37,11 +37,50 @@ const columnStyle = {
   margin: "20px",
 };
 
+const ImageDivStyle = {
+  position: "fixed",
+  width: "auto",
+};
+
 const KeyphraseText = () => {
+  const [isHover, setHover] = useState(false);
+
+  let images = [];
   let keyphrases = [];
+  let filenames = [];
+
   for (let i in conversations) {
     keyphrases.push(conversations[i].keyphrase);
+    images.push(
+      "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/" +
+        conversations[i]["filename_orig"]
+    );
   }
+
+  const imagesDiv = new Array(images.length).fill().map((item, i) => {
+    // filename = images[i].replace("/static/media/", "");
+    // filename = filename.substring(0, filename.indexOf("_"));
+    filenames.push(
+      images[i].replace(
+        "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/",
+        ""
+      )
+    );
+    return (
+      <div style={ImageDivStyle}>
+        <img
+          id={filenames[i]}
+          src={images[i]}
+          alt="no find"
+          style={{
+            width: "70%",
+            position: "absolute",
+          }}
+        ></img>
+      </div>
+    );
+  });
+
   let half_keyphrases = Math.ceil(keyphrases.length / 2);
   let left_side = keyphrases.splice(0, half_keyphrases);
   console.log(left_side);
@@ -51,7 +90,13 @@ const KeyphraseText = () => {
         <div style={columnStyle}>
           <div>
             {left_side.map((keyphrase) => (
-              <p className="keyphraseP">
+              <p
+                onMouseEnter={() => {
+                  setHover(true);
+                  console.log("inside");
+                }}
+                className="keyphraseP"
+              >
                 <span>"{keyphrase}"</span>
               </p>
             ))}
@@ -67,6 +112,7 @@ const KeyphraseText = () => {
           </div>
         </div>
       </div>
+      {isHover && imagesDiv}
     </div>
   );
 };
