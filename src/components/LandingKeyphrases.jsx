@@ -22,6 +22,8 @@ const keyphraseStyle = {
   textTransform: "uppercase",
   zIndex: "100",
   width: "90%",
+  opacity: "0",
+  transition: "opacity 1s ease-in-out",
 };
 
 const rowStyle = {
@@ -51,7 +53,7 @@ const KeyphraseText = () => {
   let left_side = keyphrases.splice(0, half_keyphrases);
 
   return (
-    <div style={keyphraseStyle}>
+    <div className="keyphrases" style={keyphraseStyle}>
       <div style={rowStyle}>
         <div style={columnStyle}>
           <div>

@@ -173,6 +173,10 @@ body {
   opacity: 1 !important;
 }
 
+.text-fade-in {
+  opacity: 1 !important;
+}
+
 .keyphraseP {
   margin-bottom: 30px;
 }
@@ -185,7 +189,7 @@ body {
   box-decoration-break: clone;
   transition: color 400ms ease-out, background-color 400ms ease-out;
   cursor: pointer;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
 }
 
 .keyphraseP span:hover {
