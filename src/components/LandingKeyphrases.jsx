@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import conversations from "../conversations_lookup";
 // import { theme } from "../theme";
 
-import LandingHoverImg from "./LandingHoverImg";
+import { LandingHoverImgRight, LandingHoverImgLeft } from "./LandingHoverImg";
 
 const keyphraseStyle = {
   //   position: "absolute",
@@ -42,7 +42,8 @@ const columnStyle = {
 };
 
 const KeyphraseText = () => {
-  const [isHover, setHover] = useState(null);
+  const [isHoverRight, setHoverRight] = useState(null);
+  const [isHoverLeft, setHoverLeft] = useState(null);
 
   let keyphrases = [];
   for (let i in conversations) {
@@ -61,11 +62,11 @@ const KeyphraseText = () => {
               <p className="keyphraseP">
                 <span
                   onMouseEnter={() => {
-                    setHover(conversations[index]);
+                    setHoverLeft(conversations[index]);
                     console.log(conversations[index]);
                   }}
                   onMouseLeave={() => {
-                    setHover(null);
+                    setHoverLeft(null);
                   }}
                 >
                   "{keyphrase}"
@@ -80,11 +81,11 @@ const KeyphraseText = () => {
               <p className="keyphraseP">
                 <span
                   onMouseEnter={() => {
-                    setHover(conversations[index + 11]);
+                    setHoverRight(conversations[index + 11]);
                     console.log(conversations[index + 11]);
                   }}
                   onMouseLeave={() => {
-                    setHover(null);
+                    setHoverRight(null);
                   }}
                 >
                   "{keyphrase}"
@@ -95,7 +96,15 @@ const KeyphraseText = () => {
         </div>
       </div>
       <div>
-        {isHover && <LandingHoverImg details={isHover} setHover={setHover} />}
+        {isHoverRight && (
+          <LandingHoverImgRight
+            details={isHoverRight}
+            setHover={setHoverRight}
+          />
+        )}
+        {isHoverLeft && (
+          <LandingHoverImgLeft details={isHoverLeft} setHover={setHoverLeft} />
+        )}
       </div>
     </div>
   );

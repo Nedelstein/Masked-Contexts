@@ -3,12 +3,13 @@ import conversations from "../conversations_lookup";
 
 let randY, randX;
 
-const ImageDivStyle = {
+const ImageDivStyleRight = {
   //   width: "auto",
   position: "absolute",
   readOnly: "false",
   width: "70%",
   top: "30%",
+  left: "0",
 
   //   zIndex: "-1",
 };
@@ -29,7 +30,7 @@ function getRandomPosition() {
   return [randomX, randomY];
 }
 
-const LandingHoverImg = (props) => {
+export const LandingHoverImgRight = (props) => {
   let imageSource = props.details.filename_orig;
 
   imageSource =
@@ -43,10 +44,35 @@ const LandingHoverImg = (props) => {
   //   ImageStyle.top = randY;
   //   ImageStyle.left = randX;
   return (
-    <div id="hoverImg" style={ImageDivStyle}>
+    <div className="hoverImg" style={ImageDivStyleRight}>
       <img style={ImageStyle} alt="whoops" src={imageSource}></img>
     </div>
   );
 };
 
-export default LandingHoverImg;
+const ImageDivStyleLeft = {
+  //   width: "auto",
+  position: "absolute",
+  readOnly: "false",
+  width: "70%",
+  top: "30%",
+  left: "50%",
+
+  //   zIndex: "-1",
+};
+
+export const LandingHoverImgLeft = (props) => {
+  let imageSource = props.details.filename_orig;
+
+  imageSource =
+    "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/" +
+    imageSource;
+
+  return (
+    <div className="hoverImg" style={ImageDivStyleLeft}>
+      <img style={ImageStyle} alt="whoops" src={imageSource}></img>
+    </div>
+  );
+};
+
+// export default { LandingHoverImg, LandingHoverImgLeft };
