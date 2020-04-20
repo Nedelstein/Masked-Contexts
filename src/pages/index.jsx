@@ -1,19 +1,26 @@
-import React, { useState, useRef } from "react";
-
-//components
-// import LandingText from "../components/LandingText";
-import LandingTypeWriter from "../components/LandingTypewriter";
-import Burger from "../components/Burger";
-import Menu from "../components/Menu";
+import React, { useRef } from "react";
 import LandingMasonry from "../components/LandingMasonry";
-import { useOnClickOutside } from "../hooks";
-import FocusLock from "react-focus-lock";
 
 const MainPage = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const node = useRef();
-  const menuId = "main-menu";
-  useOnClickOutside(node, () => setOpen(false));
+  // const menuId = "main-menu";
+  // useOnClickOutside(node, () => setOpen(false));
+
+  const comingSoonStyle = {
+    position: "fixed",
+    fontFamily: "Big Caslon",
+    fontWeight: "bold",
+    fontSize: "32px",
+    textAlign: "center",
+    backgroundColor: "yellow",
+    color: "black",
+    zIndex: "10",
+    padding: "5px",
+    transform: "translate(-50%,-50%)",
+    left: "50%",
+    top: "50%",
+  };
 
   return (
     <div ref={node}>
@@ -23,13 +30,9 @@ const MainPage = () => {
             <div className="Title-text">Masked Contexts</div>
           </a>
         </div>
+        <p style={comingSoonStyle}>COMING SOON</p>
+
         <LandingMasonry></LandingMasonry>
-        <FocusLock disabled={!open}>
-          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-          <Menu open={open} setOpen={setOpen} id={menuId} />
-        </FocusLock>
-        {/* <LandingText /> */}
-        <LandingTypeWriter />
       </header>
     </div>
   );
