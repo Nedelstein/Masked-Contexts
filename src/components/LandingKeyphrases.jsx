@@ -54,59 +54,58 @@ const KeyphraseText = () => {
   let left_side = keyphrases.splice(0, half_keyphrases);
 
   return (
-    <div className="keyphrases" style={keyphraseStyle}>
-      <div style={rowStyle}>
-        <div style={columnStyle}>
-          <div>
-            {left_side.map((keyphrase, index) => (
-              <p className="keyphraseP">
-                <span
-                  onMouseEnter={() => {
-                    setHoverLeft(conversations[index]);
-                    console.log(conversations[index]);
-                  }}
-                  onMouseLeave={() => {
-                    setHoverLeft(null);
-                  }}
-                >
-                  "{keyphrase}"
-                </span>
-              </p>
-            ))}
+    <>
+      <div className="keyphrases" style={keyphraseStyle}>
+        <div style={rowStyle}>
+          <div style={columnStyle}>
+            <div>
+              {left_side.map((keyphrase, index) => (
+                <p className="keyphraseP">
+                  <span
+                    onMouseEnter={() => {
+                      setHoverLeft(conversations[index]);
+                      console.log(conversations[index]);
+                    }}
+                    onMouseLeave={() => {
+                      setHoverLeft(null);
+                    }}
+                  >
+                    "{keyphrase}"
+                  </span>
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
-        <div style={columnStyle}>
-          <div>
-            {keyphrases.map((keyphrase, index) => (
-              <p className="keyphraseP">
-                <span
-                  onMouseEnter={() => {
-                    setHoverRight(conversations[index + 11]);
-                    console.log(conversations[index + 11]);
-                  }}
-                  onMouseLeave={() => {
-                    setHoverRight(null);
-                  }}
-                >
-                  "{keyphrase}"
-                </span>
-              </p>
-            ))}
+          <div style={columnStyle}>
+            <div>
+              {keyphrases.map((keyphrase, index) => (
+                <p style={{ textAlign: "right" }} className="keyphraseP">
+                  <span
+                    onMouseEnter={() => {
+                      setHoverRight(conversations[index + 11]);
+                      console.log(conversations[index + 11]);
+                    }}
+                    onMouseLeave={() => {
+                      setHoverRight(null);
+                    }}
+                  >
+                    "{keyphrase}"
+                  </span>
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <div>
-        {isHoverRight && (
-          <LandingHoverImgRight
-            details={isHoverRight}
-            setHover={setHoverRight}
-          />
-        )}
-        {isHoverLeft && (
-          <LandingHoverImgLeft details={isHoverLeft} setHover={setHoverLeft} />
-        )}
-      </div>
-    </div>
+      {/* <div> */}
+      {isHoverRight && (
+        <LandingHoverImgRight details={isHoverRight} setHover={setHoverRight} />
+      )}
+      {isHoverLeft && (
+        <LandingHoverImgLeft details={isHoverLeft} setHover={setHoverLeft} />
+      )}
+      {/* </div> */}
+    </>
   );
 };
 
