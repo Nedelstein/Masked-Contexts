@@ -31,7 +31,6 @@ const MainPage = () => {
           </a>
         </div>
         <p style={comingSoonStyle}>COMING SOON</p>
-
         <LandingMasonry></LandingMasonry>
       </header>
     </div>
