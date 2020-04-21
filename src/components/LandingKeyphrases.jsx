@@ -12,7 +12,7 @@ const keyphraseStyle = {
   overflow: "auto",
   fontFamily: "Big Caslon",
   fontWeight: "bold",
-  fontSize: "18px",
+  fontSize: "16px",
   textAlign: "left",
   lineHeight: "30px",
   marginTop: "5%",

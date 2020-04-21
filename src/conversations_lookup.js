@@ -10,6 +10,13 @@ const conversations = [
     date: "02/22/2020 9:30 AM",
     from: "shankar s",
     keyphrase: "She turned out to be a real gold digger",
+    captions: [
+      "a man and child sitting on a horse",
+      "some people ride a donkey and others walk through the jungle",
+      "a man and a young boy riding on a donkey while people move behind them",
+      "hispanic people in sombreros walking and riding a horse",
+      "many people are out and having some fun there",
+    ],
   },
 
   {
@@ -22,6 +29,13 @@ const conversations = [
     date: "02/22/2020 3:17PM",
     from: "garryknight",
     keyphrase: "No attribution can be given in these circumstances",
+    captions: [
+      "two women holding sunflower umbrellas while walking on a rain soaked sidewalk",
+      "a crowd of people standing outside in the rain holding umbrellas",
+      "a crowd of people gather outside with their umbrellas open",
+      "many people hold umbrellas on the street during a rainy day",
+      "numerous people on rainy sidewalk with umbrellas, two of which, ironically have sunflowers on them",
+    ],
   },
   {
     id: "219489",
@@ -33,6 +47,13 @@ const conversations = [
     date: "02/25/2020 3:38PM",
     keyphrase:
       "I hope the computers will take my contributions to their intelligence in mind when the robot uprising occurs.",
+    captions: [
+      "two giraffes at the zoo about to be fed",
+      "giraffes get close to the zookeeper in their enclosure",
+      "two giraffes stare out of their enclosure at a zoo",
+      "a group of giraffes in a zoo enclosure",
+      "two giraffe standing next to each other in a zoo",
+    ],
   },
   {
     id: "504697",
@@ -44,6 +65,13 @@ const conversations = [
     date: "02/28/2020 12:46AM",
     keyphrase:
       "I guess it would be nice if the people behind the dataset did notify Flickr users that their photos were being used in this way",
+    captions: [
+      "a couple of men fishing from a beach by a dog",
+      "two people fishing on the beach with a dog at the water's edge",
+      "a couple of people that are fishing on a beach",
+      "these two people are on the beach fishing with their dog",
+      "some people are on the beach fishing with a dog",
+    ],
   },
   {
     id: "209856",
@@ -54,6 +82,13 @@ const conversations = [
     subject: "Re: Your '[45/365]' Photo",
     date: "02/23/2020 8:23PM",
     keyphrase: "I don't mind at all",
+    captions: [
+      "a table tat is set for dinner with two plates and wine glasses",
+      "the image shows an entertainment cubby in the background, and to the foreground, a low table with wine, glassware, plates of half-eaten food, and, to one side, a person's torso, legs and arms, the latter of which is reaching over a plate of food.",
+      "a dining table with two plates of food, glasses, and a bottle of wine",
+      "a man standing in front of a plate of food with a glass of wine",
+      "the dinner table with two plates and two glasses of wine",
+    ],
   },
   {
     id: "501923",
@@ -68,6 +103,13 @@ const conversations = [
       "Hey Tom,\n\nThanks for getting back to me ! Yes I indeed am a real person! I'm a graduate student at Parsons in NYC.\n\nI am looking into these image datasets and the ways in which they were created and collected. The COCO researches scraped flickr for about 180,000 photos without the knowledge or consent of the photographers such as yourself. I'm interested in re-contextualizing these photos for their original intended purposes, and learning about the stories behind them. I'm also interested in engaging with the photographers and hearing their reactions to their photos being used in such technologies, as issues surrounding privacy and surveillance are such prominent topics right now.\n\nThanks,\nNoah",
     user_response:
       "Hi Noah,\n\na good good, it was afraid AI was getting a lot better in messages as well :)\n\nI thought i had deleted all my photos from flickr, so on second thought i was surprised to see them still there.\n\nI just went back in and deleted them again.\n\nthank you for the reminder. \n\nThey had also made all photos that were supposed to be private public.. which is pretty bad.\n\nI will never trust them again.\n\ngood luck with your studies!\n\nKind regards,\ntom",
+    captions: [
+      "a man riding a wave on a white surfboard",
+      "a man surfing on a wave in the ocean",
+      "surfers are riding a small wave near the shore",
+      "a small group of surfers in the water with one of them riding a wave",
+      "boaters are in the river floating along the stream",
+    ],
   },
   {
     id: "462512",
@@ -79,6 +121,13 @@ const conversations = [
       "Re: Your 'Route 54 - Lighthouse Road Construction 8May2012' photo",
     date: "03/05/2020 7:38PM",
     keyphrase: "I like to document things",
+    captions: [
+      "a car is turning left at a street intersection",
+      "cars are sitting at a traffic light at a busy intersection",
+      "the intersection is full of traffic lights and construction cones",
+      "a busy intersection with stop lights and a gas station",
+      "a busy intersection filled with traffic under traffic lights",
+    ],
   },
   {
     id: "481689",
@@ -92,6 +141,13 @@ const conversations = [
     noah_response: "no have",
     user_response:
       "We are complacent due to our ignorance. Good grief - we are (mostly) amateur photographers, not spies. Hard to keep up with what's PC and what not to post that might attract perverts, and those who buy photos and never pay . . . to think mighty corps are illegally data gathering is another step too far.\n\nThank goodness for people like you.",
+    captions: [
+      "an old man siting at a wooden table",
+      "a man at a table with flowers and a cake",
+      "a man sits at a table beside a chocolate cake",
+      "an older man sitting with a cake on a table",
+      "an older man smiling while sitting next to a chocolate cake and a bouquet of orange flowers",
+    ],
   },
   {
     id: "234527",
@@ -102,6 +158,13 @@ const conversations = [
     subject: "Re: Your '110925-RedSox-Yankees-041.jpg' photo",
     date: "02/25/2020 8:40AM",
     keyphrase: "It's often difficult to separate 'good' use from 'bad' use",
+    captions: [
+      "a baseball player swinging at a pitch during a baseball game",
+      "a group of men playing baseball on a field",
+      "a man with a baseball bat stands at a base",
+      "a baseball player is runnign bases in order to score",
+      "a batter swinging at a pitch during a baseball game",
+    ],
   },
   // {
   //   "id": "575052",
@@ -121,6 +184,13 @@ const conversations = [
     subject: "Re: Your 'Walk Your Bike' photo",
     date: "02/25/2020 8:52PM",
     keyphrase: "I don't really care about it",
+    captions: [
+      "a street sign informing the public to walk their bikes across the street rather than ride them",
+      "a street sign on a metal post in front of a busy street",
+      "a white street sign is on a grey pole on a city street",
+      "a posted sign on a pole reads 'walk your bike'",
+      "a traffic sign instructs bicycle riders on a city street",
+    ],
   },
   {
     id: "470658",
@@ -131,6 +201,13 @@ const conversations = [
     subject: "Re: Your 'Kite Festival' Photo",
     date: "02/24/2020 10:30PM",
     keyphrase: "I do not have enough information to assess it",
+    captions: [
+      "a person flys a large green and black kite",
+      "a male is flying a one love kite in the park",
+      "a man is flying a kite with a large image of a man printed on it",
+      "a man holding a bob marley kite in the air",
+      "a kite with the words 'one love' on it",
+    ],
   },
   {
     id: "380928",
@@ -142,6 +219,13 @@ const conversations = [
     date: "02/25/2020 2:45AM",
     keyphrase: "A system which has such frightening potential",
     noah_response: "there are too many back and forths. need to figure out",
+    captions: [
+      "a man displays food on the end of a fork",
+      "a man holds up a piece of desert on a fork",
+      "a man holding up a fork with food on it",
+      "a man holding a fork with a glob of chocolate underneath a cute of carml",
+      "a man holding out a fork with some food on it",
+    ],
   },
   {
     id: "32850",
@@ -152,6 +236,13 @@ const conversations = [
     subject: "Re: Your 'Coming straight at me' photo",
     date: "02/26/2020 9:26PM",
     keyphrase: "I thought she was hot",
+    captions: [
+      "a woman is standing on a surfboard at the beach",
+      "a girl riding a surfboard in shallow water",
+      "a woman standing on a surfboard in the water",
+      "a young girl on a surf board in the frothy water",
+      "a woman is riding a surfboard in the water",
+    ],
   },
   {
     id: "117352",
@@ -166,6 +257,13 @@ const conversations = [
       "Hi Chas,\n\nThanks so much for your response! I'm wondering if you have any feelings regarding your photo being used for such AI/computer vision purposes? As someone who worked at NASA (so cool by the way!) you must know about the ways surveillance technology permeates our society. Some people may be for or against these technologies and I'm wondering if you realizing your photo is a part of it pulls you one way or another? If this is too personal a question, no pressure!\n\nThanks,\nNoah",
     user_response:
       "Noah,\n\nAlways interested in discussing things AI and surveillance.  A little more backstory about me: I’m a fairly even-keeled person and observing opposing or differing opinions on a subject as touchy and personal as surveillance feeds my anthropology muse. Yes, working at NASA exposed me to an incredible array of ways to “observe” something or someone. Also, though, my position carried some weight with the responsibilities, meaning I was often undergoing yet another background check or verification of my honesty and truthfulness. Having a secret clearance or any special access usually means that the person who has this access, him/herself is observed and known. This is why Edward Snowden’s disclosures were so profound - he was believed to be incapable of either seeing what was going on or not having the wherewithall to disclose it - “no one would believe him.\n\nSo, yes, it does impact me as I take a huge number of photographs in what might be reasonably considered “public” places where one should not have an expectation of privacy and I then post them to a publically available space.  Meaning I’m advertantly or inadvertantly putting someone’s picture on the net and I may not even know the person. In addition to knowing a great deal about me, my past, present, and any indiscretions, as a government employee my salary, number of members of my immediate family and their names, sex and ages, my address and whether or not I owned any other assets, were all known not just to the government but to anyone interested in what a Government employee does and how he/she is compensated. That made my lffe a bit easier in some ways - there was nothing anyone could really surprise me with and everyone knew how poor/not poor I and my family were. Not everyone has the same requirement of transparency hoisted upon them - but I also swore an allegiance to defend and protect the Constitution - every Fed does, so I accepted being surveilled and questioned as a necessary element of my job.\n\nFor a long time now I’ve been somewhat interested in how the United Kingdom treats their citizens and privacy.  In many ways they are even more severe than the United States with respect to spying on its own citizens - and although the US can eliminate folks in any number of ways, the US does not - unlike the United Kingdom - have an Official Secrets Act (though J. Edgar Hoover did some nafarious things, for sure).\n\nAnd, I’ve been an early adopter of “public access” software - was a blogger in the ‘90s, have LinkedIn, Flickr accounts which are very old. Have Facebook and Twitter accounts which are also about a decade old - so I’ve been unconcerned about “my” privacy but am very concerned about how governments treat privacy. I’m not unaware that some actions I have taken or might be taking can or might cause harm to others through some mechanism I don’t control. That has and continues to stiffle me - privacy we might want but we might not be aware of how we inadvertantly expose someone else’s privacy. A good example of this is my son and daughter-in-law have requested that only they post photographs of their children (my grandchildren). This I agree with and can abide - the kids, now 8 and 10, are savvy but not so savvy they would be cautious about their privacy, so I accept their parents’ request and keep their images out of my social media stream.\n\nIf I said I was a Black Mirror fan would that allow the comparisons with the US and the UK make a bit more sense?\n\nThanks for the conversation - ready for more if warranted or you want.\n\nchas",
+    captions: [
+      "there are people shopping at the stand on the street",
+      "a group of people shopping for fresh fruit and vegetables at a market",
+      "people look at fresh berries at a market",
+      "fruits and vegetables are being sold from a makeshift stand",
+      "a beautiful woman and a man standing in front of a pile of berries",
+    ],
   },
   {
     id: "291825",
@@ -176,6 +274,13 @@ const conversations = [
     subject: "About my image in Flickr",
     date: "02/26/202 10:25PM",
     keyphrase: "I don't mind people",
+    captions: [
+      "a girl using her cell phone to take a selfie",
+      "a woman taking a picture of a tree",
+      "a woman takes a picture of a cherry tree behind a fence",
+      "a woman holding up a camera next to a tree",
+      "a person taking a picture over a fence with her phone",
+    ],
   },
   {
     id: "298154",
@@ -186,6 +291,13 @@ const conversations = [
     subject: "Re: Your photo '143 620'",
     date: "03/01/2020 2:02PM",
     keyphrase: "It seems somewhat sinister",
+    captions: [
+      "there is a train that has passed by a train stop",
+      "the train stopped at the platform has advertisements on the sides",
+      "a picture of a train on the tracks outside",
+      "a yellow and black train is on some tracks",
+      "a metro train pulling around a corner into an outdoor station",
+    ],
   },
   {
     id: "552374",
@@ -197,6 +309,13 @@ const conversations = [
     date: "03/01/2020 2:59PM",
     keyphrase:
       "The use of imagery for surveillance is something I feel less than comfortable with",
+    captions: [
+      "the man has the camera up to his face, while holding the strap with his other hand",
+      "a man making use of a black camera of some sort",
+      "a man takes a picture of himself in the mirror with his camera",
+      "tourist taking a picture after removing his camera from the strap",
+      "a man in a blue shirt is holding a camera",
+    ],
   },
   {
     id: "490035",
@@ -208,6 +327,13 @@ const conversations = [
     date: "03/01/2020 9:54PM",
     keyphrase: "It's a slippery slope",
     noah_response: "lost",
+    captions: [
+      "a woman holding an umbrella inside a darkened room",
+      "the girl in a blue dress has a green umbrella",
+      "a person holding an open umbrella on a dark background",
+      "an image of a woman that is holding an umbrella",
+      "a woman holding an umbrella in front of a crowd",
+    ],
   },
   {
     id: "150958",
@@ -218,6 +344,13 @@ const conversations = [
     subject: "Re: Your 'Van on flatbed' photo",
     date: "03/06/2020 2:48PM",
     keyphrase: "I am annoyed",
+    captions: [
+      "a train with a man on the back of it with a vehicle in the background",
+      "train passing a man on rural country road",
+      "a train car carrying a man and a white van",
+      "much needed train track repairs are now in progress",
+      "a train hauling a van is crossing some railroad tracks",
+    ],
   },
   {
     id: "554711",
@@ -231,6 +364,13 @@ const conversations = [
     noah_response: "lost",
     user_response:
       "Thanks for your reply.\n\nHappy for you to use my response if you are collating such things.\n\nOut of interest what do you find most people's response is? are people generally accepting of there 'internet content' being in the public domain and available for consumption? - or are most alarmed by it? - are the internet masses streetwise and accepting or naive and duped?\n\nWhat is your opinion on it?\n\nGareth W.",
+    captions: [
+      "a woman in a polka dot top laying in a bed",
+      "a woman laying in bed while using a laptop computer",
+      "a woman propped up in bed using a laptop computer",
+      "a lady on her bed with a laptop smiling",
+      "a woman laying in a bed with a laptop computer open and on her lap area",
+    ],
   },
   {
     id: "445620",
@@ -244,6 +384,13 @@ const conversations = [
     noah_response: "lost",
     user_response:
       "Fascinating indeed! Clearly the generic caption wouldn't really have had any way to know the family unit in the photo, but other than the fact I think I said (or at least should have) cousin's kids (plural), that description would match the generic description for the four people. My more specific description was probably more for your interest than of any use for AI purposes.\n\nThanks for the update. Cheers!",
+    captions: [
+      "a pretty young girl sitting on the floor playing a video game with her family",
+      "four people sitting down with wii controllers and steering wheels",
+      "a family of four playing a wii game",
+      "two men, a boy and a girl playing with a wii system",
+      "a group of people sitting down playing the wii",
+    ],
   },
   {
     id: "436143",
@@ -254,6 +401,13 @@ const conversations = [
     subject: "Your photo from June 25, 2008",
     date: "02/24/2020 9:56PM",
     keyphrase: "I'm not trying to be a 'Dick' about it",
+    captions: [
+      "a couple of ranchers prepare to rope a calf",
+      "cowboys riding horses try to rope cattle during a rodeo",
+      "a group of men riding horses lassoing a cow",
+      "two men on horses chasing down a bull",
+      "a cow appears to run while two men on horses wearing hats are seen with lassos",
+    ],
   },
 ];
 
