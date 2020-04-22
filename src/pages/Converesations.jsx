@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ConversationsMasonry from "../components/ConversationsMasonry";
+// import ConversationsMasonry from "../components/ConversationsMasonry";
 import ConversationsGallery from "../components/ConversationsGallery";
 import ConversationEntryModal from "../components/ConversationEntryModal";
 

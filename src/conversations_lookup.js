@@ -166,15 +166,6 @@ const conversations = [
       "a batter swinging at a pitch during a baseball game",
     ],
   },
-  // {
-  //   "id": "575052",
-  //   "filename_orig": "000000575052.jpg",
-  //   "filename_mask": "neeed",
-  //   "text": "Thank you Noah for letting me know about my image being used in your collection. First, my apologies for the late reply. I now use Smugmug as my main photo site, with Flickr as a backup, and I'm not on Flickr that often.\n\nThere's no big story behind the photo. The kite festival is an annual event in D.C. and a wonderful photo opportunity. The photo itself was taken in April 2011.\n\nYou're free to use the image. That's why I gave it a Creative Commons - Attribution license. The terms of the license, however, require a credit to the photographer -- that's me -- which I don't see on your page. If I missed it somehow, my apologies. If not, I would appreciate your adding it.\n\n-AK",
-  //   "subject": "Re: Your ;Cherry Blossom Kite Festival' photo",
-  //   "date": "03/27/2020 12:36PM",
-  //   "keyphrase": "You're free to use the image"
-  // },
   {
     id: "438620",
     filename_orig: "000000438620.jpg",
