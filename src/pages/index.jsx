@@ -23,6 +23,7 @@ const MainPage = () => {
   const spinnerStyle = {
     display: "block",
     margin: "0, auto",
+    paddingBottom: "15px",
   };
 
   return (
@@ -38,6 +39,7 @@ const MainPage = () => {
 
         content: (base) => ({
           ...base,
+          fontFamily: "Big Caslon",
           top: "50%",
           left: "50%",
         }),
