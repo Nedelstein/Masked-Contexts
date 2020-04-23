@@ -118,8 +118,8 @@ body {
 }
 
 .ReactModal__Overlay {
-  transition: opacity 500ms ease-in-out;
   opacity: 0;
+  transition: opacity 500ms ease-in-out;
 
   &--after-open {
     opacity: 1;

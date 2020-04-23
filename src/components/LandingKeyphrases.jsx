@@ -43,9 +43,10 @@ const columnStyle = {
 };
 
 const buttonStyle = {
-  position: "-webkit-sticky",
-  position: "sticky",
-  top: "0.8%",
+  // position: "-webkit-sticky",
+  // position: "sticky",
+  position: "absolute",
+  top: "25px",
   margin: "1%, 1%, 1%, 0",
   background: "none",
   color: "black",
@@ -61,7 +62,11 @@ const ModalStyle = {
     right: "auto",
     bottom: "auto",
     width: "95vw",
-    // marginRight: "-50%",
+    height: "95vh",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    paddingTop: "0",
+    paddingBottom: "0",
     transform: "translate(-50%, -50%)",
     left: "50%",
     backgroundColor: "rgba(255,255,255,1)",
@@ -87,16 +92,6 @@ const KeyphraseText = () => {
 
   let half_keyphrases = Math.ceil(keyphrases.length / 2);
   let left_side = keyphrases.splice(0, half_keyphrases);
-
-  // function openModal() {
-  // let activeContent;
-  // for (let i in conversations) {
-  //   for (let j in keyphrases) {
-  //     if (conversations[i].keyphrase === keyphrases[j]) {
-  //       activeContent = conversations[i];
-  //     }
-  //   }
-  // }
 
   function closeModal() {
     setIsOpen(false);
@@ -155,11 +150,11 @@ const KeyphraseText = () => {
         </div>
       </div>
       <Modal
+        closeTimeoutMS={500}
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={ModalStyle}
         conteentLabel={"conversation"}
-        closeTimieoutMS={400}
       >
         <div>
           <button style={buttonStyle} onClick={closeModal}>

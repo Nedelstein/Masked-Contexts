@@ -1,36 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
+import { noah_email } from "../conversations_lookup";
 
 const ModalTextStyle = {
+  // display: "inline-block",
   color: "black",
   top: "0",
-  marginLeft: "40%",
-  marginRight: "12%",
-  marginTop: "-37%",
+  height: "100%",
+  marginLeft: "4%",
+  marginRight: "55%",
+  marginTop: "0",
   whiteSpace: "pre-wrap",
   fontFamily: "Big Caslon",
   fontSize: "16px",
   lineHeight: "25px",
+  paddingLeft: "7px",
+  paddingRight: "7px",
+  borderRight: "1.5px solid black",
+  borderLeft: "1.5px solid black",
 };
 
 const ModalHeaderStyle = {
   color: "black",
   fontSize: "12px",
+  paddingTop: "25px",
 };
 
 const imgStyle = {
-  position: "-webkit-sticky",
-  position: "sticky",
+  // position: "-webkit-sticky",
+  // position: "sticky",
+  position: "fixed",
+  // display: "inline-block",
   transform: "translate(0%, -50%)",
   top: "50%",
-  margin: "-10px",
-  right: "10px",
-  width: "37%",
-  height: "auto",
+  // margin: "-10px",
+  left: "63%",
+  maxHeight: "80%",
+  width: "auto",
+};
+
+const borderStyle = {
+  widith: "6rem",
+  height: "6rem",
+  margin: "0.5rem",
+  display: "inline-block",
+};
+
+const toggleTextStyle = {
+  position: "sticky",
+  textAlign: "center",
+  bottom: "50%",
+  transform: "rotate(-90deg)",
+  paddingBottom: "6%",
+  fontFamily: "Big Caslon",
+  /* Safari */
+  //  webkitTransform: "rotate(-90deg)",
+
+  //  /* Firefox */
+  //  -moz-transform: rotate(-90deg);
+
+  //  /* IE */
+  //  -ms-transform: rotate(-90deg);
 };
 
 const ResponseModal = (props) => {
-  console.log(props);
-
   let text = props.details.text;
   let image = props.details.filename_orig;
   let date = props.details.date;
@@ -38,31 +70,56 @@ const ResponseModal = (props) => {
   let mask = props.details.filename_mask;
   let captions = props.details.captions;
 
+  const [modalText, setModalText] = useState(text);
+
   const IMG = (imgName) => {
     return require(`../assets/images/conversations/original_imgs/${imgName}`);
   };
 
-  return (
-    <div>
-      <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
+  // function changeText(_text) {
+  //   setModalText(_text);
+  // }
 
+  return (
+    <span>
+      <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
       <div style={ModalTextStyle}>
         <div style={ModalHeaderStyle}>
-          <p style={{ marginBottom: 0 }}>{date}</p>
-          <p style={{ marginTop: 0 }}>{subject}</p>
-          <hr
-            style={{
-              borderWidth: "1px",
-              borderColor: "black",
-              // size: "1px",
-              // width: "700px",
-              // height: "5px",
-            }}
-          />
+          <span style={{ marginBottom: 0 }}>{date}</span>
+          <br />
+          <span style={{ marginTop: 0 }}>{subject}</span>
         </div>
-        <p>{text}</p>
+        <p style={{ paddingBottom: "5%" }}>{modalText}</p>
       </div>
-    </div>
+      <div style={toggleTextStyle}>
+        <span
+          id="reachingOutBtn"
+          style={{ marginRight: "27px", cursor: "pointer" }}
+          onClick={() => {
+            setModalText(noah_email);
+            document.getElementById("reachingOutBtn").style.textDecoration =
+              "underline";
+            document.getElementById("responseBtn").style.textDecoration =
+              "none";
+          }}
+        >
+          Reaching Out
+        </span>
+        <span
+          id="responseBtn"
+          style={{ cursor: "pointer", textDecoration: "underline" }}
+          onClick={() => {
+            setModalText(text);
+            document.getElementById("responseBtn").style.textDecoration =
+              "underline";
+            document.getElementById("reachingOutBtn").style.textDecoration =
+              "none";
+          }}
+        >
+          Response
+        </span>
+      </div>
+    </span>
   );
 };
 
