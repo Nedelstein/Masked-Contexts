@@ -34,7 +34,7 @@ const MainPage = () => {
   useEffect(() => {
     setTimeout(() => {
       isActive(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   return (
@@ -51,7 +51,7 @@ const MainPage = () => {
         content: (base) => ({
           ...base,
           fontFamily: "Big Caslon",
-          top: "50%",
+          marginTop: "30%",
           left: "50%",
         }),
       }}
