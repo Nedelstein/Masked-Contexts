@@ -1,14 +1,5 @@
 import React from "react";
-import conversations from "../conversations_lookup";
-
-let randY, randX;
-
-const ImageDivStyleRight = {
-  position: "fixed",
-  width: "inherit",
-  top: "30vh",
-  left: "2vw",
-};
+// import conversations from "../conversations_lookup";
 
 const ImageStyle = {
   // border: "solid black",
@@ -18,29 +9,25 @@ const ImageStyle = {
   height: "auto",
 };
 
-export const LandingHoverImgRight = (props) => {
-  let imageSource = props.details.filename_orig;
-
-  imageSource =
-    "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/" +
-    imageSource;
-  return (
-    <div className="hoverImg" style={ImageDivStyleRight}>
-      <img style={ImageStyle} alt="whoops" src={imageSource}></img>
-    </div>
-  );
-};
-
-const ImageDivStyle = {
-  position: "fixed",
-  width: "inherit",
-  readOnly: "false",
-  top: "30vh",
-  left: "50vw",
-};
+let posX;
 
 export const LandingHoverImg = (props) => {
   let imageSource = props.details.filename_orig;
+  let mousePosX = props.mousePos[0];
+
+  if (mousePosX <= window.innerWidth / 2) {
+    posX = "50vw";
+  } else if (mousePosX > window.innerWidth / 2) {
+    posX = "20vw";
+  }
+
+  const ImageDivStyle = {
+    position: "fixed",
+    width: "inherit",
+    readOnly: "false",
+    top: "30vh",
+    left: posX,
+  };
 
   imageSource =
     "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/" +
@@ -52,5 +39,3 @@ export const LandingHoverImg = (props) => {
     </div>
   );
 };
-
-// export default { LandingHoverImg, LandingHoverImgLeft };

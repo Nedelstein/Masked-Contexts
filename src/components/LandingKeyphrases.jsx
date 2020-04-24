@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import useMousePosition from "@react-hook/mouse-position";
 
 import ResponseModal from "./ResponseModal";
 import conversations from "../conversations_lookup";
@@ -61,7 +62,6 @@ const buttonStyle = {
 const ModalStyle = {
   content: {
     top: "50%",
-    // left: "60%",
     right: "auto",
     bottom: "auto",
     width: "95vw",
@@ -83,10 +83,10 @@ const ModalStyle = {
 };
 
 const KeyphraseText = () => {
-  const [isHoverRight, setHoverRight] = useState(null);
   const [isHover, setHover] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
+  const [mousePosition, ref] = useMousePosition(0, 0, 30);
 
   let keyphrases = [];
   for (let i in conversations) {
@@ -102,7 +102,7 @@ const KeyphraseText = () => {
 
   return (
     <>
-      <div className="keyphrases" style={keyphraseStyle}>
+      <div ref={ref} className="keyphrases" style={keyphraseStyle}>
         <div style={keyphraseDiv}>
           {keyphrases.map((keyphrase, index) => (
             <p className="keyphraseP">
@@ -125,53 +125,6 @@ const KeyphraseText = () => {
               </span>
             </p>
           ))}
-
-          {/* <div style={columnStyle}>
-            <div>
-              {left_side.map((keyphrase, index) => (
-                <p className="keyphraseP">
-                  <span
-                    onMouseEnter={() => {
-                      setHoverLeft(conversations[index]);
-                      // console.log(conversations[index]);
-                    }}
-                    onMouseLeave={() => {
-                      setHoverLeft(null);
-                    }}
-                    onClick={() => {
-                      setModal(conversations[index]);
-                      setIsOpen(true);
-                    }}
-                  >
-                    "{keyphrase}"
-                  </span>
-                </p>
-              ))}
-            </div>
-          </div>
-          <div style={columnStyle}>
-            <div>
-              {keyphrases.map((keyphrase, index) => (
-                <p style={{ textAlign: "right" }} className="keyphraseP">
-                  <span
-                    onMouseEnter={() => {
-                      setHoverRight(conversations[index + 11]);
-                      // console.log(conversations[index + 11]);
-                    }}
-                    onMouseLeave={() => {
-                      setHoverRight(null);
-                    }}
-                    onClick={() => {
-                      setModal(conversations[index + 11]);
-                      setIsOpen(true);
-                    }}
-                  >
-                    "{keyphrase}"
-                  </span>
-                </p>
-              ))} */}
-          {/* </div> */}
-          {/* </div> */}
         </div>
       </div>
       <Modal
@@ -191,7 +144,13 @@ const KeyphraseText = () => {
       {/* {isHoverRight && (
         <LandingHoverImgRight details={isHoverRight} setHover={setHoverRight} />
       )} */}
-      {isHover && <LandingHoverImg details={isHover} setHover={setHover} />}
+      {isHover && (
+        <LandingHoverImg
+          mousePos={[mousePosition.x, mousePosition.y]}
+          details={isHover}
+          setHover={setHover}
+        />
+      )}
     </>
   );
 };
