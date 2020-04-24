@@ -31,12 +31,10 @@ const MainPage = () => {
     paddingBottom: "15px",
   };
 
-  // window.onload = () => {
-  //   isActive(false);
-  // };
-
   useEffect(() => {
-    isActive(false);
+    setTimeout(() => {
+      isActive(false);
+    }, 1000);
   }, []);
 
   return (
