@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import LandingMasonry from "../components/LandingMasonry";
 import LoadingOverlay from "react-loading-overlay";
 import ScaleLoader from "react-spinners/ScaleLoader";
@@ -31,9 +31,13 @@ const MainPage = () => {
     paddingBottom: "15px",
   };
 
-  window.onload = () => {
+  // window.onload = () => {
+  //   isActive(false);
+  // };
+
+  useEffect(() => {
     isActive(false);
-  };
+  }, []);
 
   return (
     <LoadingOverlay
