@@ -26,7 +26,9 @@ const MainPage = () => {
   // );
 
   useEffect(() => {
-    isActive(false);
+    setTimeout(() => {
+      isActive(false);
+    }, 1500);
   }, []);
 
   window.addEventListener(
@@ -58,7 +60,7 @@ const MainPage = () => {
         content: (base) => ({
           ...base,
           fontFamily: "Big Caslon",
-          top: "50%",
+          marginTop: "30%",
           left: "50%",
         }),
       }}
