@@ -71,7 +71,7 @@ const textDivStyle = {
 };
 
 const imgStyle = {
-  margin: "5%",
+  margin: "10%",
   padding: "3%",
   width: "200px",
   height: "100px",
@@ -113,10 +113,10 @@ const Mask = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      {/* <div id="maskTextDiv"></div> */}
+      <div id="maskTextDiv"></div>
       <div style={MaskPageStyle}>{masksGrid}</div>
       <Burger open={open} setOpen={setOpen} />
-      // <Menu open={open} setOpen={setOpen} />
+      <Menu open={open} setOpen={setOpen} />
     </>
   );
 };

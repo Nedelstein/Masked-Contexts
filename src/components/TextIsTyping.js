@@ -1,17 +1,19 @@
 import "../App.scss";
 let textIsTypeing;
 
-let textDiv = document.createElement("div");
-textDiv.id = "maskTextDiv";
+let textDiv = document.createElement("span");
+
 //  textDiv = document.getElementById("maskTextDiv");
 // let textDiv;
 export function typeText(inputTxt) {
+  textDiv.innerHTML = "";
+
+  document.getElementById("maskTextDiv").append(textDiv);
   textIsTypeing = true;
-  textDiv = "";
   let i = 0;
   (function addLetter() {
     if (textIsTypeing) {
-      textDiv += inputTxt.charAt(i);
+      textDiv.innerHTML += inputTxt.charAt(i);
       i++;
       if (i < inputTxt.length) {
         setTimeout(addLetter, 70);
@@ -20,6 +22,6 @@ export function typeText(inputTxt) {
   })();
 }
 export function clearText() {
-  textDiv = "";
+  textDiv.innerHTML = "";
   textIsTypeing = false;
 }
