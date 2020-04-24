@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import LoadingOverlay from "react-loading-overlay";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
@@ -16,9 +16,27 @@ const MainPage = () => {
   const menuId = "main-menu";
   useOnClickOutside(node, () => setOpen(false));
 
-  window.onload = () => {
+  // window.addEventListener(
+  //   "load",
+  //   () => {
+  //     console.log("loaded");
+  //     isActive(false);
+  //   },
+  //   false
+  // );
+
+  useEffect(() => {
     isActive(false);
-  };
+  }, []);
+
+  window.addEventListener(
+    "unload",
+    () => {
+      isActive(true);
+      // console.log("loaded");
+    },
+    false
+  );
 
   const spinnerStyle = {
     display: "block",
