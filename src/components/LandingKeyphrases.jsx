@@ -5,7 +5,7 @@ import ResponseModal from "./ResponseModal";
 import conversations from "../conversations_lookup";
 // import { theme } from "../theme";
 
-import { LandingHoverImgRight, LandingHoverImgLeft } from "./LandingHoverImg";
+import { LandingHoverImg } from "./LandingHoverImg";
 
 const keyphraseStyle = {
   //   position: "absolute",
@@ -13,9 +13,8 @@ const keyphraseStyle = {
   overflow: "auto",
   fontFamily: "Big Caslon",
   fontWeight: "bold",
-  fontSize: "16px",
-  textAlign: "left",
-  lineHeight: "30px",
+  fontSize: "24px",
+  // lineHeight: "30px",
   marginTop: "5%",
   transform: "translate(-50%, 0)",
   marginLeft: "50%",
@@ -27,19 +26,23 @@ const keyphraseStyle = {
   transition: "opacity 1s ease-in-out",
 };
 
-const rowStyle = {
-  display: "flex",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  width: "100%",
-};
+// const rowStyle = {
+//   display: "flex",
+//   flexDirection: "row",
+//   flexWrap: "wrap",
+//   width: "100%",
+// };
 
-const columnStyle = {
-  display: "flex",
-  flexDirection: "column",
-  flexBasis: "100%",
-  flex: "1",
-  margin: "20px",
+// const columnStyle = {
+//   display: "flex",
+//   flexDirection: "column",
+//   flexBasis: "100%",
+//   flex: "1",
+//   margin: "20px",
+// };
+
+const keyphraseDiv = {
+  textAlign: "center",
 };
 
 const buttonStyle = {
@@ -81,7 +84,7 @@ const ModalStyle = {
 
 const KeyphraseText = () => {
   const [isHoverRight, setHoverRight] = useState(null);
-  const [isHoverLeft, setHoverLeft] = useState(null);
+  const [isHover, setHover] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
 
@@ -90,8 +93,8 @@ const KeyphraseText = () => {
     keyphrases.push(conversations[i].keyphrase);
   }
 
-  let half_keyphrases = Math.ceil(keyphrases.length / 2);
-  let left_side = keyphrases.splice(0, half_keyphrases);
+  // let half_keyphrases = Math.ceil(keyphrases.length / 2);
+  // let left_side = keyphrases.splice(0, half_keyphrases);
 
   function closeModal() {
     setIsOpen(false);
@@ -100,8 +103,30 @@ const KeyphraseText = () => {
   return (
     <>
       <div className="keyphrases" style={keyphraseStyle}>
-        <div style={rowStyle}>
-          <div style={columnStyle}>
+        <div style={keyphraseDiv}>
+          {keyphrases.map((keyphrase, index) => (
+            <p className="keyphraseP">
+              <span
+                onMouseEnter={() => {
+                  setHover(conversations[index]);
+                  document.getElementById("masonryGrid").style.display = "none";
+                  // console.log(conversations[index]);
+                }}
+                onMouseLeave={() => {
+                  setHover(null);
+                  document.getElementById("masonryGrid").style.display = "flex";
+                }}
+                onClick={() => {
+                  setModal(conversations[index]);
+                  setIsOpen(true);
+                }}
+              >
+                "{keyphrase}"
+              </span>
+            </p>
+          ))}
+
+          {/* <div style={columnStyle}>
             <div>
               {left_side.map((keyphrase, index) => (
                 <p className="keyphraseP">
@@ -144,9 +169,9 @@ const KeyphraseText = () => {
                     "{keyphrase}"
                   </span>
                 </p>
-              ))}
-            </div>
-          </div>
+              ))} */}
+          {/* </div> */}
+          {/* </div> */}
         </div>
       </div>
       <Modal
@@ -163,12 +188,10 @@ const KeyphraseText = () => {
         </div>
         {modal && <ResponseModal details={modal} />}
       </Modal>
-      {isHoverRight && (
+      {/* {isHoverRight && (
         <LandingHoverImgRight details={isHoverRight} setHover={setHoverRight} />
-      )}
-      {isHoverLeft && (
-        <LandingHoverImgLeft details={isHoverLeft} setHover={setHoverLeft} />
-      )}
+      )} */}
+      {isHover && <LandingHoverImg details={isHover} setHover={setHover} />}
     </>
   );
 };

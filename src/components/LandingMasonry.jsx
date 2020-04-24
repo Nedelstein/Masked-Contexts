@@ -38,6 +38,7 @@ let MasonryGrid = () => {
   };
   return (
     <Masonry
+      id="masonryGrid"
       breakpointCols={breakpointColumnsObj}
       className="my-masonry-grid"
       columnClassName="my-masonry-grid_column"

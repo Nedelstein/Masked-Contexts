@@ -11,8 +11,8 @@ const ImageDivStyleRight = {
 };
 
 const ImageStyle = {
-  border: "solid black",
-  opacity: "0.9",
+  // border: "solid black",
+  // opacity: "0.9",
   readOnly: "false",
   width: "90%",
   height: "auto",
@@ -31,7 +31,7 @@ export const LandingHoverImgRight = (props) => {
   );
 };
 
-const ImageDivStyleLeft = {
+const ImageDivStyle = {
   position: "fixed",
   width: "inherit",
   readOnly: "false",
@@ -39,7 +39,7 @@ const ImageDivStyleLeft = {
   left: "50vw",
 };
 
-export const LandingHoverImgLeft = (props) => {
+export const LandingHoverImg = (props) => {
   let imageSource = props.details.filename_orig;
 
   imageSource =
@@ -47,7 +47,7 @@ export const LandingHoverImgLeft = (props) => {
     imageSource;
 
   return (
-    <div className="hoverImg" style={ImageDivStyleLeft}>
+    <div className="hoverImg" style={ImageDivStyle}>
       <img style={ImageStyle} alt="whoops" src={imageSource}></img>
     </div>
   );

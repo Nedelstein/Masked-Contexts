@@ -2,7 +2,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import "../App.scss";
 
-import Button from "./EnterButton";
+// import Button from "./EnterButton";
 import LandingKeyphrases from "./LandingKeyphrases";
 
 const letterStyle = {
@@ -16,7 +16,7 @@ const letterStyle = {
   // wordSpacing: "3px",
   // lineHeight: "30px",
   transform: "translate(-50%, 0%)",
-  marginTop: "7%",
+  marginTop: "15%",
   marginLeft: "50%",
   width: "55%",
   // height: "100%",
