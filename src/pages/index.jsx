@@ -47,42 +47,45 @@ const MainPage = () => {
   };
 
   return (
-    <LoadingOverlay
-      active={active}
-      spinner={<ScaleLoader css={spinnerStyle} size={100} color={"#fff"} />}
-      fadeSpeed={1000}
-      styles={{
-        overlay: (base) => ({
-          ...base,
-          background: "rgba(0,0,0,1)",
-        }),
+    <>
+      <LoadingOverlay
+        active={active}
+        spinner={<ScaleLoader css={spinnerStyle} size={100} color={"#fff"} />}
+        fadeSpeed={1000}
+        styles={{
+          overlay: (base) => ({
+            ...base,
+            background: "rgba(0,0,0,1)",
+          }),
 
-        content: (base) => ({
-          ...base,
-          fontFamily: "Big Caslon",
-          marginTop: "30%",
-          left: "50%",
-        }),
-      }}
-      text="hang tight i'm loading"
-    >
-      <div ref={node}>
-        <header className="App-header">
-          <div className="emptyBox">
-            <a href="/">
-              <div className="Title-text">Masked Contexts</div>
-            </a>
-          </div>
-          <LandingMasonry></LandingMasonry>
-          <FocusLock disabled={!open}>
-            <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-            <Menu open={open} setOpen={setOpen} id={menuId} />
-          </FocusLock>
-          {/* <LandingText /> */}
-          <LandingTypeWriter />
-        </header>
-      </div>
-    </LoadingOverlay>
+          content: (base) => ({
+            ...base,
+            fontFamily: "Big Caslon",
+            marginTop: "30%",
+            left: "50%",
+          }),
+        }}
+        text="hang tight i'm loading"
+      >
+        <div ref={node}>
+          <header className="App-header">
+            <div className="emptyBox">
+              <a href="/">
+                <div className="Title-text">Masked Contexts</div>
+              </a>
+            </div>
+            <LandingMasonry></LandingMasonry>
+
+            {/* <LandingText /> */}
+            <LandingTypeWriter />
+          </header>
+        </div>
+      </LoadingOverlay>
+      {/* <FocusLock disabled={!open}> */}
+      <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+      <Menu open={open} setOpen={setOpen} id={menuId} />
+      {/* </FocusLock> */}
+    </>
   );
 };
 

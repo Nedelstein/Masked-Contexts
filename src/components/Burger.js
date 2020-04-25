@@ -3,7 +3,7 @@ import { bool, func } from "prop-types";
 import styled from "styled-components";
 
 const StyledBurger = styled.button`
-  position: absolute;
+  position: fixed;
   top: 5%;
   right: 2rem;
   display: flex;
@@ -66,7 +66,7 @@ const Burger = ({ open, setOpen, ...props }) => {
 
 Burger.propTypes = {
   open: bool.isRequired,
-  setOpen: func.isRequired
+  setOpen: func.isRequired,
 };
 
 export default Burger;
