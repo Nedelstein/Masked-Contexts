@@ -19,38 +19,6 @@ const json = require("../assets/masks_filenames_captions.json");
 
 let textDiv;
 
-// function speakText(inputTxt) {
-//   let synth = window.speechSynthesis;
-//   let utterThis = new SpeechSynthesisUtterance(inputTxt);
-//   let voices = synth.getVoices();
-//   //   for (let i = 0; i < voices.length; i++) {
-//   utterThis.voice = voices[7];
-//   //   }
-//   utterThis.rate = 0.6;
-//   synth.speak(utterThis);
-// }
-
-// let textIsTypeing;
-// function typeText(inputTxt) {
-//   // console.log(inputTxt);
-//   textIsTypeing = true;
-//   textDiv = "";
-//   let i = 0;
-//   (function addLetter() {
-//     if (textIsTypeing) {
-//       textDiv += inputTxt.charAt(i);
-//       i++;
-//       if (i < inputTxt.length) {
-//         setTimeout(addLetter, 70);
-//       }
-//     }
-//   })();
-// }
-// function clearText() {
-//   textDiv = "";
-//   textIsTypeing = false;
-// }
-
 const MaskPageStyle = {
   display: "block",
   position: "fixed",
@@ -96,7 +64,7 @@ const masksGrid = new Array(json.length).fill().map((item, i) => {
           alt="whoops"
           onMouseEnter={() => {
             SpeakText(captions[i]);
-            typeText(captions[i]);
+            setTimeout(() => typeText(captions[i]), 50);
           }}
           onMouseLeave={() => {
             speechSynthesis.cancel();
