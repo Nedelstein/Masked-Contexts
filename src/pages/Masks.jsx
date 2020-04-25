@@ -64,7 +64,7 @@ const masksGrid = new Array(json.length).fill().map((item, i) => {
           alt="whoops"
           onMouseEnter={() => {
             SpeakText(captions[i]);
-            setTimeout(() => typeText(captions[i]), 50);
+            setTimeout(() => typeText(captions[i]), 250);
           }}
           onMouseLeave={() => {
             speechSynthesis.cancel();

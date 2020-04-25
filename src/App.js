@@ -2,6 +2,7 @@ import React from "react";
 import "./App.scss";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
+import ScrollToTop from "./components/ScrollToTop";
 
 import {
   BrowserRouter as Router,
@@ -22,6 +23,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/404" component={NotFoundPage} />
