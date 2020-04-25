@@ -5,7 +5,7 @@ const ModalTextStyle = {
   position: "fixed",
   color: "black",
   top: "0",
-  height: "auto",
+  minHeight: "100%",
   marginLeft: "4%",
   marginRight: "55%",
   marginTop: "0",
@@ -33,8 +33,8 @@ const imgStyle = {
   top: "50%",
   // margin: "-10px",
   left: "63%",
-  maxHeight: "80vw",
-  width: "auto",
+  maxWidth: "60vw",
+  height: "auto",
 };
 
 const borderStyle = {
@@ -49,7 +49,7 @@ const toggleTextStyle = {
   display: "inline-block",
   textAlign: "center",
   bottom: "50%",
-  left: "40vw",
+  left: "43%",
   paddingBottom: "6%",
   fontFamily: "Big Caslon",
   transform: "rotate(-90deg)",
@@ -95,7 +95,11 @@ const ResponseModal = (props) => {
         </span>
         <span
           id="responseBtn"
-          style={{ cursor: "pointer", textDecoration: "underline" }}
+          style={{
+            position: "sticky",
+            cursor: "pointer",
+            textDecoration: "underline",
+          }}
           onClick={() => {
             setModalText(text);
             document.getElementById("responseBtn").style.textDecoration =

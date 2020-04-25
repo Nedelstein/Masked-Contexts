@@ -264,7 +264,7 @@ const conversations = [
       "Thank you for letting me know the use of my image in COCO.\n\nOf course I didn't know about it.\n\nThe image was taken almost a decade ago __when I visited the place where I had just moved from.  There is no more backstory except that__.\n\nAnyway, I'm an amateur photographer who  believe in sharing spirit in the web world, basically.  So I don't mind people use my photos unless they make money from them.  I also want to get little notices when my photos are used privately or commercially.  It's an elementary manner, isn't it?\n\nWell, that's my opinion about the use of my photos.\n\nThanks again for your kind notice this time. I appreciate it very much.  It's good to know there are many people who have open minds and good will.\n\nI hope you are having a good time in spite of the outrage of a new disease (Japan is now being frenzied by covid-19__, you know)..\n\nWith best wishes.",
     subject: "About my image in Flickr",
     date: "02/26/202 10:25PM",
-    keyphrase: "I don't mind people",
+    keyphrase: "I don't mind",
     captions: [
       "a girl using her cell phone to take a selfie",
       "a woman taking a picture of a tree",

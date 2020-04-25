@@ -49,7 +49,7 @@ const keyphraseDiv = {
 const buttonStyle = {
   // position: "-webkit-sticky",
   // position: "sticky",
-  position: "absolute",
+  position: "sticky",
   top: "25px",
   margin: "1%, 1%, 1%, 0",
   background: "none",
@@ -62,7 +62,6 @@ const buttonStyle = {
 const ModalStyle = {
   content: {
     transform: "translate(-50%, -50%)",
-
     top: "50%",
     right: "auto",
     bottom: "auto",
