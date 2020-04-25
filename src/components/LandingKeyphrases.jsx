@@ -61,6 +61,8 @@ const buttonStyle = {
 
 const ModalStyle = {
   content: {
+    transform: "translate(-50%, -50%)",
+
     top: "50%",
     right: "auto",
     bottom: "auto",
@@ -70,11 +72,9 @@ const ModalStyle = {
     paddingRight: "20px",
     paddingTop: "0",
     paddingBottom: "0",
-    transform: "translate(-50%, -50%)",
     left: "50%",
     backgroundColor: "rgba(255,255,255,1)",
     overflowY: "auto",
-    maxHeight: "90vh",
     border: "none",
   },
   overlay: {

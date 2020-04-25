@@ -16,15 +16,6 @@ const MainPage = () => {
   const menuId = "main-menu";
   useOnClickOutside(node, () => setOpen(false));
 
-  // window.addEventListener(
-  //   "load",
-  //   () => {
-  //     console.log("loaded");
-  //     isActive(false);
-  //   },
-  //   false
-  // );
-
   useEffect(() => {
     setTimeout(() => {
       isActive(false);

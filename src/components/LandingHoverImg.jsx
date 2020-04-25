@@ -18,7 +18,7 @@ export const LandingHoverImg = (props) => {
   if (mousePosX <= window.innerWidth / 2) {
     posX = "50vw";
   } else if (mousePosX > window.innerWidth / 2) {
-    posX = "20vw";
+    posX = "5vw";
   }
 
   const ImageDivStyle = {

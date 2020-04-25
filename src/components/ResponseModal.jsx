@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { noah_email } from "../conversations_lookup";
 
 const ModalTextStyle = {
-  // display: "inline-block",
+  position: "fixed",
   color: "black",
   top: "0",
-  height: "100%",
+  height: "auto",
   marginLeft: "4%",
   marginRight: "55%",
   marginTop: "0",
@@ -26,15 +26,14 @@ const ModalHeaderStyle = {
 };
 
 const imgStyle = {
-  // position: "-webkit-sticky",
-  // position: "sticky",
-  position: "fixed",
+  position: "-webkit-sticky",
+  position: "sticky",
   // display: "inline-block",
   transform: "translate(0%, -50%)",
   top: "50%",
   // margin: "-10px",
   left: "63%",
-  maxHeight: "80%",
+  maxHeight: "80vw",
   width: "auto",
 };
 
@@ -47,11 +46,14 @@ const borderStyle = {
 
 const toggleTextStyle = {
   position: "sticky",
+  display: "inline-block",
   textAlign: "center",
   bottom: "50%",
-  transform: "rotate(-90deg)",
+  left: "40vw",
   paddingBottom: "6%",
   fontFamily: "Big Caslon",
+  transform: "rotate(-90deg)",
+
   /* Safari */
   //  webkitTransform: "rotate(-90deg)",
 
@@ -75,22 +77,8 @@ const ResponseModal = (props) => {
   const IMG = (imgName) => {
     return require(`../assets/images/conversations/original_imgs/${imgName}`);
   };
-
-  // function changeText(_text) {
-  //   setModalText(_text);
-  // }
-
   return (
     <span>
-      <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
-      <div style={ModalTextStyle}>
-        <div style={ModalHeaderStyle}>
-          <span style={{ marginBottom: 0 }}>{date}</span>
-          <br />
-          <span style={{ marginTop: 0 }}>{subject}</span>
-        </div>
-        <p style={{ paddingBottom: "5%" }}>{modalText}</p>
-      </div>
       <div style={toggleTextStyle}>
         <span
           id="reachingOutBtn"
@@ -118,6 +106,16 @@ const ResponseModal = (props) => {
         >
           Response
         </span>
+      </div>
+      <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
+
+      <div style={ModalTextStyle}>
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: 0 }}>{date}</span>
+          <br />
+          <span style={{ marginTop: 0 }}>{subject}</span>
+        </div>
+        <p style={{ paddingBottom: "5%" }}>{modalText}</p>
       </div>
     </span>
   );
