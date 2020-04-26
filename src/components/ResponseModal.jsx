@@ -17,6 +17,7 @@ const ModalTextStyle = {
   paddingRight: "7px",
   borderRight: "1.5px solid black",
   borderLeft: "1.5px solid black",
+  overflowY: "auto",
 };
 
 const ModalHeaderStyle = {
@@ -29,8 +30,8 @@ const imgStyle = {
   position: "-webkit-sticky",
   position: "sticky",
   // display: "inline-block",
-  transform: "translate(0%, -50%)",
-  top: "50%",
+  // transform: "translate(0%, -50%)",
+  // top: "10%",
   // margin: "-10px",
   left: "63%",
   maxWidth: "60vw",
@@ -38,7 +39,7 @@ const imgStyle = {
 };
 
 const borderStyle = {
-  widith: "6rem",
+  width: "6rem",
   height: "6rem",
   margin: "0.5rem",
   display: "inline-block",
@@ -73,6 +74,7 @@ const ResponseModal = (props) => {
   let captions = props.details.captions;
 
   const [modalText, setModalText] = useState(text);
+  const [subjectText, setSubjectText] = useState(subject);
 
   const IMG = (imgName) => {
     return require(`../assets/images/conversations/original_imgs/${imgName}`);
@@ -85,6 +87,7 @@ const ResponseModal = (props) => {
           style={{ marginRight: "27px", cursor: "pointer" }}
           onClick={() => {
             setModalText(noah_email);
+            setSubjectText("");
             document.getElementById("reachingOutBtn").style.textDecoration =
               "underline";
             document.getElementById("responseBtn").style.textDecoration =
@@ -102,6 +105,7 @@ const ResponseModal = (props) => {
           }}
           onClick={() => {
             setModalText(text);
+            setSubjectText(subject);
             document.getElementById("responseBtn").style.textDecoration =
               "underline";
             document.getElementById("reachingOutBtn").style.textDecoration =
@@ -117,7 +121,7 @@ const ResponseModal = (props) => {
         <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{date}</span>
           <br />
-          <span style={{ marginTop: 0 }}>{subject}</span>
+          <span style={{ marginTop: 0 }}>{subjectText}</span>
         </div>
         <p style={{ paddingBottom: "5%" }}>{modalText}</p>
       </div>

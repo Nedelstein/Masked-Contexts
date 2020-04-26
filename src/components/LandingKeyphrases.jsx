@@ -73,7 +73,7 @@ const ModalStyle = {
     paddingBottom: "0",
     left: "50%",
     backgroundColor: "rgba(255,255,255,1)",
-    overflowY: "auto",
+    overflowY: "initial !important",
     border: "none",
   },
   overlay: {
@@ -132,6 +132,8 @@ const KeyphraseText = () => {
         onRequestClose={closeModal}
         style={ModalStyle}
         conteentLabel={"conversation"}
+        htmlOpenClassName={"ReactModal__Html--open"}
+        bodyOpenClassName={"ReactModal__Body--open"}
       >
         <div>
           <button style={buttonStyle} onClick={closeModal}>

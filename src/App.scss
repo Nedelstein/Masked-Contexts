@@ -131,6 +131,11 @@ body {
   }
 }
 
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+
 .swiper-button-next {
   color: rgba(255, 255, 255, 0.7) !important;
   padding-right: 30%;
