@@ -5,6 +5,7 @@ const ModalTextStyle = {
   position: "fixed",
   color: "black",
   top: "0",
+  height: "100%",
   minHeight: "100%",
   marginLeft: "4%",
   marginRight: "55%",
@@ -30,6 +31,7 @@ const imgStyle = {
   // position: "-webkit-sticky",
   // position: "sticky",
   position: "fixed",
+  display: "inline-block",
   top: "50%",
   left: "54%",
   maxWidth: "40vw",
@@ -49,11 +51,14 @@ const toggleTextStyle = {
   position: "fixed",
   display: "inline-block",
   textAlign: "center",
-  bottom: "50%",
-  left: "43%",
+  // bottom: "50%",
+  top: "45%",
+  left: "47%",
   paddingBottom: "6%",
+  paddingTop: "1%",
   fontFamily: "Big Caslon",
-  transform: "rotate(-90deg)",
+  transform: "rotate(-90deg) translate(0, -50%)",
+  overflow: "",
 
   /* Safari */
   //  webkitTransform: "rotate(-90deg)",
@@ -80,7 +85,7 @@ const ResponseModal = (props) => {
     return require(`../assets/images/conversations/original_imgs/${imgName}`);
   };
   return (
-    <span>
+    <div style={{ display: "block" }}>
       <div style={toggleTextStyle}>
         <span
           id="reachingOutBtn"
@@ -125,7 +130,7 @@ const ResponseModal = (props) => {
         </div>
         <p style={{ paddingBottom: "5%" }}>{modalText}</p>
       </div>
-    </span>
+    </div>
   );
 };
 

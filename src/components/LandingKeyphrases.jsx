@@ -73,7 +73,7 @@ const ModalStyle = {
     paddingBottom: "0",
     left: "50%",
     backgroundColor: "rgba(255,255,255,1)",
-    overflowY: "initial !important",
+    // overflowY: "initial !important",
     border: "none",
   },
   overlay: {
