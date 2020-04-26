@@ -1,0 +1,220 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+::-moz-selection {
+  background: cyan;
+  color: red;
+}
+
+::selection {
+  background: cyan;
+  color: red;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Typewriter";
+  src: url("./assets/fonts/typewcond_regular.otf");
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: black;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.emptyBox {
+  background-size: cover;
+}
+
+.Title-text {
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: 2%;
+  left: 4%;
+  font-family: "Big Caslon";
+  font-style: normal;
+  overflow: hidden;
+  padding: 2px;
+  font-weight: bold;
+  line-height: 50px;
+  font-size: 32px;
+  letter-spacing: 0.1em;
+  mix-blend-mode: difference;
+  z-index: 999999;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.Title-text:hover {
+  color: black;
+  background-color: white;
+}
+
+.Subtitle-text {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  font-family: "Big Caslon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 58px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  z-index: 0;
+  margin-left: 0.5%;
+  margin-top: 0.3%;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+}
+
+.my-masonry-grid_column {
+  background-clip: padding-box;
+  margin-left: 0px;
+}
+
+.my-masonry-grid:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements in <masonry> */
+  padding-top: 2px;
+}
+
+.ReactModalPortal > * {
+  opacity: 0;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  z-index: 9999999;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+
+.swiper-button-next {
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding-right: 30%;
+  padding-top: 20% !important;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding-left: 30%;
+  padding-top: 20% !important;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.swiper-button-next:hover {
+  color: white !important;
+}
+
+.swiper-button-prev:hover {
+  color: white !important;
+}
+
+#maskTextDiv {
+  position: -webkit-sticky;
+  display: table;
+  position: absolute;
+  top: 50;
+  left: 50;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Typewriter;
+  font-size: 32px;
+  text-align: center;
+  color: black;
+  background-color: yellow;
+  z-index: 99999999999;
+  padding-left: 0.5%;
+}
+
+.button-fade-in {
+  opacity: 1 !important;
+}
+
+.text-fade-in {
+  opacity: 1 !important;
+}
+
+.keyphraseP {
+  margin-bottom: 50px;
+}
+
+.keyphraseP span {
+  color: #fff;
+  padding: 6px;
+  background-color: #430354;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  -webkit-transition: color 400ms ease-out, background-color 400ms ease-out;
+  transition: color 400ms ease-out, background-color 400ms ease-out;
+  cursor: pointer;
+}
+
+.keyphraseP span:hover {
+  background-color: yellow;
+  color: black;
+}
+/*# sourceMappingURL=App.css.map */

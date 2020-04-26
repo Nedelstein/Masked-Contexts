@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { noah_email } from "../conversations_lookup";
+import converesations, { noah_email } from "../conversations_lookup";
 
 const ModalTextStyle = {
   position: "fixed",
@@ -58,7 +58,7 @@ const toggleTextStyle = {
   paddingTop: "1%",
   fontFamily: "Big Caslon",
   transform: "rotate(-90deg) translate(0, -50%)",
-  overflow: "",
+  // overflow: "",
 
   /* Safari */
   //  webkitTransform: "rotate(-90deg)",
@@ -70,9 +70,19 @@ const toggleTextStyle = {
   //  -ms-transform: rotate(-90deg);
 };
 
+const IMG = (imgName) => {
+  return require(`../assets/images/conversations/original_imgs/${imgName}`);
+};
+
+const MaskIMG = (imgName) => {
+  return require(`../assets/images/conversations/masks/${imgName}`);
+};
+
+let isMask = false;
+
 const ResponseModal = (props) => {
   let text = props.details.text;
-  let image = props.details.filename_orig;
+  let origImage = props.details.filename_orig;
   let date = props.details.date;
   let subject = props.details.subject;
   let mask = props.details.filename_mask;
@@ -80,10 +90,19 @@ const ResponseModal = (props) => {
 
   const [modalText, setModalText] = useState(text);
   const [subjectText, setSubjectText] = useState(subject);
+  const [modalImage, setModalImage] = useState(IMG(origImage));
 
-  const IMG = (imgName) => {
-    return require(`../assets/images/conversations/original_imgs/${imgName}`);
-  };
+  function cocoMode() {
+    if (isMask === false) {
+      setModalImage(MaskIMG(mask));
+      isMask = !isMask;
+      console.log(isMask);
+    } else if (isMask === true) {
+      setModalImage(IMG(origImage));
+      isMask = !isMask;
+    }
+  }
+
   return (
     <div style={{ display: "block" }}>
       <div style={toggleTextStyle}>
@@ -120,7 +139,8 @@ const ResponseModal = (props) => {
           Response
         </span>
       </div>
-      <img style={imgStyle} src={IMG(image)} alt={props.details.id} />
+      <img style={imgStyle} src={modalImage} alt={props.details.id} />
+      <button onClick={() => cocoMode()}>hi hello</button>
 
       <div style={ModalTextStyle}>
         <div style={ModalHeaderStyle}>
