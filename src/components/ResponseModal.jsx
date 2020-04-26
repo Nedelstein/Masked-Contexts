@@ -27,15 +27,14 @@ const ModalHeaderStyle = {
 };
 
 const imgStyle = {
-  position: "-webkit-sticky",
-  position: "sticky",
-  // display: "inline-block",
-  // transform: "translate(0%, -50%)",
-  // top: "10%",
-  // margin: "-10px",
-  left: "63%",
-  maxWidth: "60vw",
-  height: "auto",
+  // position: "-webkit-sticky",
+  // position: "sticky",
+  position: "fixed",
+  top: "50%",
+  left: "54%",
+  maxWidth: "40vw",
+  maxHeight: "70vh",
+  transform: "translateY(-50%)",
 };
 
 const borderStyle = {
@@ -46,7 +45,8 @@ const borderStyle = {
 };
 
 const toggleTextStyle = {
-  position: "sticky",
+  // position: "sticky",
+  position: "fixed",
   display: "inline-block",
   textAlign: "center",
   bottom: "50%",

@@ -131,7 +131,7 @@ const KeyphraseText = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={ModalStyle}
-        conteentLabel={"conversation"}
+        contentLabel={"conversation"}
         htmlOpenClassName={"ReactModal__Html--open"}
         bodyOpenClassName={"ReactModal__Body--open"}
       >
