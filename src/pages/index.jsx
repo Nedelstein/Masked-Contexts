@@ -58,19 +58,17 @@ const MainPage = () => {
         }}
         text="hang tight i'm loading"
       >
-        <div ref={node}>
+        <>
           <header className="App-header">
-            <div className="emptyBox">
-              <a href="/">
-                <div className="Title-text">Masked Contexts</div>
-              </a>
+            <a href="/">
+              <div className="Title-text">Masked Contexts</div>
+            </a>
+            <div ref={node}>
+              <LandingMasonry></LandingMasonry>
+              <LandingTypeWriter />
             </div>
-            <LandingMasonry></LandingMasonry>
-
-            {/* <LandingText /> */}
-            <LandingTypeWriter />
           </header>
-        </div>
+        </>
       </LoadingOverlay>
       {/* <FocusLock disabled={!open}> */}
       <Burger open={open} setOpen={setOpen} aria-controls={menuId} />

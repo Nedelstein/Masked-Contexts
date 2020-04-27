@@ -58,7 +58,7 @@ const captionText = {
   fontSize: "16px",
   fontWeight: "bold",
   color: "black",
-  backgroundColor: "rgba(255,255,0,0.7)",
+  backgroundColor: "rgba(255,255,0,.9)",
   padding: "3px",
 };
 

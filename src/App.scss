@@ -50,10 +50,7 @@ body {
   // background-color: rgba(67, 3, 84, 1);
   background-color: black;
   color: white;
-  // position: absolute;
-  // -webkit-text-stroke: 0.5px black;
-  // display: inline-block;
-  top: 2%;
+  margin-top: 2%;
   left: 4%;
   font-family: "Big Caslon";
   font-style: normal;
@@ -205,8 +202,8 @@ body {
 }
 
 .keyphraseP span:hover {
-  background-color: yellow;
-  color: black;
+  background-color: cyan;
+  color: red;
 }
 
 .cocoBtnStyle {
