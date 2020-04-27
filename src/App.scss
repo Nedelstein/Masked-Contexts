@@ -205,12 +205,13 @@ body {
 }
 
 .cocoBtnStyle {
-  display: inline;
+  display: table;
   text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   margin-left: 70%;
-  top: 60%;
+  margin-top: -14%;
   color: #fff;
   padding: 6px;
   background-color: #430354;

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import converesations, { noah_email } from "../conversations_lookup";
+import Typewriter from "typewriter-effect";
+
+import { noah_email } from "../conversations_lookup";
+import speakText from "./SpeakText";
 
 const ModalTextStyle = {
   position: "fixed",
@@ -40,7 +43,9 @@ const imgStyle = {
   transform: "translateY(-50%)",
 };
 
+// let captionDisplay;
 const captionText = {
+  // display: captionDisplay,
   position: "absolute",
   overflow: "auto",
   top: "30%",
@@ -83,11 +88,45 @@ const ResponseModal = (props) => {
   let subject = props.details.subject;
   let mask = props.details.filename_mask;
   let captions = props.details.captions;
-  console.log(captions);
 
   const [modalText, setModalText] = useState(text);
   const [subjectText, setSubjectText] = useState(subject);
   const [modalImage, setModalImage] = useState(IMG(origImage));
+  const [typeText, setTypeText] = useState(null);
+
+  const TypeString = () => {
+    // speechSynthesis.cancel();
+    return (
+      <div style={captionText}>
+        <Typewriter
+          onInit={(typewriter) => {
+            captions.map((item) =>
+              typewriter
+                .callFunction(() => speakText(item))
+                // .callFunction(() => {
+                //   if (typeText == null) {
+                //     speechSynthesis.cancel();
+                //   } else if (typeText != null) {
+                //     speakText(item);
+                //   }
+                // })
+                .typeString(item)
+                .pauseFor(400)
+                .deleteAll()
+                .pauseFor(100)
+                .start()
+            );
+          }}
+          options={{
+            delay: 70,
+            autoStart: true,
+            loop: false,
+            cursor: "*/",
+          }}
+        />
+      </div>
+    );
+  };
 
   return (
     <div style={{ display: "block" }}>
@@ -127,22 +166,21 @@ const ResponseModal = (props) => {
       </div>
       <div style={{ position: "relative" }}>
         <img style={imgStyle} src={modalImage} alt={props.details.id} />
-        <span style={captionText}>
-          {captions.map((item) => (
-            <div style={{ paddingBottom: "4px" }}>
-              {item}
-              <br />
-            </div>
-          ))}
-        </span>
-      </div>
-
-      <div
-        class="cocoBtnStyle"
-        onMouseEnter={() => setModalImage(MaskIMG(mask))}
-        onMouseLeave={() => setModalImage(IMG(origImage))}
-      >
-        hi hello
+        <span>{typeText}</span>
+        <div
+          class="cocoBtnStyle"
+          onMouseEnter={() => {
+            setModalImage(MaskIMG(mask));
+            setTypeText(TypeString);
+          }}
+          onMouseLeave={() => {
+            setModalImage(IMG(origImage));
+            setTypeText(null);
+            speechSynthesis.cancel();
+          }}
+        >
+          hi hello
+        </div>
       </div>
 
       <div style={ModalTextStyle}>
