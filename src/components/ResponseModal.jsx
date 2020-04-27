@@ -30,20 +30,28 @@ const ModalHeaderStyle = {
 const imgStyle = {
   // position: "-webkit-sticky",
   // position: "sticky",
-  position: "fixed",
+  position: "relative",
   display: "inline-block",
-  top: "50%",
+  // top: "50%",
+  marginTop: "27%",
   left: "54%",
   maxWidth: "40vw",
   maxHeight: "70vh",
   transform: "translateY(-50%)",
 };
 
-const borderStyle = {
-  width: "6rem",
-  height: "6rem",
-  margin: "0.5rem",
-  display: "inline-block",
+const captionText = {
+  position: "absolute",
+  overflow: "auto",
+  top: "30%",
+  left: "54%",
+  maxWidth: "40vw",
+  fontFamily: "Typewriter",
+  fontSize: "16px",
+  fontWeight: "bold",
+  color: "black",
+  backgroundColor: "rgba(255,255,0,0.7)",
+  padding: "3px",
 };
 
 const toggleTextStyle = {
@@ -58,16 +66,6 @@ const toggleTextStyle = {
   paddingTop: "1%",
   fontFamily: "Big Caslon",
   transform: "rotate(-90deg) translate(0, -50%)",
-  // overflow: "",
-
-  /* Safari */
-  //  webkitTransform: "rotate(-90deg)",
-
-  //  /* Firefox */
-  //  -moz-transform: rotate(-90deg);
-
-  //  /* IE */
-  //  -ms-transform: rotate(-90deg);
 };
 
 const IMG = (imgName) => {
@@ -78,8 +76,6 @@ const MaskIMG = (imgName) => {
   return require(`../assets/images/conversations/masks/${imgName}`);
 };
 
-let isMask = false;
-
 const ResponseModal = (props) => {
   let text = props.details.text;
   let origImage = props.details.filename_orig;
@@ -87,21 +83,11 @@ const ResponseModal = (props) => {
   let subject = props.details.subject;
   let mask = props.details.filename_mask;
   let captions = props.details.captions;
+  console.log(captions);
 
   const [modalText, setModalText] = useState(text);
   const [subjectText, setSubjectText] = useState(subject);
   const [modalImage, setModalImage] = useState(IMG(origImage));
-
-  function cocoMode() {
-    if (isMask === false) {
-      setModalImage(MaskIMG(mask));
-      isMask = !isMask;
-      console.log(isMask);
-    } else if (isMask === true) {
-      setModalImage(IMG(origImage));
-      isMask = !isMask;
-    }
-  }
 
   return (
     <div style={{ display: "block" }}>
@@ -139,8 +125,25 @@ const ResponseModal = (props) => {
           Response
         </span>
       </div>
-      <img style={imgStyle} src={modalImage} alt={props.details.id} />
-      <button onClick={() => cocoMode()}>hi hello</button>
+      <div style={{ position: "relative" }}>
+        <img style={imgStyle} src={modalImage} alt={props.details.id} />
+        <span style={captionText}>
+          {captions.map((item) => (
+            <div style={{ paddingBottom: "4px" }}>
+              {item}
+              <br />
+            </div>
+          ))}
+        </span>
+      </div>
+
+      <div
+        class="cocoBtnStyle"
+        onMouseEnter={() => setModalImage(MaskIMG(mask))}
+        onMouseLeave={() => setModalImage(IMG(origImage))}
+      >
+        hi hello
+      </div>
 
       <div style={ModalTextStyle}>
         <div style={ModalHeaderStyle}>

@@ -24,11 +24,6 @@ const letterStyle = {
   zIndex: "1",
 };
 
-let buttonAppear = () => {
-  let btnElement = document.querySelector(".enterButton");
-  btnElement.classList.add("button-fade-in");
-};
-
 let textAppear = () => {
   let textElement = document.querySelector(".keyphrases");
   textElement.classList.add("text-fade-in");

@@ -203,3 +203,24 @@ body {
   background-color: yellow;
   color: black;
 }
+
+.cocoBtnStyle {
+  display: inline;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 70%;
+  top: 60%;
+  color: #fff;
+  padding: 6px;
+  background-color: #430354;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: color 300ms ease-out, background-color 300ms ease-out;
+}
+
+.cocoBtnStyle:hover {
+  background-color: yellow;
+  color: black;
+  cursor: help;
+}
