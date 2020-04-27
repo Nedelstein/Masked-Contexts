@@ -94,28 +94,23 @@ const ResponseModal = (props) => {
   const [modalImage, setModalImage] = useState(IMG(origImage));
   const [typeText, setTypeText] = useState(null);
 
+  const indexNum = Math.floor(Math.random() * Math.floor(5));
+
   const TypeString = () => {
-    // speechSynthesis.cancel();
+    speechSynthesis.cancel();
     return (
       <div style={captionText}>
         <Typewriter
           onInit={(typewriter) => {
-            captions.map((item) =>
-              typewriter
-                .callFunction(() => speakText(item))
-                // .callFunction(() => {
-                //   if (typeText == null) {
-                //     speechSynthesis.cancel();
-                //   } else if (typeText != null) {
-                //     speakText(item);
-                //   }
-                // })
-                .typeString(item)
-                .pauseFor(400)
-                .deleteAll()
-                .pauseFor(100)
-                .start()
-            );
+            // captions.map((item) =>
+            typewriter
+              .callFunction(() => speakText(captions[indexNum]))
+              .typeString(captions[indexNum])
+              .pauseFor(200)
+              .deleteAll()
+              .pauseFor(100)
+              .start();
+            // );
           }}
           options={{
             delay: 70,
@@ -126,6 +121,10 @@ const ResponseModal = (props) => {
         />
       </div>
     );
+  };
+
+  const Empty = () => {
+    return <></>;
   };
 
   return (
@@ -175,8 +174,8 @@ const ResponseModal = (props) => {
           }}
           onMouseLeave={() => {
             setModalImage(IMG(origImage));
-            setTypeText(null);
             speechSynthesis.cancel();
+            setTypeText(Empty);
           }}
         >
           hi hello
