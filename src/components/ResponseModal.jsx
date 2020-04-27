@@ -10,6 +10,7 @@ const ModalTextStyle = {
   top: "0",
   height: "100%",
   minHeight: "100%",
+  maxWidth: "35vw",
   marginLeft: "4%",
   marginRight: "55%",
   marginTop: "0",
@@ -71,6 +72,7 @@ const toggleTextStyle = {
   paddingTop: "1%",
   fontFamily: "Big Caslon",
   transform: "rotate(-90deg) translate(0, -50%)",
+  zIndex: "99999",
 };
 
 const IMG = (imgName) => {
@@ -102,7 +104,6 @@ const ResponseModal = (props) => {
       <div style={captionText}>
         <Typewriter
           onInit={(typewriter) => {
-            // captions.map((item) =>
             typewriter
               .callFunction(() => speakText(captions[indexNum]))
               .typeString(captions[indexNum])
@@ -110,7 +111,6 @@ const ResponseModal = (props) => {
               .deleteAll()
               .pauseFor(100)
               .start();
-            // );
           }}
           options={{
             delay: 70,
@@ -129,6 +129,14 @@ const ResponseModal = (props) => {
 
   return (
     <div style={{ display: "block" }}>
+      <div style={ModalTextStyle}>
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: 0 }}>{date}</span>
+          <br />
+          <span style={{ marginTop: 0 }}>{subjectText}</span>
+        </div>
+        <p style={{ paddingBottom: "5%" }}>{modalText}</p>
+      </div>
       <div style={toggleTextStyle}>
         <span
           id="reachingOutBtn"
@@ -163,10 +171,11 @@ const ResponseModal = (props) => {
           Response
         </span>
       </div>
+
       <div style={{ position: "relative" }}>
         <img style={imgStyle} src={modalImage} alt={props.details.id} />
         <span>{typeText}</span>
-        <div
+        <span
           class="cocoBtnStyle"
           onMouseEnter={() => {
             setModalImage(MaskIMG(mask));
@@ -178,17 +187,8 @@ const ResponseModal = (props) => {
             setTypeText(Empty);
           }}
         >
-          hi hello
-        </div>
-      </div>
-
-      <div style={ModalTextStyle}>
-        <div style={ModalHeaderStyle}>
-          <span style={{ marginBottom: 0 }}>{date}</span>
-          <br />
-          <span style={{ marginTop: 0 }}>{subjectText}</span>
-        </div>
-        <p style={{ paddingBottom: "5%" }}>{modalText}</p>
+          COCO Mode
+        </span>
       </div>
     </div>
   );

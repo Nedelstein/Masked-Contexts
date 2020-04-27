@@ -12,35 +12,22 @@ const keyphraseStyle = {
   //   position: "absolute",
   display: "block",
   overflow: "auto",
-  fontFamily: "Big Caslon",
+  // fontFamily: "Big Caslon",
+  fontFamily: "Adca",
   fontWeight: "bold",
-  fontSize: "24px",
+  fontSize: "30px",
   // lineHeight: "30px",
   marginTop: "5%",
   transform: "translate(-50%, 0)",
   marginLeft: "50%",
-  wordSpacing: "5px",
+  wordSpacing: "4px",
+  lineHeight: "43px",
   textTransform: "uppercase",
   zIndex: "100",
   width: "90%",
   opacity: "0",
   transition: "opacity 1s ease-in-out",
 };
-
-// const rowStyle = {
-//   display: "flex",
-//   flexDirection: "row",
-//   flexWrap: "wrap",
-//   width: "100%",
-// };
-
-// const columnStyle = {
-//   display: "flex",
-//   flexDirection: "column",
-//   flexBasis: "100%",
-//   flex: "1",
-//   margin: "20px",
-// };
 
 const keyphraseDiv = {
   textAlign: "center",
@@ -49,7 +36,7 @@ const keyphraseDiv = {
 const buttonStyle = {
   // position: "-webkit-sticky",
   // position: "sticky",
-  position: "sticky",
+  display: "inline",
   top: "25px",
   margin: "1%, 1%, 1%, 0",
   background: "none",
@@ -135,16 +122,13 @@ const KeyphraseText = () => {
         htmlOpenClassName={"ReactModal__Html--open"}
         bodyOpenClassName={"ReactModal__Body--open"}
       >
-        <div>
+        <>
           <button style={buttonStyle} onClick={closeModal}>
             &times;
           </button>
-        </div>
+        </>
         {modal && <ResponseModal details={modal} />}
       </Modal>
-      {/* {isHoverRight && (
-        <LandingHoverImgRight details={isHoverRight} setHover={setHoverRight} />
-      )} */}
       {isHover && (
         <LandingHoverImg
           mousePos={[mousePosition.x, mousePosition.y]}
