@@ -39,6 +39,7 @@ const buttonStyle = {
   display: "inline",
   top: "25px",
   margin: "1%, 1%, 1%, 0",
+  fontFamiily: "courier",
   background: "none",
   color: "black",
   border: "none",

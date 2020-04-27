@@ -15,20 +15,22 @@ const ModalTextStyle = {
   marginRight: "55%",
   marginTop: "0",
   whiteSpace: "pre-wrap",
-  fontFamily: "Big Caslon",
-  fontSize: "16px",
-  lineHeight: "25px",
+  fontFamily: "Courier",
+  fontSize: "14px",
+  lineHeight: "22px",
   paddingLeft: "7px",
   paddingRight: "7px",
   borderRight: "1.5px solid black",
   borderLeft: "1.5px solid black",
   overflowY: "auto",
+  zIndex: "999",
 };
 
 const ModalHeaderStyle = {
   color: "black",
   fontSize: "12px",
   paddingTop: "25px",
+  lineHeight: "20px",
 };
 
 const imgStyle = {
@@ -70,7 +72,7 @@ const toggleTextStyle = {
   left: "47%",
   paddingBottom: "6%",
   paddingTop: "1%",
-  fontFamily: "Big Caslon",
+  fontFamily: "Courier",
   transform: "rotate(-90deg) translate(0, -50%)",
   zIndex: "99999",
 };
