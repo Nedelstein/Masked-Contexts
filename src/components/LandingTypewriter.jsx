@@ -11,7 +11,6 @@ const letterStyle = {
   color: "white",
   backgroundColor: "rgba(0,0,0,0.7)",
   fontFamily: "Courier",
-  fontWeight: "bold",
   fontSize: "22px",
   textAlign: "left",
   // wordSpacing: "3px",

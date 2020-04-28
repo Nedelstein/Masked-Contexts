@@ -8,6 +8,7 @@ import Menu from "../components/Menu";
 import LandingMasonry from "../components/LandingMasonry";
 import { useOnClickOutside } from "../hooks";
 import FocusLock from "react-focus-lock";
+import NavBar from "../components/NavBar";
 
 const MainPage = () => {
   const [open, setOpen] = useState(false);
@@ -58,22 +59,19 @@ const MainPage = () => {
         }}
         text="hang tight i'm loading"
       >
-        <>
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+          <Menu open={open} setOpen={setOpen} id={menuId} />
           <header className="App-header">
+            {/* <NavBar /> */}
             <a href="/">
               <div className="Title-text">Masked Contexts</div>
             </a>
-            <div ref={node}>
-              <LandingMasonry></LandingMasonry>
-              <LandingTypeWriter />
-            </div>
+            <LandingMasonry></LandingMasonry>
+            <LandingTypeWriter />
           </header>
-        </>
+        </div>
       </LoadingOverlay>
-      {/* <FocusLock disabled={!open}> */}
-      <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-      <Menu open={open} setOpen={setOpen} id={menuId} />
-      {/* </FocusLock> */}
     </>
   );
 };

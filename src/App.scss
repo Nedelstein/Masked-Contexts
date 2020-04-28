@@ -30,8 +30,7 @@ body {
 }
 
 .App-header {
-  // background-color: #2f303a;
-  background-color: black;
+  // background-color: black;
   min-height: 100vh;
   display: flex;
   /* flex-direction: column;
@@ -46,12 +45,14 @@ body {
 }
 
 .Title-text {
+  display: inline-block;
   position: absolute;
   // background-color: rgba(67, 3, 84, 1);
   background-color: black;
   color: white;
   margin-top: 2%;
   left: 4%;
+  width: auto;
   font-family: "Big Caslon";
   font-style: normal;
   overflow: hidden;

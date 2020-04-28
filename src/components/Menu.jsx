@@ -8,12 +8,12 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #effffa;
-  height: 100vh;
-  text-align: right;
+  // background: #effffa;
+  height: 10vh;
+  text-align: center;
   padding: 0.7rem;
   position: absolute;
-  top: 0;
+  top: 15vh;
   right: 0;
   z-index: 9998;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
@@ -24,23 +24,24 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-family: Big Caslon;
+    font-family: Courier;
     font-size: 1.7rem;
     text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: bold;
+    padding: 0.3rem;
     letter-spacing: 0.2rem;
-    color: ${({ theme }) => theme.purple};
+    color: white;
+    background-color: ${({ theme }) => theme.purple};
     text-decoration: none;
     transition: color 0.3s linear;
+    margin-bottom: 10px;
 
     @media (max-width: 600px) {
       font-size: 1.5rem;
       text-align: center;
     }
     &:hover {
-      color: #000000;
-      f
+      color: red;
+      background-color: cyan;
     }
   }
 `;
@@ -57,10 +58,6 @@ const Menu = ({ open, ...props }) => {
       <Link to="/about" tabIndex={tabIndex}>
         <span aria-hidden="true"></span>
         About
-      </Link>
-      <Link to="/conversations" tabIndex={tabIndex}>
-        <span aria-hidden="true"></span>
-        Conversations
       </Link>
       <Link to="/masks" tabIndex={tabIndex}>
         <span aria-hidden="true"></span>
