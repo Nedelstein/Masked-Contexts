@@ -38,7 +38,7 @@ const buttonStyle = {
   // position: "sticky",
   display: "inline",
   top: "25px",
-  margin: "1%, 1%, 1%, 0",
+  // margin: "0, 0%, 1%, 0",
   fontFamiily: "courier",
   background: "none",
   color: "black",
@@ -49,6 +49,7 @@ const buttonStyle = {
 
 const ModalStyle = {
   content: {
+    // display: "block",
     transform: "translate(-50%, -50%)",
     top: "50%",
     right: "auto",

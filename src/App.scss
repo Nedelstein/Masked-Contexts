@@ -197,8 +197,8 @@ body {
   background-color: #430354;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  transition: color 400ms ease-out, background-color 400ms ease-out;
-  cursor: pointer;
+  transition: color 200ms linear, background-color 200ms linear;
+  cursor: help;
   // mix-blend-mode: difference;
 }
 
@@ -208,13 +208,14 @@ body {
 }
 
 .cocoBtnStyle {
-  display: table;
+  // display: table;
+  position: fixed;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  margin-left: 70%;
-  margin-top: -14%;
+  left: 62%;
+  top: 76%;
   color: #fff;
   padding: 6px;
   background-color: #430354;
