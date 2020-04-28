@@ -78,9 +78,6 @@ const KeyphraseText = () => {
     keyphrases.push(conversations[i].keyphrase);
   }
 
-  // let half_keyphrases = Math.ceil(keyphrases.length / 2);
-  // let left_side = keyphrases.splice(0, half_keyphrases);
-
   function closeModal() {
     setIsOpen(false);
   }
