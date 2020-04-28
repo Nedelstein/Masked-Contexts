@@ -7,6 +7,7 @@ const ImageStyle = {
   readOnly: "false",
   width: "90%",
   height: "auto",
+  zIndex: "99",
 };
 
 let posX;
@@ -27,6 +28,7 @@ export const LandingHoverImg = (props) => {
     readOnly: "false",
     top: "30vh",
     left: posX,
+    zIndex: "99",
   };
 
   imageSource =

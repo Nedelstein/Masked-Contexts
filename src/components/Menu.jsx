@@ -30,7 +30,7 @@ const StyledMenu = styled.nav`
     padding: 0.3rem;
     letter-spacing: 0.1rem;
     color: white;
-    background-color: ${({ theme }) => theme.purple};
+    background-color: black;
     text-decoration: none;
     transition: color 0.3s linear;
     margin-bottom: 66px;

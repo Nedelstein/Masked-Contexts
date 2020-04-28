@@ -194,7 +194,8 @@ body {
 .keyphraseP span {
   color: #fff;
   padding: 6px;
-  background-color: #430354;
+  // background-color: #430354;
+  background-color: black;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   transition: color 200ms linear, background-color 200ms linear;

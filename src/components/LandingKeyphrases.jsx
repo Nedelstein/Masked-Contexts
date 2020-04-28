@@ -9,29 +9,26 @@ import conversations from "../conversations_lookup";
 import { LandingHoverImg } from "./LandingHoverImg";
 
 const keyphraseStyle = {
-  //   position: "absolute",
+  position: "relative",
   display: "block",
-  // overflow: "auto",
-  // fontFamily: "Big Caslon",
-  fontFamily: "Adca",
-  fontWeight: "bold",
-  fontSize: "30px",
-  // lineHeight: "30px",
+  fontFamily: "Courier",
+  // fontWeight: "bold",
+  fontSize: "50px",
   marginTop: "5%",
   transform: "translate(-50%, 0)",
   marginLeft: "50%",
   wordSpacing: "4px",
-  lineHeight: "43px",
-  textTransform: "uppercase",
+  lineHeight: "61px",
+  // textTransform: "uppercase",
   zIndex: "100",
   width: "90%",
   opacity: "0",
   transition: "opacity 1s ease-in-out",
 };
 
-const keyphraseDiv = {
-  textAlign: "center",
-};
+// const keyphraseDiv = {
+//   // textAlign: "center",
+// };
 
 const buttonStyle = {
   // position: "-webkit-sticky",
@@ -91,7 +88,7 @@ const KeyphraseText = () => {
   return (
     <>
       <div ref={ref} className="keyphrases" style={keyphraseStyle}>
-        <div style={keyphraseDiv}>
+        <div>
           {keyphrases.map((keyphrase, index) => (
             <p className="keyphraseP">
               <span
@@ -115,6 +112,13 @@ const KeyphraseText = () => {
           ))}
         </div>
       </div>
+      {isHover && (
+        <LandingHoverImg
+          mousePos={[mousePosition.x, mousePosition.y]}
+          details={isHover}
+          setHover={setHover}
+        />
+      )}
       <Modal
         closeTimeoutMS={500}
         isOpen={modalIsOpen}
@@ -131,13 +135,6 @@ const KeyphraseText = () => {
         </>
         {modal && <ResponseModal details={modal} />}
       </Modal>
-      {isHover && (
-        <LandingHoverImg
-          mousePos={[mousePosition.x, mousePosition.y]}
-          details={isHover}
-          setHover={setHover}
-        />
-      )}
     </>
   );
 };
