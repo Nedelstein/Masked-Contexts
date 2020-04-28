@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   // background: #effffa;
   height: 10vh;
   text-align: center;
   padding: 0rem;
   position: fixed;
-  top: 30vh;
+  margin-top: 9%;
   right: -0.7rem;
   z-index: 9998;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
