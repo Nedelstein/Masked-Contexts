@@ -11,10 +11,10 @@ const StyledMenu = styled.nav`
   // background: #effffa;
   height: 10vh;
   text-align: center;
-  padding: 0.7rem;
-  position: absolute;
-  top: 15vh;
-  right: 0;
+  padding: 0rem;
+  position: fixed;
+  top: 30vh;
+  right: -0.7rem;
   z-index: 9998;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease-in-out;
@@ -28,12 +28,13 @@ const StyledMenu = styled.nav`
     font-size: 1.7rem;
     text-transform: uppercase;
     padding: 0.3rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     color: white;
     background-color: ${({ theme }) => theme.purple};
     text-decoration: none;
     transition: color 0.3s linear;
-    margin-bottom: 10px;
+    margin-bottom: 66px;
+    transform: rotate(90deg);
 
     @media (max-width: 600px) {
       font-size: 1.5rem;

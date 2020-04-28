@@ -7,7 +7,7 @@ import LandingKeyphrases from "./LandingKeyphrases";
 
 const letterStyle = {
   // position: "absolute",
-  overflow: "auto",
+  // overflow: "auto",
   color: "white",
   backgroundColor: "rgba(0,0,0,0.7)",
   fontFamily: "Courier",
@@ -50,7 +50,6 @@ let LandingTypewriter = () => {
             cursor: "*/",
           }}
         />
-        {/* <Button /> */}
       </div>
       <LandingKeyphrases />
     </div>

@@ -11,7 +11,7 @@ import { LandingHoverImg } from "./LandingHoverImg";
 const keyphraseStyle = {
   //   position: "absolute",
   display: "block",
-  overflow: "auto",
+  // overflow: "auto",
   // fontFamily: "Big Caslon",
   fontFamily: "Adca",
   fontWeight: "bold",

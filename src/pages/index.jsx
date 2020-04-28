@@ -55,6 +55,7 @@ const MainPage = () => {
             fontFamily: "Big Caslon",
             marginTop: "30%",
             left: "50%",
+            overlay: "auto",
           }),
         }}
         text="hang tight i'm loading"
