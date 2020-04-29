@@ -85,14 +85,13 @@ const KeyphraseText = () => {
   return (
     <>
       <div ref={ref} className="keyphrases" style={keyphraseStyle}>
-        <div>
+        <div style={{ marginTop: "10%" }}>
           {keyphrases.map((keyphrase, index) => (
             <p className="keyphraseP">
               <span
                 onMouseEnter={() => {
                   setHover(conversations[index]);
                   document.getElementById("masonryGrid").style.display = "none";
-                  // console.log(conversations[index]);
                 }}
                 onMouseLeave={() => {
                   setHover(null);

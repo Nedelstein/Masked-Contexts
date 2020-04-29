@@ -9,7 +9,7 @@ const letterStyle = {
   // position: "absolute",
   // overflow: "auto",
   color: "white",
-  backgroundColor: "rgba(0,0,0,0.7)",
+  backgroundColor: "rgba(0,0,0,0.92)",
   fontFamily: "Courier",
   fontSize: "22px",
   textAlign: "left",
@@ -20,7 +20,7 @@ const letterStyle = {
   marginLeft: "50%",
   width: "55%",
   // height: "100%",
-  padding: "7px",
+  padding: "12px",
   zIndex: "1",
 };
 

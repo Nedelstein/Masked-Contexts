@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: black;
+  // background-color: black;
+  background-color: #fedcd2;
 }
 ::selection {
   background: cyan;
@@ -188,7 +189,7 @@ body {
 }
 
 .keyphraseP {
-  margin-bottom: 50px;
+  margin-bottom: 10%;
 }
 
 .keyphraseP span {
