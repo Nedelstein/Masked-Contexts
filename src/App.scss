@@ -119,6 +119,7 @@ body {
   // When the modal is closed, overlay div has no css class
   // This selector should be overridden by the `&--after-open` class below
   opacity: 0;
+  padding: 0px 10px;
 }
 
 .ReactModal__Overlay {
@@ -230,4 +231,8 @@ body {
   background-color: yellow;
   color: black;
   cursor: help;
+}
+
+.inActive {
+  visibility: hidden !important;
 }

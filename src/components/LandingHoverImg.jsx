@@ -23,7 +23,7 @@ export const LandingHoverImg = (props) => {
   }
 
   if (mousePosY <= window.innerHeight / 2) {
-    posY = "55vh";
+    posY = "45vh";
   } else if (mousePosY > window.innerHeight / 2) {
     posY = "10vh";
   }
