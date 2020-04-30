@@ -9,24 +9,31 @@ const ImageStyle = {
   zIndex: "99",
 };
 
-let posX;
+let posX, posY;
 
 export const LandingHoverImg = (props) => {
   let imageSource = props.details.filename_orig;
   let mousePosX = props.mousePos[0];
+  let mousePosY = props.mousePos[1];
 
   if (mousePosX <= window.innerWidth / 2) {
     posX = "50vw";
   } else if (mousePosX > window.innerWidth / 2) {
-    posX = "5vw";
+    posX = "20vw";
+  }
+
+  if (mousePosY <= window.innerHeight / 2) {
+    posY = "55vh";
+  } else if (mousePosY > window.innerHeight / 2) {
+    posY = "10vh";
   }
 
   const ImageDivStyle = {
     position: "fixed",
     width: "inherit",
     readOnly: "false",
-    top: "30vh",
-    left: posX,
+    top: posY,
+    left: "55vw",
     zIndex: "99",
   };
 

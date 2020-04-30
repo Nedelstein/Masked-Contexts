@@ -153,7 +153,7 @@ const KeyphraseText = () => {
       </div>
       {isHover && (
         <LandingHoverImg
-          mousePos={[mousePosition.x, mousePosition.y]}
+          mousePos={[mousePosition.screenX, mousePosition.screenY]}
           details={isHover}
           setHover={setHover}
         />
