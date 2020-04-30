@@ -46,7 +46,6 @@ const buttonStyle = {
 
 const ModalStyle = {
   content: {
-    // display: "block",
     transform: "translate(-50%, -50%)",
     top: "50%",
     right: "auto",
@@ -59,7 +58,7 @@ const ModalStyle = {
     paddingBottom: "0",
     left: "50%",
     backgroundColor: "rgba(255,255,255,1)",
-    // overflowY: "initial !important",
+    // backgroundColor: "#fedcd2",
     border: "none",
   },
   overlay: {
@@ -72,6 +71,7 @@ const KeyphraseText = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(null);
   const [mousePosition, ref] = useMousePosition(0, 0, 30);
+  // const [isActive, setActive] = useState(null);
 
   let keyphrases = [];
   for (let i in conversations) {
@@ -82,20 +82,63 @@ const KeyphraseText = () => {
     setIsOpen(false);
   }
 
+  function activeIndex(indices, index) {
+    let i = indices.indexOf(index);
+    // if (i >= 0) {
+    //   indices.splice(i, 1);
+    // }
+
+    console.log(indices !== i);
+    return indices !== i;
+
+    // if (keyphrases[index] === indices[index]) {
+    //   document.getElementById(index).style.display = "none";
+    // }
+    // indices.className = "hide";
+    // console.log(indices);
+  }
+
+  // const onHoverDisappear = (id) => {
+  //   setActive({ hover: id });
+  // };
+
+  // const onHoverReappear = () => {
+  //   setActive({ hovere: null });
+  // };
+
   return (
     <>
       <div ref={ref} className="keyphrases" style={keyphraseStyle}>
-        <div style={{ marginTop: "10%" }}>
+        <div
+          style={{
+            marginTop: "13%",
+            marginLeft: "1%",
+            marginRight: "15%",
+            marginBottom: "10%",
+          }}
+        >
           {keyphrases.map((keyphrase, index) => (
-            <p className="keyphraseP">
+            <p id={index} className="keyphraseP">
               <span
                 onMouseEnter={() => {
+                  const currentIndex = index;
                   setHover(conversations[index]);
+                  // setActive(currentIndex);
                   document.getElementById("masonryGrid").style.display = "none";
+
+                  // let activeKeyphrase = document.getElementById(currentIndex);
+                  // if (document.querySelectorAll(".keyphraseP").id != isActive) {
+                  //   document.getElementById(index).style.visibility = "hidden";
+                  // }
+                  // activeKeyphrase.style.visibility = "visible";
                 }}
                 onMouseLeave={() => {
                   setHover(null);
                   document.getElementById("masonryGrid").style.display = "flex";
+                  // document.querySelector(".hide").style.display = "block";
+                  // document.getElementById(index).style.visibility = "visible";
+
+                  // setActive(null);
                 }}
                 onClick={() => {
                   setModal(conversations[index]);

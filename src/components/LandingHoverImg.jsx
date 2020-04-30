@@ -1,5 +1,4 @@
 import React from "react";
-// import conversations from "../conversations_lookup";
 
 const ImageStyle = {
   // border: "solid black",
@@ -32,7 +31,7 @@ export const LandingHoverImg = (props) => {
   };
 
   imageSource =
-    "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/alt_homepage/src/assets/images/conversations/original_imgs/" +
+    "https://raw.githubusercontent.com/Nedelstein/Masked-Contexts/master/src/assets/images/conversations/original_imgs/" +
     imageSource;
 
   return (

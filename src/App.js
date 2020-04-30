@@ -20,6 +20,9 @@ import Conversations from "./pages/Converesations";
 import Masks from "./pages/Masks";
 
 function App() {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
   return (
     <ThemeProvider theme={theme}>
       <Router>

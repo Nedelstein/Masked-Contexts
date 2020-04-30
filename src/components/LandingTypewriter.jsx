@@ -44,7 +44,8 @@ let LandingTypewriter = () => {
               .start();
           }}
           options={{
-            delay: 25,
+            delay: 0,
+            // delay: 25
             autoStart: true,
             loop: false,
             cursor: "*/",
