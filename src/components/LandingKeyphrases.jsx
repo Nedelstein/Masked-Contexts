@@ -113,14 +113,14 @@ const KeyphraseText = () => {
                   let arr = new Array(keyphrases.length).fill(true);
                   arr[index] = false;
                   setActive(arr);
-                  document.getElementById("masonryGrid").style.display = "none";
+                  // document.getElementById("masonryGrid").style.display = "none";
                 }}
                 onMouseLeave={() => {
                   let arr = new Array(keyphrases.length);
                   arr[index] = false;
                   setHover(null);
                   setActive(arr);
-                  document.getElementById("masonryGrid").style.display = "flex";
+                  // document.getElementById("masonryGrid").style.display = "flex";
                 }}
                 onClick={() => {
                   setModal(conversations[index]);

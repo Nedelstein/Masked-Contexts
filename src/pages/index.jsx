@@ -1,21 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import LoadingOverlay from "react-loading-overlay";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import { useOnClickOutside } from "../hooks";
 
 import LandingTypeWriter from "../components/LandingTypewriter";
 import Burger from "../components/Burger";
 import Menu from "../components/Menu";
-import LandingMasonry from "../components/LandingMasonry";
-import { useOnClickOutside } from "../hooks";
+import LoadingOverlayText from "../components/LoadingOverlayText";
+
 import FocusLock from "react-focus-lock";
-// import NavBar from "../components/NavBar";
 
 const MainPage = () => {
   const [open, setOpen] = useState(false);
   const [active, isActive] = useState(true);
+  const [page, switchPage] = useState(true);
+
   const node = useRef();
-  const menuId = "main-menu";
-  useOnClickOutside(node, () => setOpen(false));
 
   useEffect(() => {
     setTimeout(() => {
@@ -32,11 +32,19 @@ const MainPage = () => {
     false
   );
 
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
+
   const spinnerStyle = {
     display: "block",
     margin: "0, auto",
     paddingBottom: "15px",
   };
+
+  function changePageState() {
+    switchPage(false);
+    window.scrollTo(0, 0);
+  }
 
   return (
     <>
@@ -48,12 +56,14 @@ const MainPage = () => {
           overlay: (base) => ({
             ...base,
             background: "rgba(0,0,0,1)",
+            // background: "#fedcd2",
           }),
 
           content: (base) => ({
             ...base,
-            fontFamily: "Courier",
-            marginTop: "30%",
+            fontFamily: "Rokkitt-Medium",
+            // marginTop: "30%",
+            marginTop: "35%",
             left: "50%",
           }),
         }}
@@ -68,8 +78,11 @@ const MainPage = () => {
             <a href="/">
               <div className="Title-text">Masked Contexts</div>
             </a>
-            <LandingMasonry></LandingMasonry>
-            <LandingTypeWriter />
+            {page ? (
+              <LoadingOverlayText buttonClick={() => changePageState()} />
+            ) : (
+              <LandingTypeWriter />
+            )}
           </header>
         </div>
       </LoadingOverlay>
