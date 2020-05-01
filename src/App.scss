@@ -51,6 +51,18 @@ body {
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Rokkitt";
+  src: url("./assets/fonts/Rokkitt.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Rokkitt-Medium";
+  src: url("./assets/fonts/Rokkitt-Medium.ttf");
+  font-weight: normal;
+}
+
 .App {
   text-align: center;
 }
