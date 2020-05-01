@@ -22,8 +22,33 @@ body {
 }
 
 @font-face {
-  font-family: "Adca";
-  src: url("./assets//fonts/Adca.ttf");
+  font-family: "RobotoMono";
+  src: url("./assets/fonts/Roboto_Mono/RobotoMono-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoLight";
+  src: url("./assets/fonts/Roboto_Mono/RobotoMono-Light.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url("./assets/fonts/Roboto_Mono/RobotoMono-Bold.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoThin";
+  src: url("./assets/fonts/Roboto_Mono/RobotoMono-Thin.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("./assets/fonts/Roboto_Mono/RobotoMono-Medium.ttf");
+  font-weight: normal;
 }
 
 .App {
@@ -51,7 +76,7 @@ body {
   // background-color: rgba(67, 3, 84, 1);
   background-color: black;
   color: white;
-  margin-top: 2%;
+  margin-top: 1%;
   left: 4%;
   width: auto;
   font-family: "Big Caslon";
@@ -119,7 +144,6 @@ body {
   // When the modal is closed, overlay div has no css class
   // This selector should be overridden by the `&--after-open` class below
   opacity: 0;
-  padding: 0px 10px;
 }
 
 .ReactModal__Overlay {

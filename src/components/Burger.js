@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledBurger = styled.button`
   position: fixed;
-  margin-top: 2.5%;
+  margin-top: 2%;
   right: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ const StyledBurger = styled.button`
     width: 2.2rem;
     height: 0.25rem;
     // background: ${({ open }) => (open ? "#0D0C1D" : "#effffa")};
-    background: #0D0C1D;
+    background: black;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;

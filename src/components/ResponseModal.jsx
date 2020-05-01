@@ -15,9 +15,9 @@ const ModalTextStyle = {
   marginRight: "55%",
   marginTop: "0",
   whiteSpace: "pre-wrap",
-  fontFamily: "Courier",
-  fontSize: "14px",
-  lineHeight: "22px",
+  fontFamily: "RobotoMono",
+  fontSize: "12px",
+  lineHeight: "20px",
   paddingLeft: "15px",
   paddingRight: "15px",
   borderRight: "1.5px solid black",
@@ -28,7 +28,7 @@ const ModalTextStyle = {
 
 const ModalHeaderStyle = {
   color: "black",
-  fontSize: "12px",
+  fontSize: "10px",
   paddingTop: "25px",
   lineHeight: "20px",
 };
@@ -72,7 +72,8 @@ const toggleTextStyle = {
   left: "42%",
   paddingBottom: "6%",
   paddingTop: "1%",
-  fontFamily: "Courier",
+  fontFamily: "RobotoMono",
+  fontSize: "13px",
   transform: "rotate(-90deg) translate(0, -50%)",
   zIndex: "99999",
 };

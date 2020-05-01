@@ -10,11 +10,11 @@ const letterStyle = {
   // overflow: "auto",
   color: "white",
   backgroundColor: "rgba(0,0,0,0.92)",
-  fontFamily: "Courier",
+  fontFamily: "RobotoMono",
   fontSize: "22px",
   textAlign: "left",
   // wordSpacing: "3px",
-  lineHeight: "30px",
+  lineHeight: "35px",
   transform: "translate(-50%, 0%)",
   marginTop: "15%",
   marginLeft: "50%",
@@ -37,7 +37,7 @@ let LandingTypewriter = () => {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                "<span>Hi __________</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here:_________________. I thought it was important that you know your image was used for this..."
+                "<span>Hi _________,</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: ______________. I thought it was important that you know your image was used for this..."
               )
               .callFunction(textAppear)
               .pauseFor(9999999999999)

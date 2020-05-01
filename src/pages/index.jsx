@@ -52,7 +52,7 @@ const MainPage = () => {
 
           content: (base) => ({
             ...base,
-            fontFamily: "Big Caslon",
+            fontFamily: "Courier",
             marginTop: "30%",
             left: "50%",
           }),
