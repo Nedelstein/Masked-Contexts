@@ -6,7 +6,7 @@ const ImageStyle = {
   readOnly: "false",
   width: "100%",
   height: "auto",
-  zIndex: "99",
+  zIndex: "0",
 };
 
 let posX, posY;

@@ -246,26 +246,20 @@ body {
 }
 
 #keyphraseStyle {
-  // position: "relative",
-  display: block;
+  position: relative;
   font-family: "RobotoMono";
-  // fontWeight: "bold",
   font-size: 50px;
   margin-top: 5%;
   transform: translate(-50%, 0);
   margin-left: 50%;
   word-spacing: 4px;
   line-height: 72px;
-  // textTransform: "uppercase",
-  z-index: 100;
+  text-transform: lowercase;
+  z-index: 9999999;
   width: 90%;
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 1.5s;
 }
-
-// .text-fade-in {
-//   opacity: 1 !important;
-// }
 
 .keyphraseP {
   margin-bottom: 10%;

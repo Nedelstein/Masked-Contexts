@@ -32,8 +32,11 @@ const EnterButton = styled.button`
   margin-left: 50%;
   margin-bottom: 6%;
   width: auto;
-  padding: 0.3rem;
-  border: none;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  border: 0.1px solid white;
   z-indez: 1;
   transition: 200ms color linear, 200ms background-color linear ;
   cursor: help;
@@ -61,7 +64,7 @@ const LoadingOverlayText = (props) => {
       <span id="landingMasonry">
         <LandingMasonry></LandingMasonry>
       </span>
-      <div id="openingText" style={{ marginTop: "10%" }}>
+      <div id="openingText" style={{ marginTop: "6%" }}>
         <p style={textStyle}>
           Masked Contexts is an exploration into the COCO dataset and a dialogue
           with the photographers whose images were scraped by the dataset’s
@@ -76,12 +79,13 @@ const LoadingOverlayText = (props) => {
           The COCO (common objects in context) dataset contains 330,000 photos
           scraped from Flickr, many of which are intimate photos uploaded by
           ameature photohraphers for personal use. Image datasets like COCO are
-          often used to train surveillance technologies, amongst other computer
-          vision programs.
+          often used to train surveillance technologies, amongst other types of
+          computer vision programs.
         </p>
         <p style={textStyle}>
-          These conversations can be viewed by clicking on the quotes you are
-          about to see.
+          Conversations can be viewed by clicking on the quotes you are about to
+          see. Parts of these conversations were lost as a result of Flickr
+          terminating some of my accounts.
         </p>
         <p style={textStyle}>
           All images shown on this site are from this public dataset.

@@ -5,40 +5,15 @@ import useMousePosition from "@react-hook/mouse-position";
 
 import ResponseModal from "./ResponseModal";
 import conversations from "../conversations_lookup";
-// import { theme } from "../theme";
-
 import { LandingHoverImg } from "./LandingHoverImg";
 
 const classNames = require("classnames");
-
-// const keyphraseStyle = {
-//   // position: "relative",
-//   display: "block",
-//   fontFamily: "RobotoMono",
-//   // fontWeight: "bold",
-//   fontSize: "50px",
-//   marginTop: "5%",
-//   transform: "translate(-50%, 0)",
-//   marginLeft: "50%",
-//   wordSpacing: "4px",
-//   lineHeight: "72px",
-//   // textTransform: "uppercase",
-//   zIndex: "100",
-//   width: "90%",
-//   opacity: "0",
-//   transition: "opacity 1s ease-in-out",
-// };
-
-// const keyphraseDiv = {
-//   // textAlign: "center",
-// };
 
 const buttonStyle = {
   // position: "-webkit-sticky",
   // position: "sticky",
   display: "inline",
   top: "25px",
-  // margin: "0, 0%, 1%, 0",
   fontFamiily: "courier",
   background: "none",
   color: "black",
@@ -68,8 +43,6 @@ const ModalStyle = {
     background: "rgba(0,0,0,0.7)",
   },
 };
-
-// const keySpan = styled.
 
 let keyphrases = [];
 for (let i in conversations) {
