@@ -11,23 +11,23 @@ import { LandingHoverImg } from "./LandingHoverImg";
 
 const classNames = require("classnames");
 
-const keyphraseStyle = {
-  position: "relative",
-  display: "block",
-  fontFamily: "RobotoMono",
-  // fontWeight: "bold",
-  fontSize: "50px",
-  marginTop: "5%",
-  transform: "translate(-50%, 0)",
-  marginLeft: "50%",
-  wordSpacing: "4px",
-  lineHeight: "72px",
-  // textTransform: "uppercase",
-  zIndex: "100",
-  width: "90%",
-  opacity: "0",
-  transition: "opacity 1s ease-in-out",
-};
+// const keyphraseStyle = {
+//   // position: "relative",
+//   display: "block",
+//   fontFamily: "RobotoMono",
+//   // fontWeight: "bold",
+//   fontSize: "50px",
+//   marginTop: "5%",
+//   transform: "translate(-50%, 0)",
+//   marginLeft: "50%",
+//   wordSpacing: "4px",
+//   lineHeight: "72px",
+//   // textTransform: "uppercase",
+//   zIndex: "100",
+//   width: "90%",
+//   opacity: "0",
+//   transition: "opacity 1s ease-in-out",
+// };
 
 // const keyphraseDiv = {
 //   // textAlign: "center",
@@ -93,7 +93,7 @@ const KeyphraseText = () => {
 
   return (
     <>
-      <div ref={ref} className="keyphrases" style={keyphraseStyle}>
+      <div ref={ref} id="keyphraseStyle">
         <div
           style={{
             marginTop: "13%",

@@ -4,7 +4,7 @@ const ImageStyle = {
   // border: "solid black",
   // opacity: "0.9",
   readOnly: "false",
-  width: "90%",
+  width: "100%",
   height: "auto",
   zIndex: "99",
 };
@@ -33,7 +33,7 @@ export const LandingHoverImg = (props) => {
     width: "inherit",
     readOnly: "false",
     top: posY,
-    left: "55vw",
+    left: "45vw",
     zIndex: "99",
   };
 

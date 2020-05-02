@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import "../App.scss";
 
@@ -6,30 +6,35 @@ import "../App.scss";
 import LandingKeyphrases from "./LandingKeyphrases";
 
 const letterStyle = {
-  // position: "absolute",
+  display: "block",
+  position: "relative",
   // overflow: "auto",
   color: "white",
-  backgroundColor: "rgba(0,0,0,0.92)",
+  backgroundColor: "black",
   fontFamily: "RobotoMono",
   fontSize: "18px",
   textAlign: "left",
   // wordSpacing: "3px",
   lineHeight: "32px",
+  width: "55%",
   transform: "translate(-50%, 0%)",
   marginTop: "15%",
-  marginLeft: "50%",
-  width: "55%",
-  // height: "100%",
+  left: "50%",
   padding: "12px",
   zIndex: "1",
 };
 
-let textAppear = () => {
-  let textElement = document.querySelector(".keyphrases");
-  textElement.classList.add("text-fade-in");
-};
+const LandingTypewriter = () => {
+  const [keyphrases, setKeyphrases] = useState();
 
-let LandingTypewriter = () => {
+  const textAppear = () => {
+    setKeyphrases(LandingKeyphrases);
+  };
+
+  const opacityChange = () => {
+    document.querySelector("#keyphraseStyle").style.opacity = "1";
+  };
+
   return (
     <div>
       <div style={letterStyle}>
@@ -37,9 +42,10 @@ let LandingTypewriter = () => {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                "<span>Hi _________,</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: ____________. I thought it was important that you know your image was used for this..."
+                "<span>Hi _________,</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: ____________. I thought it was important that you know your image was used for this...</span>"
               )
               .callFunction(textAppear)
+              .callFunction(opacityChange)
               .pauseFor(9999999999999)
               .start();
           }}
@@ -52,7 +58,7 @@ let LandingTypewriter = () => {
           }}
         />
       </div>
-      <LandingKeyphrases />
+      {keyphrases}
     </div>
   );
 };

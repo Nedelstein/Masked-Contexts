@@ -222,7 +222,7 @@ const ResponseModal = (props) => {
         <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: "0" }}>{userResponse3Date}</span>
         </div>
-        <p style={{ paddingBottom: "2%" }}>{userResponse3}</p>
+        <p>{userResponse3}</p>
       </div>
 
       <div style={toggleTextStyle}>
