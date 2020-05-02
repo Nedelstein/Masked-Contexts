@@ -123,6 +123,20 @@ body {
   text-align: center;
 }
 
+#openingText {
+  opacity: 1;
+  transition: opacity 350ms linear;
+}
+
+#landingMasonry {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.fade-exit {
+  opacity: 0 !important;
+}
+
 .my-masonry-grid {
   display: flex;
   position: fixed;

@@ -27,7 +27,6 @@ const MainPage = () => {
     "unload",
     () => {
       isActive(true);
-      // console.log("loaded");
     },
     false
   );

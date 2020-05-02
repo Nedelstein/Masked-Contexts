@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import LandingMasonry from "./LandingMasonry";
 
 const textStyle = {
   color: "white",
-  backgroundColor: "rgba(0,0,0,0.8)",
+  backgroundColor: "rgba(0,0,0,0.9)",
   fontFamily: "RobotoMono",
   fontSize: "16px",
   textAlign: "left",
@@ -20,34 +21,45 @@ const textStyle = {
 
 const buttonStyle = {
   color: "white",
-  backgroundColor: "rgba(0,0,0,0.8)",
+  backgroundColor: "black",
   fontFamily: "RobotoMono",
-  fontSize: "16px",
+  fontSize: "1.7rem",
   textAlign: "center",
-  lineHeight: "30px",
+  lineHeight: "33px",
+  letterSpacing: "0.05rem",
   transform: "translate(-50%, 0%)",
   marginTop: "2%",
   marginLeft: "50%",
   marginBottom: "6%",
-  width: "auto%",
-  padding: "12px",
+  width: "auto",
+  paddingLeft: "18px",
+  paddingRight: "18px",
+  border: "none",
   zIndex: "1",
 };
 
-const spinnerStyle = {
-  display: "block",
-  margin: "0, auto",
-  paddingBottom: "15px",
-};
-
 const LoadingOverlayText = (props) => {
-  const [page, switchPage] = useState(false);
+  const [appear, setAppear] = useState(true);
+
+  function fadeAndSwitch() {
+    document.getElementById("openingText").classList.add("fade-exit");
+
+    setTimeout(() => {
+      document.getElementById("landingMasonry").classList.add("fade-exit");
+    }, 2500);
+
+    setTimeout(() => {
+      props.buttonClick();
+    }, 3000);
+  }
 
   return (
     <>
-      <LandingMasonry></LandingMasonry>
-
-      <div style={{ marginTop: "10%" }}>
+      <span id="landingMasonry">
+        <LandingMasonry></LandingMasonry>
+      </span>
+      {/* <CSSTransition in={appear} appear={true} timeout={1000} classNames="fade"> */}
+      <div id="openingText" style={{ marginTop: "10%" }}>
         <p style={textStyle}>
           Masked Contexts is an exploration into the COCO dataset and a dialogue
           with the photographers whose images were scraped by the dataset’s
@@ -72,10 +84,11 @@ const LoadingOverlayText = (props) => {
         <p style={textStyle}>
           All images shown on this site are from this public dataset.
         </p>
-        <button onClick={props.buttonClick} style={buttonStyle}>
+        <button onClick={() => fadeAndSwitch()} style={buttonStyle}>
           Enter
         </button>
       </div>
+      {/* </CSSTransition> */}
     </>
   );
 };
