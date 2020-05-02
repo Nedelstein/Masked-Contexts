@@ -20,8 +20,8 @@ const ModalTextStyle = {
   lineHeight: "20px",
   paddingLeft: "15px",
   paddingRight: "15px",
-  borderRight: "1.5px solid black",
-  borderLeft: "1.5px solid black",
+  borderRight: "1px solid black",
+  borderLeft: "1px solid black",
   overflowY: "auto",
   zIndex: "999",
 };
@@ -78,6 +78,18 @@ const toggleTextStyle = {
   zIndex: "99999",
 };
 
+const textBorderStyle = {
+  // borderTop: "1px solid black",
+  width: "100%",
+  height: "auto",
+  left: "0%",
+  position: "absolute",
+};
+
+const Border = () => {
+  return <hr style={textBorderStyle}></hr>;
+};
+
 const IMG = (imgName) => {
   return require(`../assets/images/conversations/original_imgs/${imgName}`);
 };
@@ -87,17 +99,28 @@ const MaskIMG = (imgName) => {
 };
 
 const ResponseModal = (props) => {
+  console.log(props.details);
   let text = props.details.text;
   let origImage = props.details.filename_orig;
   let date = props.details.date;
   let subject = props.details.subject;
   let mask = props.details.filename_mask;
   let captions = props.details.captions;
+  let noahResponseText = props.details.noah_response;
+  let _noahResponseDate = props.details.noah_response_date;
+  let userResponseText = props.details.user_response;
+  let _userResponseDate = props.details.user_response_date;
 
   const [modalText, setModalText] = useState(text);
   const [subjectText, setSubjectText] = useState(subject);
+  const [responseDate, setResponseDate] = useState(date);
   const [modalImage, setModalImage] = useState(IMG(origImage));
   const [typeText, setTypeText] = useState(null);
+  const [noahResponse, setNoahResponse] = useState(noahResponseText);
+  const [noahResponseDate, setNoahResponseDate] = useState(_noahResponseDate);
+  const [userResponse, setUserResponse] = useState(userResponseText);
+  const [userResponseDate, setUserResponseDate] = useState(_userResponseDate);
+  const [border, setBorder] = useState(Border);
 
   const indexNum = Math.floor(Math.random() * Math.floor(5));
 
@@ -134,12 +157,25 @@ const ResponseModal = (props) => {
     <div style={{ display: "block" }}>
       <div style={ModalTextStyle}>
         <div style={ModalHeaderStyle}>
-          <span style={{ marginBottom: 0 }}>{date}</span>
+          <span style={{ marginBottom: 0 }}>{responseDate}</span>
           <br />
           <span style={{ marginTop: 0 }}>{subjectText}</span>
         </div>
-        <p style={{ paddingBottom: "5%" }}>{modalText}</p>
+        <p style={{ paddingBottom: "2%" }}>{modalText}</p>
+        {noahResponseText === undefined ? null : border}
+        {/* {border} */}
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: 0 }}>{noahResponseDate}</span>
+        </div>
+        <p style={{ paddingBottom: "2%" }}>{noahResponse}</p>
+        {noahResponseText === undefined ? null : border}
+        {/* {border} */}
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: 0 }}>{userResponseDate}</span>
+        </div>
+        <p style={{ paddingBottom: "5%" }}>{userResponse}</p>
       </div>
+
       <div style={toggleTextStyle}>
         <span
           id="reachingOutBtn"
@@ -147,6 +183,12 @@ const ResponseModal = (props) => {
           onClick={() => {
             setModalText(noah_email);
             setSubjectText("");
+            setResponseDate("");
+            setNoahResponse("");
+            setNoahResponseDate("");
+            setUserResponse("");
+            setUserResponseDate("");
+            setBorder("");
             document.getElementById("reachingOutBtn").style.textDecoration =
               "underline";
             document.getElementById("responseBtn").style.textDecoration =
@@ -165,6 +207,17 @@ const ResponseModal = (props) => {
           onClick={() => {
             setModalText(text);
             setSubjectText(subject);
+            setResponseDate(date);
+            setNoahResponseDate(_noahResponseDate);
+            setNoahResponse(noahResponseText);
+            setUserResponseDate(_userResponseDate);
+            setUserResponse(userResponseText);
+
+            if (noahResponseText !== undefined) {
+              setBorder(Border);
+            } else {
+              setBorder("");
+            }
             document.getElementById("responseBtn").style.textDecoration =
               "underline";
             document.getElementById("reachingOutBtn").style.textDecoration =
