@@ -231,6 +231,16 @@ body {
   padding-left: 0.5%;
 }
 
+.maskImgs {
+  border: 0px solid black;
+  transition: border 300ms ease-in-out;
+}
+
+.maskImgs:hover {
+  border: 1px solid white;
+  z-index: 10000;
+}
+
 .button-fade-in {
   opacity: 1 !important;
 }

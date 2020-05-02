@@ -195,7 +195,7 @@ body {
 }
 
 .text-fade-in {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 /* .keyphrases {
