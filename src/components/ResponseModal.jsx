@@ -111,6 +111,16 @@ const ResponseModal = (props) => {
   let userResponseText = props.details.user_response;
   let _userResponseDate = props.details.user_response_date;
 
+  let userResponseText2 = props.details.user_response_2;
+  let _userResponseDate2 = props.details.user_response_2_date;
+  let userResponseText3 = props.details.user_response_3;
+  let _userResponseDate3 = props.details.user_response_3_date;
+
+  let noahResponseText2 = props.details.noah_response_2;
+  let _noahResponseDate2 = props.details.noah_response_2_date;
+  let noahResponseText3 = props.details.noah_response_3;
+  let _noahResponseDate3 = props.details.noah_response_3_date;
+
   const [modalText, setModalText] = useState(text);
   const [subjectText, setSubjectText] = useState(subject);
   const [responseDate, setResponseDate] = useState(date);
@@ -120,6 +130,27 @@ const ResponseModal = (props) => {
   const [noahResponseDate, setNoahResponseDate] = useState(_noahResponseDate);
   const [userResponse, setUserResponse] = useState(userResponseText);
   const [userResponseDate, setUserResponseDate] = useState(_userResponseDate);
+
+  const [noahResponse2, setNoahResponse2] = useState(noahResponseText2);
+  const [noahResponse2Date, setNoahResponse2Date] = useState(
+    _noahResponseDate2
+  );
+
+  const [userResponse2, setUserResponse2] = useState(userResponseText2);
+  const [userResponse2Date, setUserResponse2Date] = useState(
+    _userResponseDate2
+  );
+
+  const [noahResponse3, setNoahResponse3] = useState(noahResponseText3);
+  const [noahResponse3Date, setNoahResponse3Date] = useState(
+    _noahResponseDate3
+  );
+
+  const [userResponse3, setUserResponse3] = useState(userResponseText3);
+  const [userResponse3Date, setUserResponse3Date] = useState(
+    _userResponseDate3
+  );
+
   const [border, setBorder] = useState(Border);
 
   const indexNum = Math.floor(Math.random() * Math.floor(5));
@@ -163,17 +194,35 @@ const ResponseModal = (props) => {
         </div>
         <p style={{ paddingBottom: "2%" }}>{modalText}</p>
         {noahResponseText === undefined ? null : border}
-        {/* {border} */}
         <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{noahResponseDate}</span>
         </div>
         <p style={{ paddingBottom: "2%" }}>{noahResponse}</p>
-        {noahResponseText === undefined ? null : border}
-        {/* {border} */}
+        {userResponseText === undefined ? null : border}
         <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{userResponseDate}</span>
         </div>
-        <p style={{ paddingBottom: "5%" }}>{userResponse}</p>
+        <p style={{ paddingBottom: "2%" }}>{userResponse}</p>
+        {noahResponse2 === undefined ? null : border}
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: 0 }}>{noahResponse2Date}</span>
+        </div>
+        <p style={{ paddingBottom: "2%" }}>{noahResponse2}</p>
+        {userResponse2 === undefined ? null : border}
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: "0" }}>{userResponse2Date}</span>
+        </div>
+        <p style={{ paddingBottom: "2%" }}>{userResponse2}</p>
+        {noahResponse3 === undefined ? null : border}
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: "0" }}>{noahResponse3Date}</span>
+        </div>
+        <p style={{ paddingBottom: "2%" }}>{noahResponse3}</p>
+        {userResponse3 === undefined ? null : border}
+        <div style={ModalHeaderStyle}>
+          <span style={{ marginBottom: "0" }}>{userResponse3Date}</span>
+        </div>
+        <p style={{ paddingBottom: "2%" }}>{userResponse3}</p>
       </div>
 
       <div style={toggleTextStyle}>
@@ -188,6 +237,17 @@ const ResponseModal = (props) => {
             setNoahResponseDate("");
             setUserResponse("");
             setUserResponseDate("");
+
+            setNoahResponse2("");
+            setNoahResponse2Date("");
+            setUserResponse2("");
+            setUserResponse2Date("");
+
+            setNoahResponse3("");
+            setNoahResponse3Date("");
+            setUserResponse3("");
+            setUserResponse3Date("");
+
             setBorder("");
             document.getElementById("reachingOutBtn").style.textDecoration =
               "underline";
@@ -212,6 +272,16 @@ const ResponseModal = (props) => {
             setNoahResponse(noahResponseText);
             setUserResponseDate(_userResponseDate);
             setUserResponse(userResponseText);
+
+            setNoahResponse2(noahResponseText2);
+            setNoahResponse2Date(_noahResponseDate2);
+            setUserResponse2(userResponseText2);
+            setUserResponse2Date(_userResponseDate2);
+
+            setNoahResponse3(noahResponseText3);
+            setNoahResponse3Date(_noahResponseDate3);
+            setUserResponse3(userResponseText3);
+            setUserResponse3Date(_userResponseDate3);
 
             if (noahResponseText !== undefined) {
               setBorder(Border);

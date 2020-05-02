@@ -37,7 +37,7 @@ let LandingTypewriter = () => {
           onInit={(typewriter) => {
             typewriter
               .typeString(
-                "<span>Hi _________,</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: . I thought it was important that you know your image was used for this..."
+                "<span>Hi _________,</br></br>I am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: ____________. I thought it was important that you know your image was used for this..."
               )
               .callFunction(textAppear)
               .pauseFor(9999999999999)

@@ -31,7 +31,24 @@ const conversations = [
     subject: "Fudge Brownie Image on Flickr",
     date: "02/25/2020 2:45AM",
     keyphrase: "A system which has such frightening potential",
-    noah_response: "there are too many back and forths. need to figure out",
+    noah_response:
+      "Hi Dauvit,\n\nFirst of all I'd like to thank you for getting back to me.\n\nAbout me - I am a graduate student at Parsons in NYC. I am in my last semester in the Design and Technology MFA program. I am increasingly interested in issues surrounding surveillance, privacy, AI, and the ways in which there are these invisible layers of automation all around us. I was very disturbed when I discovered the ways in which datasets like COCO are created and organized and thought it to be a worthy endeavor to reach out to people such as yourself and inform them of how their photos are being appropriated for such purposes.\n\nThe COCO dataset comes with metadata for each image and I wrote a short script that allowed me to reverse engineer this to give me all the flickr usernames of the people whose photos were scraped and have been reaching out to these people for the past couple weeks.\n\nYour recent lecture sounds very interesting and I would love to watch it if there is any recording of it!\n\nThanks,\nNoah",
+    noah_response_date: "02/25/2020 11:38AM",
+    user_response:
+      "Thank you, Noah.\n\nWeirdly, my talk IS available -  http://www.3dprinttooling.com/dalexander.html\n\nHope you enjoy it. I, too, am a designer/maker who has become really alarmed by the way my digital data is being abused. I have barely engaged with even Flickr for about a year now while I reappraise.\n\nAre you planning on doing anything with your responses?",
+    user_response_date: "02/26/2020 3:36AM",
+    noah_response_2:
+      "Really interesting lecture! Thanks for sharing.\n\nRegarding the responses, I'm interested in juxtaposing the responses I get (from people such as yourself) with the image captions that the COCO dataset provides for each image. These captions were written by hired Amazon Mechanical Turk workers, and while they are supposed to be objective summaries of the images, they often sound quite subjective and make certain assumptions about the image. The final form of this is still TBD at the moment, but that's my thinking thus far. If you don't want your response as part of it, by all means let me know and I'm happy to exclude it. It would be quite ironic if I took the information from you against your permission for a project that deals with internet privacy.\n\nThanks,\nNoah",
+    noah_response_2_date: "02/27/2020 11:54AM",
+    user_response_2:
+      "Noah,\n\nI am, of course, very happy for you to use my responses and any ideas from the video in your work.\n\nI've attached a text from the talk which has the references at the bottom. It is a bit fragmentary as it is one of my 'shooting scripts'. You are free to use any of this.",
+    user_response_2_date: "02/28/2020 3:15AM",
+    noah_response_3:
+      "Hi Dauvit,\n\nThanks so much for this. I'm thinking of juxtaposing the responses and exchanges I have with the people that get back to me with the captions that COCO provides for each image. It's really interesting to see this comparison as there's a lot of subjectivity involved in these seemingly objective captions.\n\nAll of this (as well as the work of my classmates) will be shown during our thesis showcase in May. You are welcome to attend if you'll be in the New York area around that time!\n\nThanks,\nNoah",
+    noah_response_3_date: "02/28/2020 2:04PM",
+    user_response_3:
+      "Noah,\n\nIn that case, you'll want to know that the image shows my partner eating a chocolate fudge brownie in what was once our favourite cafe in Brighton, England, now, alas! gone. It is really odd to think that such a personal and almost intimate image, something which can only really have meaning to me and a handful of friends, can come to be used in something so sinister. I'm also rather annoyed that my decision to release things on a CC license has been abused.\n\nI would love to come over to the show but my own students graduate at that point and I'm not likely to get away!\nThanks for inviting me.\n\nYours,\nDauvit.",
+    user_response_3_date: "02/28/2020 4:26PM",
     captions: [
       "a man displays food on the end of a fork",
       "a man holds up a piece of desert on a fork",
@@ -40,7 +57,6 @@ const conversations = [
       "a man holding out a fork with some food on it",
     ],
   },
-
   {
     id: "219489",
     filename_orig: "000000219489.jpg",
@@ -70,8 +86,13 @@ const conversations = [
     keyphrase: "Are you a bot yourself?",
     noah_response:
       "Hey Tom,\n\nThanks for getting back to me ! Yes I indeed am a real person! I'm a graduate student at Parsons in NYC.\n\nI am looking into these image datasets and the ways in which they were created and collected. The COCO researches scraped flickr for about 180,000 photos without the knowledge or consent of the photographers such as yourself. I'm interested in re-contextualizing these photos for their original intended purposes, and learning about the stories behind them. I'm also interested in engaging with the photographers and hearing their reactions to their photos being used in such technologies, as issues surrounding privacy and surveillance are such prominent topics right now.\n\nThanks,\nNoah",
+    noah_respose_date: "02/23/2020 6:02PM",
     user_response:
       "Hi Noah,\n\na good good, it was afraid AI was getting a lot better in messages as well :)\n\nI thought i had deleted all my photos from flickr, so on second thought i was surprised to see them still there.\n\nI just went back in and deleted them again.\n\nthank you for the reminder. \n\nThey had also made all photos that were supposed to be private public.. which is pretty bad.\n\nI will never trust them again.\n\ngood luck with your studies!\n\nKind regards,\ntom",
+    user_response_date: "02/24/2020 4:53AM",
+    noah_response_2:
+      "Wow I can't believe they made your private photos public! That's horrible. You should reach out to Flickr and let them know.\n\nThanks,\nNoah",
+    noah_response_2_date: "02/24/2020 10:06AM",
     captions: [
       "a man riding a wave on a white surfboard",
       "a man surfing on a wave in the ocean",
@@ -108,9 +129,11 @@ const conversations = [
     subject: "Re: Your photo 'Lisa - Late night computing'",
     date: "03/01/2020",
     keyphrase: "AI is pretty awesome and it needs to be fed data to get better",
-    noah_response: "lost",
+    noah_response:
+      "This message is no longer retrievable due to my Flickr ban.",
     user_response:
       "Thanks for your reply.\n\nHappy for you to use my response if you are collating such things.\n\nOut of interest what do you find most people's response is? are people generally accepting of there 'internet content' being in the public domain and available for consumption? - or are most alarmed by it? - are the internet masses streetwise and accepting or naive and duped?\n\nWhat is your opinion on it?\n\nGareth W.",
+    user_response_date: "03/02/2020 5:03PM",
     captions: [
       "a woman in a polka dot top laying in a bed",
       "a woman laying in bed while using a laptop computer",
@@ -128,9 +151,11 @@ const conversations = [
     subject: "Re: Your 'Chris' birthday cake' Photo",
     date: "02/24/2020 11:38PM",
     keyphrase: "We are complacent due to our ignorance",
-    noah_response: "no have",
+    noah_response:
+      "This message is no longer retrievable due to my Flickr ban.",
     user_response:
-      "We are complacent due to our ignorance. Good grief - we are (mostly) amateur photographers, not spies. Hard to keep up with what's PC and what not to post that might attract perverts, and those who buy photos and never pay . . . to think mighty corps are illegally data gathering is another step too far.\n\nThank goodness for people like you.",
+      "Yes please, Noah.\nWe are complacent due to our ignorance. Good grief - we are (mostly) amateur photographers, not spies. Hard to keep up with what's PC and what not to post that might attract perverts, and those who buy photos and never pay . . . to think mighty corps are illegally data gathering is another step too far.\n\nThank goodness for people like you.",
+    user_response_date: "03/08/2020 4:14PM",
     captions: [
       "an old man siting at a wooden table",
       "a man at a table with flowers and a cake",
@@ -217,7 +242,8 @@ const conversations = [
     subject: "Re: Your photo 'Gearcon_0408 The Umbrella'",
     date: "03/01/2020 9:54PM",
     keyphrase: "It's a slippery slope",
-    noah_response: "lost",
+    noah_response:
+      "This message is no longer retrievable due to my Flickr ban.",
     captions: [
       "a woman holding an umbrella inside a darkened room",
       "the girl in a blue dress has a green umbrella",
@@ -397,9 +423,11 @@ const conversations = [
     subject: "Re: Your photo 'Mario Kart Wii, Memorial Day Weekend Edition'",
     date: "03/02/2020 3:14PM",
     keyphrase: "Fascinating indeed!",
-    noah_response: "lost",
+    noah_response:
+      "This message is no longer retrievable due to my Flickr ban.",
     user_response:
       "Fascinating indeed! Clearly the generic caption wouldn't really have had any way to know the family unit in the photo, but other than the fact I think I said (or at least should have) cousin's kids (plural), that description would match the generic description for the four people. My more specific description was probably more for your interest than of any use for AI purposes.\n\nThanks for the update. Cheers!",
+    user_response_date: "03/11/2020 5:51PM",
     captions: [
       "a pretty young girl sitting on the floor playing a video game with her family",
       "four people sitting down with wii controllers and steering wheels",
@@ -411,6 +439,6 @@ const conversations = [
 ];
 
 export const noah_email =
-  "Hi __________\n\nI am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here:_________________. I thought it was important that you know your image was used for this.\n\nNow that you are aware, I was wondering if you could tell me a little more about the photo. What was the original context for it being taken? Where/why did you shoot it? If there is any backstory, I would love to hear about it.\n\nLastly, if you have any opinions about your image being used in this regard, I’d love to hear from you about that as well.\n\nThanks";
+  "Hi __________\n\nI am writing to let you know that your photo was used as part of an image dataset that Microsoft created a number of years ago. The name of the dataset is called COCO and comprises of hundreds of thousands of images scraped from Flickr accounts without the knowledge of the Flickr members such as yourself. This dataset is often used to build computer programs that are used for surveillance cameras and other detection purposes. I found your image here: _______________. I thought it was important that you know your image was used for this.\n\nNow that you are aware, I was wondering if you could tell me a little more about the photo. What was the original context for it being taken? Where/why did you shoot it? If there is any backstory, I would love to hear about it.\n\nLastly, if you have any opinions about your image being used in this regard, I’d love to hear from you about that as well.\n\nThanks";
 
 export default conversations;
