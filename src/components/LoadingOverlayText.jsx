@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import React from "react";
+import styled from "styled-components";
 
 import LandingMasonry from "./LandingMasonry";
 
@@ -19,38 +19,41 @@ const textStyle = {
   zIndex: "1",
 };
 
-const buttonStyle = {
-  color: "white",
-  backgroundColor: "black",
-  fontFamily: "RobotoMono",
-  fontSize: "1.7rem",
-  textAlign: "center",
-  lineHeight: "33px",
-  letterSpacing: "0.05rem",
-  transform: "translate(-50%, 0%)",
-  marginTop: "2%",
-  marginLeft: "50%",
-  marginBottom: "6%",
-  width: "auto",
-  paddingLeft: "18px",
-  paddingRight: "18px",
-  border: "none",
-  zIndex: "1",
-};
+const EnterButton = styled.button`
+  color: white;
+  background-color: black;
+  font-family: Courier;
+  font-size: 1.7rem;
+  text-align: center;
+  line-height: 33px;
+  letter-spacing: 0.1rem;
+  transform: translate(-50%, 0%);
+  margin-top: 2%;
+  margin-left: 50%;
+  margin-bottom: 6%;
+  width: auto;
+  padding: 0.3rem;
+  border: none;
+  z-indez: 1;
+  transition: 200ms color linear, 200ms background-color linear ;
+  cursor: help;
+  &:hover {
+    background-color: cyan;
+    color: red;
+  },
+`;
 
 const LoadingOverlayText = (props) => {
-  const [appear, setAppear] = useState(true);
-
   function fadeAndSwitch() {
     document.getElementById("openingText").classList.add("fade-exit");
 
     setTimeout(() => {
       document.getElementById("landingMasonry").classList.add("fade-exit");
-    }, 2500);
+    }, 2000);
 
     setTimeout(() => {
       props.buttonClick();
-    }, 3000);
+    }, 2500);
   }
 
   return (
@@ -58,7 +61,6 @@ const LoadingOverlayText = (props) => {
       <span id="landingMasonry">
         <LandingMasonry></LandingMasonry>
       </span>
-      {/* <CSSTransition in={appear} appear={true} timeout={1000} classNames="fade"> */}
       <div id="openingText" style={{ marginTop: "10%" }}>
         <p style={textStyle}>
           Masked Contexts is an exploration into the COCO dataset and a dialogue
@@ -84,11 +86,8 @@ const LoadingOverlayText = (props) => {
         <p style={textStyle}>
           All images shown on this site are from this public dataset.
         </p>
-        <button onClick={() => fadeAndSwitch()} style={buttonStyle}>
-          Enter
-        </button>
+        <EnterButton onClick={() => fadeAndSwitch()}>Enter</EnterButton>
       </div>
-      {/* </CSSTransition> */}
     </>
   );
 };
