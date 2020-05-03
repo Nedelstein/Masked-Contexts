@@ -5,6 +5,7 @@ import { noah_email } from "../conversations_lookup";
 import speakText from "./SpeakText";
 
 const ModalTextStyle = {
+  display: "block",
   position: "fixed",
   color: "black",
   top: "0",
@@ -12,7 +13,7 @@ const ModalTextStyle = {
   minHeight: "100%",
   maxWidth: "35vw",
   marginLeft: "3%",
-  marginRight: "55%",
+  // marginRight: "55%",
   marginTop: "0",
   whiteSpace: "pre-wrap",
   fontFamily: "RobotoMono",
@@ -36,23 +37,29 @@ const ModalHeaderStyle = {
 const imgStyle = {
   // position: "-webkit-sticky",
   // position: "sticky",
-  position: "fixed",
+  // position: "fixed",
   display: "inline-block",
   // top: "50%",
-  top: "45%",
-  left: "54%",
+  // top: "42%",
+  // left: "53%",
+  margin: "-35% 35%",
   maxWidth: "40vw",
   maxHeight: "70vh",
-  transform: "translateY(-50%)",
+  // transform: "translateY(-50%)",
+  cursor: "help",
 };
 
 // let captionDisplay;
 const captionText = {
   // display: captionDisplay,
-  position: "fixed",
-  overflow: "auto",
-  top: "30%",
-  left: "54%",
+  // position: "fixed",
+  // overflow: "auto",
+  // top: "27%",
+  // left: "51.5%",
+  position: "absolute",
+  margin: "-35% 35%",
+  top: "0px",
+  left: "0px",
   maxWidth: "40vw",
   fontFamily: "Typewriter",
   fontSize: "16px",
@@ -60,15 +67,23 @@ const captionText = {
   color: "black",
   backgroundColor: "rgba(255,255,0,.9)",
   padding: "3px",
+  // transform: "translateY(-50%)",
+};
+
+const rightDivStyle = {
+  maxWidth: "35vw",
+  left: "36vw",
+  position: "relative",
 };
 
 const toggleTextStyle = {
   // position: "sticky",
-  position: "fixed",
+  // position: "fixed",
   display: "inline-block",
   textAlign: "center",
   // bottom: "50%",
-  top: "42%",
+  // top: "42%",
+  marginTop: "50%",
   left: "42%",
   paddingBottom: "6%",
   paddingTop: "1%",
@@ -185,7 +200,7 @@ const ResponseModal = (props) => {
   };
 
   return (
-    <div style={{ display: "block" }}>
+    <div style={{ display: "block", width: "100%" }}>
       <div style={ModalTextStyle}>
         <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{responseDate}</span>
@@ -225,96 +240,109 @@ const ResponseModal = (props) => {
         <p>{userResponse3}</p>
       </div>
 
-      <div style={toggleTextStyle}>
-        <span
-          id="reachingOutBtn"
-          style={{ marginRight: "27px", cursor: "pointer" }}
-          onClick={() => {
-            setModalText(noah_email);
-            setSubjectText("");
-            setResponseDate("");
-            setNoahResponse("");
-            setNoahResponseDate("");
-            setUserResponse("");
-            setUserResponseDate("");
+      <div style={rightDivStyle}>
+        <div style={toggleTextStyle}>
+          <span
+            id="reachingOutBtn"
+            style={{ marginRight: "27px", cursor: "pointer" }}
+            onClick={() => {
+              setModalText(noah_email);
+              setSubjectText("");
+              setResponseDate("");
+              setNoahResponse("");
+              setNoahResponseDate("");
+              setUserResponse("");
+              setUserResponseDate("");
+              setNoahResponse2("");
+              setNoahResponse2Date("");
+              setUserResponse2("");
+              setUserResponse2Date("");
+              setNoahResponse3("");
+              setNoahResponse3Date("");
+              setUserResponse3("");
+              setUserResponse3Date("");
 
-            setNoahResponse2("");
-            setNoahResponse2Date("");
-            setUserResponse2("");
-            setUserResponse2Date("");
-
-            setNoahResponse3("");
-            setNoahResponse3Date("");
-            setUserResponse3("");
-            setUserResponse3Date("");
-
-            setBorder("");
-            document.getElementById("reachingOutBtn").style.textDecoration =
-              "underline";
-            document.getElementById("responseBtn").style.textDecoration =
-              "none";
-          }}
-        >
-          Reaching Out
-        </span>
-        <span
-          id="responseBtn"
-          style={{
-            position: "sticky",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-          onClick={() => {
-            setModalText(text);
-            setSubjectText(subject);
-            setResponseDate(date);
-            setNoahResponseDate(_noahResponseDate);
-            setNoahResponse(noahResponseText);
-            setUserResponseDate(_userResponseDate);
-            setUserResponse(userResponseText);
-
-            setNoahResponse2(noahResponseText2);
-            setNoahResponse2Date(_noahResponseDate2);
-            setUserResponse2(userResponseText2);
-            setUserResponse2Date(_userResponseDate2);
-
-            setNoahResponse3(noahResponseText3);
-            setNoahResponse3Date(_noahResponseDate3);
-            setUserResponse3(userResponseText3);
-            setUserResponse3Date(_userResponseDate3);
-
-            if (noahResponseText !== undefined) {
-              setBorder(Border);
-            } else {
               setBorder("");
-            }
-            document.getElementById("responseBtn").style.textDecoration =
-              "underline";
-            document.getElementById("reachingOutBtn").style.textDecoration =
-              "none";
-          }}
-        >
-          Response
-        </span>
-      </div>
+              document.getElementById("reachingOutBtn").style.textDecoration =
+                "underline";
+              document.getElementById("responseBtn").style.textDecoration =
+                "none";
+            }}
+          >
+            Reaching Out
+          </span>
+          <span
+            id="responseBtn"
+            style={{
+              position: "sticky",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+            onClick={() => {
+              setModalText(text);
+              setSubjectText(subject);
+              setResponseDate(date);
+              setNoahResponseDate(_noahResponseDate);
+              setNoahResponse(noahResponseText);
+              setUserResponseDate(_userResponseDate);
+              setUserResponse(userResponseText);
 
-      <div style={{ position: "relative" }}>
-        <img style={imgStyle} src={modalImage} alt={props.details.id} />
-        <span>{typeText}</span>
-        <span
-          class="cocoBtnStyle"
-          onMouseEnter={() => {
-            setModalImage(MaskIMG(mask));
-            setTypeText(TypeString);
-          }}
-          onMouseLeave={() => {
-            setModalImage(IMG(origImage));
-            speechSynthesis.cancel();
-            setTypeText(Empty);
-          }}
-        >
-          COCO Mode
-        </span>
+              setNoahResponse2(noahResponseText2);
+              setNoahResponse2Date(_noahResponseDate2);
+              setUserResponse2(userResponseText2);
+              setUserResponse2Date(_userResponseDate2);
+
+              setNoahResponse3(noahResponseText3);
+              setNoahResponse3Date(_noahResponseDate3);
+              setUserResponse3(userResponseText3);
+              setUserResponse3Date(_userResponseDate3);
+
+              if (noahResponseText !== undefined) {
+                setBorder(Border);
+              } else {
+                setBorder("");
+              }
+              document.getElementById("responseBtn").style.textDecoration =
+                "underline";
+              document.getElementById("reachingOutBtn").style.textDecoration =
+                "none";
+            }}
+          >
+            Response
+          </span>
+        </div>
+        <div style={{ position: "relative" }}>
+          <img
+            style={imgStyle}
+            src={modalImage}
+            alt={props.details.id}
+            onMouseEnter={() => {
+              setModalImage(MaskIMG(mask));
+              setTypeText(TypeString);
+            }}
+            onMouseLeave={() => {
+              setModalImage(IMG(origImage));
+              speechSynthesis.cancel();
+              setTypeText(Empty);
+            }}
+          />
+          {/* <span style={captionText}>asdasd</span> */}
+          <span>{typeText}</span>
+          {/* <span
+            class="cocoBtnStyle"
+            onMouseEnter={() => {
+              setModalImage(MaskIMG(mask));
+              setTypeText(TypeString);
+            }}
+            onMouseLeave={() => {
+              setModalImage(IMG(origImage));
+              speechSynthesis.cancel();
+              setTypeText(Empty);
+            }}
+          >
+            COCO Mode
+          </span> */}
+        </div>
       </div>
     </div>
   );
