@@ -4,106 +4,7 @@ import Typewriter from "typewriter-effect";
 import { noah_email } from "../conversations_lookup";
 import speakText from "./SpeakText";
 
-const ModalTextStyle = {
-  display: "block",
-  position: "fixed",
-  color: "black",
-  top: "0",
-  height: "100%",
-  minHeight: "100%",
-  maxWidth: "35vw",
-  marginLeft: "3%",
-  // marginRight: "55%",
-  marginTop: "0",
-  whiteSpace: "pre-wrap",
-  fontFamily: "RobotoMono",
-  fontSize: "12px",
-  lineHeight: "20px",
-  paddingLeft: "15px",
-  paddingRight: "15px",
-  borderRight: "1px solid black",
-  borderLeft: "1px solid black",
-  overflowY: "auto",
-  zIndex: "999",
-};
-
-const ModalHeaderStyle = {
-  color: "black",
-  fontSize: "10px",
-  paddingTop: "25px",
-  lineHeight: "20px",
-};
-
-const imgStyle = {
-  // position: "-webkit-sticky",
-  // position: "sticky",
-  // position: "fixed",
-  display: "inline-block",
-  // top: "50%",
-  // top: "42%",
-  // left: "53%",
-  margin: "-35% 35%",
-  maxWidth: "40vw",
-  maxHeight: "70vh",
-  // transform: "translateY(-50%)",
-  cursor: "help",
-};
-
-// let captionDisplay;
-const captionText = {
-  // display: captionDisplay,
-  // position: "fixed",
-  // overflow: "auto",
-  // top: "27%",
-  // left: "51.5%",
-  position: "absolute",
-  margin: "-35% 35%",
-  top: "0px",
-  left: "0px",
-  maxWidth: "40vw",
-  fontFamily: "Typewriter",
-  fontSize: "16px",
-  fontWeight: "bold",
-  color: "black",
-  backgroundColor: "rgba(255,255,0,.9)",
-  padding: "3px",
-  // transform: "translateY(-50%)",
-};
-
-const rightDivStyle = {
-  maxWidth: "35vw",
-  left: "36vw",
-  position: "relative",
-};
-
-const toggleTextStyle = {
-  // position: "sticky",
-  // position: "fixed",
-  display: "inline-block",
-  textAlign: "center",
-  // bottom: "50%",
-  // top: "42%",
-  marginTop: "50%",
-  left: "42%",
-  paddingBottom: "6%",
-  paddingTop: "1%",
-  fontFamily: "RobotoMono",
-  fontSize: "13px",
-  transform: "rotate(-90deg) translate(0, -50%)",
-  zIndex: "99999",
-};
-
-const textBorderStyle = {
-  // borderTop: "1px solid black",
-  width: "100%",
-  height: "auto",
-  left: "0%",
-  position: "absolute",
-};
-
-const Border = () => {
-  return <hr style={textBorderStyle}></hr>;
-};
+let modalTextCol = "black";
 
 const IMG = (imgName) => {
   return require(`../assets/images/conversations/original_imgs/${imgName}`);
@@ -114,7 +15,95 @@ const MaskIMG = (imgName) => {
 };
 
 const ResponseModal = (props) => {
-  console.log(props.details);
+  const ModalTextStyle = {
+    display: "block",
+    position: "fixed",
+    color: modalTextCol,
+    top: "0",
+    height: "100%",
+    minHeight: "100%",
+    maxWidth: "35vw",
+    marginLeft: "3%",
+    // marginRight: "55%",
+    marginTop: "0",
+    whiteSpace: "pre-wrap",
+    fontFamily: "RobotoMono",
+    fontSize: "12px",
+    lineHeight: "20px",
+    paddingLeft: "15px",
+    paddingRight: "15px",
+    borderRight: "1px solid black",
+    borderLeft: "1px solid black",
+    overflowY: "auto",
+    zIndex: "999",
+  };
+
+  const ModalHeaderStyle = {
+    color: modalTextCol,
+    fontSize: "10px",
+    paddingTop: "25px",
+    lineHeight: "20px",
+  };
+
+  const imgStyle = {
+    display: "inline-block",
+    // left: "53%",
+    margin: "-35% 35%",
+    maxWidth: "40vw",
+    maxHeight: "70vh",
+    // transform: "translateY(-50%)",
+    cursor: "help",
+  };
+
+  const captionText = {
+    position: "absolute",
+    margin: "-35% 0%",
+    top: "0px",
+    left: "35%",
+    width: "fit-content",
+    fontFamily: "Typewriter",
+    fontSize: "16px",
+    fontWeight: "bold",
+    color: "black",
+    backgroundColor: "rgba(255,255,0,.9)",
+    padding: "3px",
+    // transform: "translateY(-50%)",
+  };
+
+  const rightDivStyle = {
+    maxWidth: "35vw",
+    left: "36vw",
+    position: "relative",
+  };
+
+  const toggleTextStyle = {
+    display: "inline-block",
+    textAlign: "center",
+    color: modalTextCol,
+    // bottom: "50%",
+    marginTop: "50%",
+    left: "42%",
+    paddingBottom: "6%",
+    paddingTop: "1%",
+    fontFamily: "RobotoMono",
+    fontSize: "13px",
+    transform: "rotate(-90deg) translate(0, -50%)",
+    zIndex: "99999",
+  };
+
+  const textBorderStyle = {
+    width: "100%",
+    height: "auto",
+    left: "0%",
+    position: "absolute",
+    borderColor: { modalTextCol },
+    borderWidth: "0.5px",
+  };
+
+  const Border = () => {
+    return <hr style={textBorderStyle}></hr>;
+  };
+
   let text = props.details.text;
   let origImage = props.details.filename_orig;
   let date = props.details.date;
@@ -167,6 +156,7 @@ const ResponseModal = (props) => {
   );
 
   const [border, setBorder] = useState(Border);
+  // const [cocoMode, setCocoMode] = useState(null);
 
   const indexNum = Math.floor(Math.random() * Math.floor(5));
 
@@ -201,15 +191,15 @@ const ResponseModal = (props) => {
 
   return (
     <div style={{ display: "block", width: "100%" }}>
-      <div style={ModalTextStyle}>
-        <div style={ModalHeaderStyle}>
+      <div id="modalText" style={ModalTextStyle}>
+        <div id="modalHeader" style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{responseDate}</span>
           <br />
           <span style={{ marginTop: 0 }}>{subjectText}</span>
         </div>
         <p style={{ paddingBottom: "2%" }}>{modalText}</p>
         {noahResponseText === undefined ? null : border}
-        <div style={ModalHeaderStyle}>
+        <div id="modalHeader" style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{noahResponseDate}</span>
         </div>
         <p style={{ paddingBottom: "2%" }}>{noahResponse}</p>
@@ -319,29 +309,27 @@ const ResponseModal = (props) => {
             onMouseEnter={() => {
               setModalImage(MaskIMG(mask));
               setTypeText(TypeString);
+              document.getElementById("modal").style.background = "black";
+              // document.getElementById("modalText").style.color = "white";
+              // document.getElementById("modalHeader").style.color = "white";
+              modalTextCol = "white";
+
+              // document.getElementById("")
             }}
             onMouseLeave={() => {
               setModalImage(IMG(origImage));
               speechSynthesis.cancel();
               setTypeText(Empty);
+              document.getElementById("modal").style.background = "white";
+              // document.getElementById("modalText").style.color = "black";
+              // document.getElementById("modalHeader").style.color = "black";
+              modalTextCol = "black";
             }}
           />
-          {/* <span style={captionText}>asdasd</span> */}
-          <span>{typeText}</span>
-          {/* <span
-            class="cocoBtnStyle"
-            onMouseEnter={() => {
-              setModalImage(MaskIMG(mask));
-              setTypeText(TypeString);
-            }}
-            onMouseLeave={() => {
-              setModalImage(IMG(origImage));
-              speechSynthesis.cancel();
-              setTypeText(Empty);
-            }}
-          >
-            COCO Mode
+          {/* <span style={captionText}>
+            a group of people shopping in front of a thing
           </span> */}
+          {typeText}
         </div>
       </div>
     </div>

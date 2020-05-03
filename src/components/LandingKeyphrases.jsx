@@ -114,6 +114,7 @@ const KeyphraseText = () => {
         />
       )}
       <Modal
+        id="modal"
         closeTimeoutMS={500}
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
