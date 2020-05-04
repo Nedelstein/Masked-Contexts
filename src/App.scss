@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  // background-color: black;
-  background-color: #fedcd2;
+  background-color: #f5f5dc;
+  // background-color: #fedcd2;
 }
 ::selection {
   background: cyan;
@@ -222,9 +222,10 @@ body {
   left: 50;
   justify-content: center;
   align-items: center;
+  text-align: left;
   font-family: Typewriter;
-  font-size: 32px;
-  text-align: center;
+  font-size: 28px;
+  // text-align: center;
   color: black;
   background-color: yellow;
   z-index: 99999999999;

@@ -4,8 +4,9 @@ const ImageStyle = {
   // border: "solid black",
   // opacity: "0.9",
   readOnly: "false",
-  width: "100%",
-  height: "auto",
+  // width: "100%",
+  maxHeight: "58vh",
+  width: "auto",
   zIndex: "0",
 };
 
@@ -23,7 +24,7 @@ export const LandingHoverImg = (props) => {
   }
 
   if (mousePosY <= window.innerHeight / 2) {
-    posY = "45vh";
+    posY = "40vh";
   } else if (mousePosY > window.innerHeight / 2) {
     posY = "10vh";
   }

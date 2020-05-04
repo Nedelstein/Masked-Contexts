@@ -24,8 +24,8 @@ const StyledBurger = styled.button`
   span {
     width: 2.2rem;
     height: 0.25rem;
-    // background: ${({ open }) => (open ? "#0D0C1D" : "#effffa")};
     background: black;
+    font-familt: Courier;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -54,7 +54,6 @@ const Burger = ({ open, setOpen, ...props }) => {
       aria-label="Toggle menu"
       open={open}
       aria-expanded={isExpanded}
-      open={open}
       onClick={() => setOpen(!open)}
       {...props}
     >

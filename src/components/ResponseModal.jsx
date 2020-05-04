@@ -96,7 +96,7 @@ const ResponseModal = (props) => {
     height: "auto",
     left: "0%",
     position: "absolute",
-    borderColor: { modalTextCol },
+    borderColor: "black",
     borderWidth: "0.5px",
   };
 
@@ -192,14 +192,14 @@ const ResponseModal = (props) => {
   return (
     <div style={{ display: "block", width: "100%" }}>
       <div id="modalText" style={ModalTextStyle}>
-        <div id="modalHeader" style={ModalHeaderStyle}>
+        <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{responseDate}</span>
           <br />
           <span style={{ marginTop: 0 }}>{subjectText}</span>
         </div>
         <p style={{ paddingBottom: "2%" }}>{modalText}</p>
         {noahResponseText === undefined ? null : border}
-        <div id="modalHeader" style={ModalHeaderStyle}>
+        <div style={ModalHeaderStyle}>
           <span style={{ marginBottom: 0 }}>{noahResponseDate}</span>
         </div>
         <p style={{ paddingBottom: "2%" }}>{noahResponse}</p>
@@ -309,26 +309,17 @@ const ResponseModal = (props) => {
             onMouseEnter={() => {
               setModalImage(MaskIMG(mask));
               setTypeText(TypeString);
-              document.getElementById("modal").style.background = "black";
-              // document.getElementById("modalText").style.color = "white";
-              // document.getElementById("modalHeader").style.color = "white";
+              document.getElementById("modal").style.backgroundColor = "black";
               modalTextCol = "white";
-
-              // document.getElementById("")
             }}
             onMouseLeave={() => {
               setModalImage(IMG(origImage));
               speechSynthesis.cancel();
               setTypeText(Empty);
-              document.getElementById("modal").style.background = "white";
-              // document.getElementById("modalText").style.color = "black";
-              // document.getElementById("modalHeader").style.color = "black";
+              document.getElementById("modal").style.backgroundColor = "white";
               modalTextCol = "black";
             }}
           />
-          {/* <span style={captionText}>
-            a group of people shopping in front of a thing
-          </span> */}
           {typeText}
         </div>
       </div>

@@ -16,7 +16,6 @@ import {
 import MainPage from "./pages";
 import About from "./pages/About";
 import NotFoundPage from "./pages/404";
-import Conversations from "./pages/Converesations";
 import Masks from "./pages/Masks";
 
 function App() {
@@ -30,10 +29,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/404" component={NotFoundPage} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/conversations" component={Conversations} />
+          <Route exact path="/about" component={About} />{" "}
           <Route exact path="/masks" component={Masks} />
-
           <Redirect to="/404" />
         </Switch>
       </Router>

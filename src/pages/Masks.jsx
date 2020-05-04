@@ -7,10 +7,6 @@ import { typeText, clearText } from "../components/TextIsTyping";
 
 const json = require("../assets/masks_filenames_captions.json");
 
-// let imgDiv;
-
-let textDiv;
-
 const MaskPageStyle = {
   display: "block",
   position: "fixed",
@@ -26,6 +22,7 @@ const ImgDivStyle = {
   alignItems: "center",
   margin: "1%",
   overflow: "hidden",
+  cursor: "help",
 };
 
 const imgStyle = {
