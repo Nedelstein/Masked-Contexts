@@ -5,8 +5,13 @@ import "../App.scss";
 // import Button from "./EnterButton";
 import LandingKeyphrases from "./LandingKeyphrases";
 
-const letterStyle = {
+const typeWriterContainer = {
   display: "block",
+  width: "55%",
+};
+
+const letterStyle = {
+  display: "inline-block",
   position: "relative",
   // overflow: "auto",
   color: "white",
@@ -17,15 +22,15 @@ const letterStyle = {
   // wordSpacing: "3px",
   lineHeight: "32px",
   width: "55%",
+  left: "50%",
   transform: "translate(-50%, 0%)",
   marginTop: "15%",
-  left: "50%",
   padding: "12px",
   zIndex: "1",
 };
 
 const LandingTypewriter = () => {
-  const [keyphrases, setKeyphrases] = useState();
+  const [keyphrases, setKeyphrases] = useState(null);
 
   const textAppear = () => {
     setKeyphrases(LandingKeyphrases);
@@ -36,7 +41,7 @@ const LandingTypewriter = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "100vw" }}>
       <div style={letterStyle}>
         <Typewriter
           onInit={(typewriter) => {
@@ -53,7 +58,7 @@ const LandingTypewriter = () => {
             delay: 0,
             // delay: 25
             autoStart: true,
-            loop: false,
+            loop: true,
             cursor: "*/",
           }}
         />

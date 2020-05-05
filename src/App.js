@@ -29,7 +29,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/404" component={NotFoundPage} />
-          <Route exact path="/about" component={About} />{" "}
+          <Route exact path="/about" component={About} />
           <Route exact path="/masks" component={Masks} />
           <Redirect to="/404" />
         </Switch>

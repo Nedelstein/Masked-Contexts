@@ -49,10 +49,6 @@ for (let i in conversations) {
   keyphrases.push(conversations[i].keyphrase);
 }
 
-const active = {
-  visibility: "hidden",
-};
-
 const KeyphraseText = () => {
   const [isHover, setHover] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
