@@ -1,23 +1,9 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
+
 import styled from "styled-components";
 
 import LandingMasonry from "./LandingMasonry";
-
-const textStyle = {
-  color: "white",
-  backgroundColor: "rgba(0,0,0,0.9)",
-  fontFamily: "RobotoMono",
-  fontSize: "16px",
-  textAlign: "left",
-  lineHeight: "30px",
-  transform: "translate(-50%, 0%)",
-  marginTop: "2%",
-  marginLeft: "50%",
-  //   marginBottom: "6%",
-  width: "60%",
-  padding: "12px",
-  zIndex: "1",
-};
 
 const EnterButton = styled.button`
   color: white;
@@ -47,6 +33,39 @@ const EnterButton = styled.button`
 `;
 
 const LoadingOverlayText = (props) => {
+  const isMobileDevice = useMediaQuery({
+    query: "(max-device-width: 500px)",
+  });
+
+  let textSize, textLineHeight, textMarginTop, textWidth;
+  if (isMobileDevice) {
+    textSize = "12px";
+    textLineHeight = "24px";
+    textMarginTop = "15%";
+    textWidth = "90%";
+  } else {
+    textSize = "16px";
+    textLineHeight = "30px";
+    textMarginTop = "2%";
+    textWidth = "60%";
+  }
+
+  const textStyle = {
+    color: "white",
+    backgroundColor: "rgba(0,0,0,0.9)",
+    fontFamily: "RobotoMono",
+    fontSize: textSize,
+    textAlign: "left",
+    lineHeight: textLineHeight,
+    transform: "translate(-50%, 0%)",
+    marginTop: textMarginTop,
+    marginLeft: "50%",
+    //   marginBottom: "6%",
+    width: textWidth,
+    padding: "12px",
+    zIndex: "1",
+  };
+
   function fadeAndSwitch() {
     document.getElementById("openingText").classList.add("fade-exit");
 

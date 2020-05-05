@@ -1,36 +1,47 @@
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
+import { useMediaQuery } from "react-responsive";
 import "../App.scss";
 
 // import Button from "./EnterButton";
 import LandingKeyphrases from "./LandingKeyphrases";
 
-const typeWriterContainer = {
-  display: "block",
-  width: "55%",
-};
-
-const letterStyle = {
-  display: "inline-block",
-  position: "relative",
-  // overflow: "auto",
-  color: "white",
-  backgroundColor: "black",
-  fontFamily: "RobotoMono",
-  fontSize: "18px",
-  textAlign: "left",
-  // wordSpacing: "3px",
-  lineHeight: "32px",
-  width: "55%",
-  left: "50%",
-  transform: "translate(-50%, 0%)",
-  marginTop: "15%",
-  padding: "12px",
-  zIndex: "1",
-};
-
 const LandingTypewriter = () => {
   const [keyphrases, setKeyphrases] = useState(null);
+  const isMobileDevice = useMediaQuery({
+    query: "(max-device-width: 500px)",
+  });
+
+  let typeFontSize, typeLineHeight, typeMarginTop, typeWidth;
+  if (isMobileDevice) {
+    typeFontSize = "12px";
+    typeLineHeight = "24px";
+    typeMarginTop = "25%";
+    typeWidth = "90%";
+  } else {
+    typeFontSize = "16px";
+    typeLineHeight = "32px";
+    typeMarginTop = "15%";
+    typeWidth = "55%";
+  }
+  const letterStyle = {
+    display: "inline-block",
+    position: "relative",
+    // overflow: "auto",
+    color: "white",
+    backgroundColor: "black",
+    fontFamily: "RobotoMono",
+    fontSize: typeFontSize,
+    textAlign: "left",
+    // wordSpacing: "3px",
+    lineHeight: typeLineHeight,
+    width: typeWidth,
+    left: "50%",
+    transform: "translate(-50%, 0%)",
+    marginTop: typeMarginTop,
+    padding: "12px",
+    zIndex: "1",
+  };
 
   const textAppear = () => {
     setKeyphrases(LandingKeyphrases);

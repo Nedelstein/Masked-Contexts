@@ -20,6 +20,7 @@
     "react-loading-overlay": "^1.0.1",
     "react-masonry-css": "^1.0.14",
     "react-modal": "^3.11.2",
+    "react-responsive": "^8.0.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-spinners": "^0.8.1",

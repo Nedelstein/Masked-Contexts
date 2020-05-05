@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import useMousePosition from "@react-hook/mouse-position";
-// import styled from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
 import ResponseModal from "./ResponseModal";
 import conversations from "../conversations_lookup";
@@ -56,9 +56,17 @@ const KeyphraseText = () => {
   const [mousePosition, ref] = useMousePosition(0, 0, 30);
   const [isActive, setActive] = useState(new Array(keyphrases).fill(false));
 
+  const isMobileDevice = useMediaQuery({
+    query: "(max-device-width: 500px)",
+  });
+
   function closeModal() {
     setIsOpen(false);
   }
+
+  let keyPhraseMargRight;
+
+  isMobileDevice ? (keyPhraseMargRight = "0.5%") : (keyPhraseMargRight = "15%");
 
   return (
     <>
@@ -67,7 +75,7 @@ const KeyphraseText = () => {
           style={{
             marginTop: "13%",
             marginLeft: "1%",
-            marginRight: "15%",
+            marginRight: keyPhraseMargRight,
             marginBottom: "10%",
           }}
         >

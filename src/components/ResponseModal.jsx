@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
+import { useMediaQuery } from "react-responsive";
 
 import { noah_email } from "../conversations_lookup";
 import speakText from "./SpeakText";
@@ -156,7 +157,9 @@ const ResponseModal = (props) => {
   );
 
   const [border, setBorder] = useState(Border);
-  // const [cocoMode, setCocoMode] = useState(null);
+  const isMobileDevice = useMediaQuery({
+    query: "(max-device-width: 500px)",
+  });
 
   const indexNum = Math.floor(Math.random() * Math.floor(5));
 
