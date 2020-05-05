@@ -52,7 +52,7 @@ const ResponseModal = (props) => {
     imgWidth = "40vw";
     imgHeight = "70vh";
     imgMargins = "-35% 35%";
-    imgMargLeft = "auto";
+    imgMargLeft = "35%";
     imgTransform = "none";
     rightDivLeft = "36vw";
     rightDivWidth = "35vw";
