@@ -14,7 +14,7 @@ const EnterButton = styled.button`
   line-height: 33px;
   letter-spacing: 0.1rem;
   transform: translate(-50%, 0%);
-  margin-top: 2%;
+  margin-top: 1.5%;
   margin-left: 50%;
   margin-bottom: 6%;
   width: auto;
@@ -47,13 +47,13 @@ const LoadingOverlayText = (props) => {
   if (isMobileDevice) {
     textSize = "12px";
     textLineHeight = "24px";
-    textMarginTop = "15%";
+    textMarginTop = "5%";
     textWidth = "90%";
   } else {
     textSize = "16px";
     textLineHeight = "30px";
-    textMarginTop = "2%";
-    textWidth = "60%";
+    textMarginTop = "1%";
+    textWidth = "50%";
   }
 
   const textStyle = {
@@ -61,14 +61,14 @@ const LoadingOverlayText = (props) => {
     backgroundColor: "rgba(0,0,0,0.9)",
     fontFamily: "RobotoMono",
     fontSize: textSize,
-    textAlign: "left",
+    textAlign: "center",
     lineHeight: textLineHeight,
     transform: "translate(-50%, 0%)",
     marginTop: textMarginTop,
     marginLeft: "50%",
     //   marginBottom: "6%",
     width: textWidth,
-    padding: "12px",
+    padding: "3px",
     zIndex: "1",
   };
 
@@ -89,8 +89,21 @@ const LoadingOverlayText = (props) => {
       <span id="landingMasonry">
         <LandingMasonry></LandingMasonry>
       </span>
-      <div id="openingText" style={{ marginTop: "6%" }}>
-        <p style={textStyle}>
+      {/* <header className="App-header"> */}
+      <div>
+        <a href="/">
+          <div className="Title-text-landing">Masked Contexts</div>
+        </a>
+
+        {/* </header> */}
+        <div id="openingText">
+          <p style={textStyle}>
+            An exploration into the COCO dataset and a dialogue with the
+            photographers whose images were scraped by the dataset's authors
+            without their knowledge or consent
+          </p>
+        </div>
+        {/* <p style={textStyle}>
           Masked Contexts is an exploration into the COCO dataset and a dialogue
           with the photographers whose images were scraped by the dataset’s
           authors without their knowledge or consent. Email correspondence
@@ -114,7 +127,7 @@ const LoadingOverlayText = (props) => {
         </p>
         <p style={textStyle}>
           All images shown on this site are from this public dataset.
-        </p>
+        </p> */}
         <EnterButton onClick={() => fadeAndSwitch()}>Enter</EnterButton>
       </div>
     </>
