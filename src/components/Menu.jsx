@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { bool } from "prop-types";
-
 import { Link } from "react-router-dom";
 
 const StyledMenu = styled.nav`
@@ -19,8 +18,8 @@ const StyledMenu = styled.nav`
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.3s ease-in-out;
 
-  @media (max-width: 600px) {
-    width: 100%;
+  @media (max-width: 500px) {
+    width: 22%;
   }
 
   a {
@@ -36,9 +35,12 @@ const StyledMenu = styled.nav`
     margin-bottom: 66px;
     transform: rotate(90deg);
 
-    @media (max-width: 600px) {
-      font-size: 1.5rem;
+    @media (max-width: 500px) {
+      font-size: 1rem;
       text-align: center;
+      transform: none;
+      padding: 0.1rem;
+      margin-bottom: 20px;
     }
     &:hover {
       color: red;
@@ -50,6 +52,7 @@ const StyledMenu = styled.nav`
 const Menu = ({ open, ...props }) => {
   const isHidden = open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
+
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
       <Link to="/" tabIndex={tabIndex}>

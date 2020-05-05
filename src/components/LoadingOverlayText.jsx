@@ -24,12 +24,18 @@ const EnterButton = styled.button`
   padding-right: 0.3rem;
   border: 0.1px solid white;
   z-indez: 1;
-  transition: 200ms color linear, 200ms background-color linear ;
+  transition: 200ms color linear, 200ms background-color linear;
   cursor: help;
+  @media only screen and (max-device-width: 500px) {
+    font-size: 1rem;
+    line-height: 22px;
+  }
   &:hover {
     background-color: cyan;
     color: red;
-  },
+  }
+  ,
+
 `;
 
 const LoadingOverlayText = (props) => {

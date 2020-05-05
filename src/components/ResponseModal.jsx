@@ -16,15 +16,61 @@ const MaskIMG = (imgName) => {
 };
 
 const ResponseModal = (props) => {
+  const isMobileDevice = useMediaQuery({
+    query: "(max-device-width: 500px)",
+  });
+
+  let modalTextWidth, modalTextTop, modalTextMarginLeft, modalTextTopBorder;
+  let imgWidth, imgHeight, imgMargins, imgMargLeft, imgTransform;
+  let rightDivWidth, rightDivLeft;
+  let toggleTextMargTop,
+    toggleTextTransform,
+    toggleTextMargLeft,
+    toggleTextWidth;
+
+  if (isMobileDevice) {
+    modalTextWidth = "90vw";
+    modalTextTop = "58%";
+    modalTextMarginLeft = "0%";
+    modalTextTopBorder = "1px solid black";
+    imgWidth = "90vw";
+    imgHeight = "40vh";
+    imgMargins = "0% 0%";
+    imgMargLeft = "50%";
+    imgTransform = "translate(-50%, 0)";
+    rightDivLeft = "0";
+    rightDivWidth = "auto";
+    toggleTextMargTop = "0%";
+    toggleTextMargLeft = "50%";
+    toggleTextWidth = "100vw";
+    toggleTextTransform = "translate(-50%, 0)";
+  } else {
+    modalTextWidth = "35vw";
+    modalTextTop = "0";
+    modalTextMarginLeft = "3%";
+    modalTextTopBorder = "none";
+    imgWidth = "40vw";
+    imgHeight = "70vh";
+    imgMargins = "-35% 35%";
+    imgMargLeft = "auto";
+    imgTransform = "none";
+    rightDivLeft = "36vw";
+    rightDivWidth = "35vw";
+    toggleTextMargTop = "50%";
+    toggleTextMargLeft = "0";
+    toggleTextWidth = "auto";
+    toggleTextTransform = "rotate(-90deg) translate(0, -50%)";
+  }
+
   const ModalTextStyle = {
     display: "block",
     position: "fixed",
     color: modalTextCol,
-    top: "0",
+    top: modalTextTop,
     height: "100%",
     minHeight: "100%",
-    maxWidth: "35vw",
-    marginLeft: "3%",
+    maxWidth: modalTextWidth,
+    marginLeft: modalTextMarginLeft,
     // marginRight: "55%",
     marginTop: "0",
     whiteSpace: "pre-wrap",
@@ -35,6 +81,7 @@ const ResponseModal = (props) => {
     paddingRight: "15px",
     borderRight: "1px solid black",
     borderLeft: "1px solid black",
+    borderTop: modalTextTopBorder,
     overflowY: "auto",
     zIndex: "999",
   };
@@ -49,9 +96,11 @@ const ResponseModal = (props) => {
   const imgStyle = {
     display: "inline-block",
     // left: "53%",
-    margin: "-35% 35%",
-    maxWidth: "40vw",
-    maxHeight: "70vh",
+    margin: imgMargins,
+    maxWidth: imgWidth,
+    maxHeight: imgHeight,
+    marginLeft: imgMargLeft,
+    transform: imgTransform,
     // transform: "translateY(-50%)",
     cursor: "help",
   };
@@ -72,8 +121,8 @@ const ResponseModal = (props) => {
   };
 
   const rightDivStyle = {
-    maxWidth: "35vw",
-    left: "36vw",
+    maxWidth: rightDivWidth,
+    left: rightDivLeft,
     position: "relative",
   };
 
@@ -82,13 +131,15 @@ const ResponseModal = (props) => {
     textAlign: "center",
     color: modalTextCol,
     // bottom: "50%",
-    marginTop: "50%",
+    marginTop: toggleTextMargTop,
+    marginLeft: toggleTextMargLeft,
+    width: toggleTextWidth,
     left: "42%",
     paddingBottom: "6%",
     paddingTop: "1%",
     fontFamily: "RobotoMono",
     fontSize: "13px",
-    transform: "rotate(-90deg) translate(0, -50%)",
+    transform: toggleTextTransform,
     zIndex: "99999",
   };
 
@@ -157,10 +208,6 @@ const ResponseModal = (props) => {
   );
 
   const [border, setBorder] = useState(Border);
-  const isMobileDevice = useMediaQuery({
-    query: "(max-device-width: 500px)",
-  });
-
   const indexNum = Math.floor(Math.random() * Math.floor(5));
 
   const TypeString = () => {
