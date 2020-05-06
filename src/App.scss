@@ -131,11 +131,9 @@ body {
   overflow: hidden;
   padding: 4px;
   text-transform: uppercase;
-  // font-weight: lighter;
-  // line-height: 50px;
   font-size: 42px;
   letter-spacing: 0.07em;
-  mix-blend-mode: color-burn;
+  // mix-blend-mode: color-burn;
   z-index: 999999;
   transition: background-color 300ms, color 300ms;
   cursor: pointer;
@@ -145,8 +143,8 @@ body {
   }
 }
 .Title-text-landing:hover {
-  color: black;
-  background-color: white;
+  color: red;
+  background-color: cyan;
   // mix-blend-mode: hard-light;
 }
 
