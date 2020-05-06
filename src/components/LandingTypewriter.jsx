@@ -12,7 +12,7 @@ const scrollToRef = (ref) =>
 const LandingTypewriter = () => {
   const [keyphrases, setKeyphrases] = useState(null);
   const keyphraseRef = useRef(null);
-  const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 500);
+  const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 800);
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 500px)",
   });
