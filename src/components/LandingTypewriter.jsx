@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Typewriter from "typewriter-effect";
 import { useMediaQuery } from "react-responsive";
 import "../App.scss";
@@ -6,8 +6,13 @@ import "../App.scss";
 // import Button from "./EnterButton";
 import LandingKeyphrases from "./LandingKeyphrases";
 
+const scrollToRef = (ref) =>
+  window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: "smooth" });
+
 const LandingTypewriter = () => {
   const [keyphrases, setKeyphrases] = useState(null);
+  const keyphraseRef = useRef(null);
+  const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 500);
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 500px)",
   });
@@ -69,6 +74,7 @@ const LandingTypewriter = () => {
               )
               .callFunction(textAppear)
               .callFunction(opacityChange)
+              .callFunction(executeScroll)
               .pauseFor(9999999999999)
               .start();
           }}
@@ -81,7 +87,9 @@ const LandingTypewriter = () => {
           }}
         />
       </div>
-      {keyphrases}
+      <div style={{ paddingTop: "3%" }} ref={keyphraseRef}>
+        {keyphrases}
+      </div>
     </div>
   );
 };

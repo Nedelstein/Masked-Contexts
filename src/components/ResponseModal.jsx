@@ -154,13 +154,15 @@ const ResponseModal = (props) => {
 
   const toggleTextStyle = {
     display: "inline-block",
+    position: "relative",
     textAlign: "center",
     color: modalTextCol,
     // bottom: "50%",
     marginTop: toggleTextMargTop,
     marginLeft: toggleTextMargLeft,
     width: toggleTextWidth,
-    left: "42%",
+    // left: "42%",
+    left: "0%",
     paddingBottom: "6%",
     paddingTop: "1%",
     fontFamily: "RobotoMono",

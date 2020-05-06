@@ -103,7 +103,7 @@ body {
   z-index: 999999;
   transition: background-color 0.5s;
   cursor: pointer;
-  @media only screen and (max-device-width: 500px) {
+  @media only screen and (max-width: 500px) {
     font-size: 18px;
     line-height: 30px;
   }
@@ -139,7 +139,7 @@ body {
   z-index: 999999;
   transition: background-color 300ms, color 300ms;
   cursor: pointer;
-  @media only screen and (max-device-width: 500px) {
+  @media only screen and (max-width: 500px) {
     font-size: 20px;
     line-height: 30px;
   }
@@ -311,7 +311,7 @@ body {
   opacity: 0;
   transition: opacity 1.5s;
 
-  @media only screen and (max-device-width: 500px) {
+  @media only screen and (max-width: 500px) {
     font-size: 30px;
     line-height: 50px;
   }

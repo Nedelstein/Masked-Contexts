@@ -84,7 +84,7 @@ const KeyphraseText = () => {
                 className={classNames({
                   inActive: isActive[index] === true,
                 })}
-                onMouseEnter={() => {
+                onMouseMove={() => {
                   setHover(conversations[index]);
                   let arr = new Array(keyphrases.length).fill(true);
                   arr[index] = false;
