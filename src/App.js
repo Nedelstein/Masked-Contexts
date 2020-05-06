@@ -35,7 +35,7 @@ function App() {
         </Switch>
       </Router>
       <meta
-        property="og:title"
+        property="og:description"
         content="An exploration into the COCO dataset and a dialogue with the photographers whose images were scraped by the dataset's authors without their knowledge or consent."
       />
     </ThemeProvider>
