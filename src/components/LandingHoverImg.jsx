@@ -1,18 +1,11 @@
 import React from "react";
-
-const ImageStyle = {
-  // border: "solid black",
-  // opacity: "0.9",
-  readOnly: "false",
-  // width: "100%",
-  maxHeight: "58vh",
-  width: "auto",
-  zIndex: "0",
-};
+import { useMediaQuery } from "react-responsive";
 
 let posX, posY;
 
 export const LandingHoverImg = (props) => {
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+
   let imageSource = props.details.filename_orig;
   let mousePosX = props.mousePos[0];
   let mousePosY = props.mousePos[1];
@@ -28,6 +21,18 @@ export const LandingHoverImg = (props) => {
   } else if (mousePosY > window.innerHeight / 2) {
     posY = "10vh";
   }
+
+  let imgHeight;
+
+  isBigScreen ? (imgHeight = "100%") : (imgHeight = "58vh");
+
+  const ImageStyle = {
+    readOnly: "false",
+    // width: "100%",
+    maxHeight: imgHeight,
+    width: "auto",
+    zIndex: "0",
+  };
 
   const ImageDivStyle = {
     position: "fixed",
