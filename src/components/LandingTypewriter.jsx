@@ -12,12 +12,19 @@ const LandingTypewriter = () => {
     query: "(max-device-width: 500px)",
   });
 
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+
   let typeFontSize, typeLineHeight, typeMarginTop, typeWidth;
   if (isMobileDevice) {
     typeFontSize = "12px";
     typeLineHeight = "24px";
     typeMarginTop = "25%";
     typeWidth = "90%";
+  } else if (isBigScreen) {
+    typeFontSize = "20px";
+    typeLineHeight = "32px";
+    typeMarginTop = "15%";
+    typeWidth = "55%";
   } else {
     typeFontSize = "16px";
     typeLineHeight = "32px";

@@ -43,12 +43,19 @@ const LoadingOverlayText = (props) => {
     query: "(max-device-width: 500px)",
   });
 
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+
   let textSize, textLineHeight, textMarginTop, textWidth;
   if (isMobileDevice) {
     textSize = "12px";
     textLineHeight = "24px";
     textMarginTop = "5%";
     textWidth = "90%";
+  } else if (isBigScreen) {
+    textSize = "22px";
+    textLineHeight = "32px";
+    textMarginTop = "1%";
+    textWidth = "55%";
   } else {
     textSize = "16px";
     textLineHeight = "30px";

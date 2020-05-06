@@ -17,10 +17,16 @@ const MaskIMG = (imgName) => {
 
 const ResponseModal = (props) => {
   const isMobileDevice = useMediaQuery({
-    query: "(max-device-width: 500px)",
+    query: "(max-device-width:940px)",
   });
 
-  let modalTextWidth, modalTextTop, modalTextMarginLeft, modalTextTopBorder;
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+
+  let modalTextWidth,
+    modalTextSize,
+    modalTextTop,
+    modalTextMarginLeft,
+    modalTextTopBorder;
   let imgWidth, imgHeight, imgMargins, imgMargLeft, imgTransform;
   let rightDivWidth, rightDivLeft;
   let toggleTextMargTop,
@@ -33,9 +39,10 @@ const ResponseModal = (props) => {
     modalTextTop = "58%";
     modalTextMarginLeft = "0%";
     modalTextTopBorder = "1px solid black";
+    modalTextSize = "12px";
     imgWidth = "90vw";
     imgHeight = "40vh";
-    imgMargins = "0% 0%";
+    imgMargins = "";
     imgMargLeft = "50%";
     imgTransform = "translate(-50%, 0)";
     rightDivLeft = "0";
@@ -44,11 +51,30 @@ const ResponseModal = (props) => {
     toggleTextMargLeft = "50%";
     toggleTextWidth = "100vw";
     toggleTextTransform = "translate(-50%, 0)";
+  } else if (isBigScreen) {
+    imgWidth = "100%";
+    modalTextSize = "16px";
+    toggleTextMargLeft = "2%";
+
+    modalTextWidth = "35vw";
+    modalTextTop = "0";
+    modalTextMarginLeft = "3%";
+    modalTextTopBorder = "none";
+    imgHeight = "70vh";
+    imgMargins = "-35% 35%";
+    imgMargLeft = "35%";
+    imgTransform = "none";
+    rightDivLeft = "36vw";
+    rightDivWidth = "35vw";
+    toggleTextMargTop = "50%";
+    toggleTextWidth = "auto";
+    toggleTextTransform = "rotate(-90deg) translate(0, -50%)";
   } else {
     modalTextWidth = "35vw";
     modalTextTop = "0";
     modalTextMarginLeft = "3%";
     modalTextTopBorder = "none";
+    modalTextSize = "12px";
     imgWidth = "40vw";
     imgHeight = "70vh";
     imgMargins = "-35% 35%";
@@ -75,7 +101,7 @@ const ResponseModal = (props) => {
     marginTop: "0",
     whiteSpace: "pre-wrap",
     fontFamily: "RobotoMono",
-    fontSize: "12px",
+    fontSize: modalTextSize,
     lineHeight: "20px",
     paddingLeft: "15px",
     paddingRight: "15px",

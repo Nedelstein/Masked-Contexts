@@ -315,6 +315,11 @@ body {
     font-size: 30px;
     line-height: 50px;
   }
+
+  @media all and (min-width: 1824px) {
+    font-size: 60px;
+    line-height: 88px;
+  }
 }
 
 .keyphraseP {

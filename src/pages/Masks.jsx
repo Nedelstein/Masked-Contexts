@@ -85,6 +85,8 @@ const Mask = () => {
     query: "(max-device-width: 500px)",
   });
 
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+
   let imgDivMargin,
     imgStylePadding,
     imgStyleWidth,
@@ -103,6 +105,15 @@ const Mask = () => {
     textLineHeight = "24px";
     textMarginTop = "50%";
     textWidth = "90%";
+  } else if (isBigScreen) {
+    imgDivMargin = "1%";
+    imgStyleWidth = "330px";
+    imgStyleHeight = "180px";
+    pageMarginTop = "2.5%";
+    textSize = "22px";
+    textLineHeight = "35px";
+    textMarginTop = "20%";
+    textWidth = "50%";
   } else {
     imgDivMargin = "1%";
     imgStyleWidth = "220px";
