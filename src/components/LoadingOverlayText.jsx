@@ -90,13 +90,13 @@ const LoadingOverlayText = (props) => {
         <LandingMasonry></LandingMasonry>
       </span>
       {/* <header className="App-header"> */}
-      <div style={{ width: "100%" }}>
+      <div id="openingText" style={{ width: "100%" }}>
         <a href="/">
           <div className="Title-text-landing">Masked Contexts</div>
         </a>
 
         {/* </header> */}
-        <div id="openingText">
+        <div>
           <p style={textStyle}>
             An exploration into the COCO dataset and a dialogue with the
             photographers whose images were scraped by the dataset's authors
