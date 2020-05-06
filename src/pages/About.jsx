@@ -6,10 +6,13 @@ import Menu from "../components/Menu";
 
 import cocoScreenshot from "../assets/images/about/coco_screenshot.png";
 import boySuitcase from "../assets/images/about/boySuitcase.png";
+import emailImg from "../assets/images/about/email.png";
 
 const About = () => {
   const [open, setOpen] = useState(false);
   const [isHover, setHover] = useState(null);
+  const [isEmailHover, setEmailHover] = useState(null);
+
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 500px)",
   });
@@ -23,7 +26,9 @@ const About = () => {
     titleTextSize,
     textTitleMargTop;
 
-  let imgLeft, imgWidth, imgTop;
+  let imgLeft, imgTop;
+
+  let emailImgLeft, emailImgTop;
 
   if (isMobileDevice) {
     textSize = "12px";
@@ -41,15 +46,19 @@ const About = () => {
     textTitleMargTop = "3%";
     imgLeft = "66%";
     imgTop = "17%";
+    emailImgLeft = "62%";
+    emailImgTop = "25%";
   } else {
     textSize = "16px";
     textLineHeight = "30px";
     textMarginTop = "2%";
-    textWidth = "50%";
+    textWidth = "45%";
     titleTextSize = "24px";
     textTitleMargTop = "3%";
-    imgLeft = "58%";
-    imgTop = "10%";
+    imgLeft = "55%";
+    imgTop = "8%";
+    emailImgLeft = "50%";
+    emailImgTop = "20%";
   }
 
   const textStyle = {
@@ -96,7 +105,15 @@ const About = () => {
     position: "fixed",
     left: imgLeft,
     top: imgTop,
-    maxWidth: "35vw",
+    maxWidth: "40vw",
+    height: "auto",
+  };
+
+  const emailImgStyle = {
+    position: "fixed",
+    left: emailImgLeft,
+    top: emailImgTop,
+    maxWidth: "50vw",
     height: "auto",
   };
 
@@ -149,9 +166,15 @@ const About = () => {
             other types of computer vision programs. In 2019, I began contacting
             Flickr users to inform them that their images were scraped for this
             purpose, and documentation of those conversations are displayed on
-            this site alongside the photographers' images. (Parts of these
-            conversations have been lost as a result of Flickr deleting some of
-            my accounts.)
+            this site alongside the photographers' images. Parts of these
+            conversations have been lost as a result of Flickr
+            <span
+              onMouseEnter={() => setEmailHover(emailImg)}
+              onMouseLeave={() => setEmailHover(null)}
+            >
+              {" "}
+              <span style={textLinkStyle}>deleting some of my accounts.</span>
+            </span>{" "}
           </p>
           <p style={textStyle}>
             Masked Contexts seeks to present a multi-layered glimpse into the
@@ -202,6 +225,9 @@ const About = () => {
           </p>
         </div>
         {isHover && <img style={imgStyle} src={isHover} alt="whoops"></img>}
+        {isEmailHover && (
+          <img style={emailImgStyle} src={isEmailHover} alt="whoops"></img>
+        )}
       </header>
     </>
   );
