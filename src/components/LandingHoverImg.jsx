@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 let posX, posY;
 
 export const LandingHoverImg = (props) => {
-  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
   let imageSource = props.details.filename_orig;
   let mousePosX = props.mousePos[0];

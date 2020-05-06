@@ -12,7 +12,7 @@ const LandingTypewriter = () => {
     query: "(max-device-width: 500px)",
   });
 
-  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
   let typeFontSize, typeLineHeight, typeMarginTop, typeWidth;
   if (isMobileDevice) {

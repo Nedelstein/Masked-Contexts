@@ -20,7 +20,7 @@ const ResponseModal = (props) => {
     query: "(max-device-width:940px)",
   });
 
-  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
   let modalTextWidth,
     modalTextSize,
