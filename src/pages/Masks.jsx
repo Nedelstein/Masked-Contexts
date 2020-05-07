@@ -164,7 +164,7 @@ const Mask = () => {
   const gridStyle = {
     // lineHeight: "0",
     columnCount: gridColCount,
-    columnGap: "2px",
+    columnGap: "10px",
     backgroundColor: "#430354",
     overflow: "hidden",
   };
@@ -174,8 +174,9 @@ const Mask = () => {
     // padding: imgStylePadding,
     // width: imgStyleWidth,
     // height: imgStyleHeight,
-    width: "80%",
+    width: "90%",
     height: "auto",
+    marginTop: "5px",
     // overflow: "hidden",
   };
 
@@ -207,12 +208,13 @@ const Mask = () => {
           id={filenames[i]}
           src={IMG(filenames[i])}
           alt="whoops"
-          onMouseEnter={() => {
+          onMouseOver={() => {
             SpeakText(captions[i]);
-            setTimeout(() => typeText(captions[i]), 350);
+            setTimeout(() => typeText(captions[i]), 300);
           }}
           onMouseLeave={() => {
             speechSynthesis.cancel();
+            typeText("");
             clearText();
           }}
         ></img>
