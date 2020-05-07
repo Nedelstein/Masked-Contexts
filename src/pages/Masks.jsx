@@ -17,22 +17,35 @@ const ModalStyle = {
     top: "50%",
     right: "auto",
     bottom: "auto",
-    width: "95vw",
-    height: "95vh",
+    width: "100vw",
+    height: "100vh",
     paddingLeft: "10px",
     paddingRight: "10px",
     paddingTop: "0",
     paddingBottom: "0",
     left: "50%",
-    backgroundColor: "black",
+    backgroundColor: "rgba(0,0,0,.9)",
     // backgroundColor: "#fedcd2",
     border: "none",
   },
-  overlay: {
-    background: "rgba(0,0,0,0.0)",
-  },
 };
 
+const headerStyle = {
+  display: "inline-block",
+  position: "relative",
+  // background-color: rgba(67, 3, 84, 1);
+  color: "white",
+  marginTop: "33vh",
+  marginLeft: "50%",
+  transform: "translate(-50%, 0%)",
+  textAlign: "center",
+  // width: auto;
+  fontFamily: "Courier",
+  overflow: "hidden",
+  textTransform: "uppercase",
+  fontSize: "42px",
+  // letterSpacing: "0.07em",
+};
 const EnterButton = styled.button`
   color: white;
   background-color: black;
@@ -42,7 +55,7 @@ const EnterButton = styled.button`
   line-height: 33px;
   letter-spacing: 0.1rem;
   transform: translate(-50%, 0%);
-  margin-top: 3.5%;
+  margin-top: 3%;
   margin-left: 50%;
   margin-bottom: 6%;
   width: auto;
@@ -94,6 +107,7 @@ const Mask = () => {
     pageMarginTop;
 
   let textSize, textLineHeight, textMarginTop, textWidth;
+  let gridColCount;
 
   if (isMobileDevice) {
     imgDivMargin = "0.5%";
@@ -105,6 +119,7 @@ const Mask = () => {
     textLineHeight = "24px";
     textMarginTop = "50%";
     textWidth = "90%";
+    gridColCount = "3";
   } else if (isBigScreen) {
     imgDivMargin = "1%";
     imgStyleWidth = "330px";
@@ -112,8 +127,9 @@ const Mask = () => {
     pageMarginTop = "2.5%";
     textSize = "22px";
     textLineHeight = "35px";
-    textMarginTop = "20%";
+    textMarginTop = "5";
     textWidth = "50%";
+    gridColCount = "12";
   } else {
     imgDivMargin = "1%";
     imgStyleWidth = "220px";
@@ -121,8 +137,9 @@ const Mask = () => {
     pageMarginTop = "2.5%";
     textSize = "16px";
     textLineHeight = "30px";
-    textMarginTop = "30%";
+    textMarginTop = "3%";
     textWidth = "50%";
+    gridColCount = "7";
   }
 
   const MaskPageStyle = {
@@ -139,16 +156,27 @@ const Mask = () => {
     display: "inline-block",
     // position: "fixed",
     alignItems: "center",
-    margin: imgDivMargin,
+    margin: "0%",
     overflow: "hidden",
-    cursor: "help",
+    // cursor: "help",
+  };
+
+  const gridStyle = {
+    // lineHeight: "0",
+    columnCount: gridColCount,
+    columnGap: "2px",
+    backgroundColor: "#430354",
+    overflow: "hidden",
   };
 
   const imgStyle = {
     // margin: "12%",
-    padding: imgStylePadding,
-    width: imgStyleWidth,
-    height: imgStyleHeight,
+    // padding: imgStylePadding,
+    // width: imgStyleWidth,
+    // height: imgStyleHeight,
+    width: "90%",
+    height: "auto",
+    // overflow: "hidden",
   };
 
   const textStyle = {
@@ -172,22 +200,23 @@ const Mask = () => {
     captions.push(json[i].caption);
     return (
       <>
-        <div className="maskImgs" style={ImgDivStyle} key={i}>
-          <img
-            id={filenames[i]}
-            style={imgStyle}
-            src={IMG(filenames[i])}
-            alt="whoops"
-            onMouseEnter={() => {
-              SpeakText(captions[i]);
-              setTimeout(() => typeText(captions[i]), 350);
-            }}
-            onMouseLeave={() => {
-              speechSynthesis.cancel();
-              clearText();
-            }}
-          ></img>
-        </div>
+        {/* <div className="maskImgs" style={ImgDivStyle} key={i}> */}
+        <img
+          style={imgStyle}
+          className="maskImgs"
+          id={filenames[i]}
+          src={IMG(filenames[i])}
+          alt="whoops"
+          onMouseEnter={() => {
+            SpeakText(captions[i]);
+            setTimeout(() => typeText(captions[i]), 350);
+          }}
+          onMouseLeave={() => {
+            speechSynthesis.cancel();
+            clearText();
+          }}
+        ></img>
+        {/* </div> */}
       </>
     );
     // };
@@ -206,17 +235,20 @@ const Mask = () => {
         htmlOpenClassName={"ReactModal__Html--open"}
         bodyOpenClassName={"ReactModal__Body--open"}
       >
-        <p style={textStyle}>
-          The COCO metadata provides annotations for each image in two forms,
-          masks and captions. Both of these methods of annotation were made by
-          hired Amazon Mechanical Turks and are showcased here.
-        </p>
-        <EnterButton onClick={closeModal}>Enter</EnterButton>
+        <div style={{ width: "100%" }}>
+          <div style={headerStyle}>Masks & Captions</div>
+          <p style={textStyle}>
+            The COCO metadata provides annotations for each image in two forms,
+            masks and captions. Both of these methods of annotation were made by
+            hired Amazon Mechanical Turks and are showcased here.
+          </p>
+          <EnterButton onClick={closeModal}>Enter</EnterButton>
+        </div>
       </Modal>
-      <div id="maskTextDiv"></div>
-      <div style={MaskPageStyle}>{masksGrid}</div>
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} setOpen={setOpen} />
+      <div id="maskTextDiv"></div>
+      <section style={gridStyle}>{masksGrid}</section>
     </div>
   );
 };
