@@ -8,8 +8,6 @@ import Burger from "../components/Burger";
 import Menu from "../components/Menu";
 import LoadingOverlayText from "../components/LoadingOverlayText";
 
-import FocusLock from "react-focus-lock";
-
 const MainPage = () => {
   const [open, setOpen] = useState(false);
   const [active, isActive] = useState(true);
@@ -74,13 +72,15 @@ const MainPage = () => {
             <Menu open={open} setOpen={setOpen} id={menuId} />
           </div>
           <header className="App-header">
-            <a href="/">
-              <div className="Title-text">Masked Contexts</div>
-            </a>
             {page ? (
               <LoadingOverlayText buttonClick={() => changePageState()} />
             ) : (
-              <LandingTypeWriter />
+              <>
+                <a href="/">
+                  <div className="Title-text">Masked Contexts</div>
+                </a>
+                <LandingTypeWriter />
+              </>
             )}
           </header>
         </div>

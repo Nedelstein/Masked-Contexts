@@ -129,7 +129,7 @@ const Mask = () => {
     textLineHeight = "35px";
     textMarginTop = "5";
     textWidth = "50%";
-    gridColCount = "12";
+    gridColCount = "10";
   } else {
     imgDivMargin = "1%";
     imgStyleWidth = "220px";
@@ -139,7 +139,7 @@ const Mask = () => {
     textLineHeight = "30px";
     textMarginTop = "3%";
     textWidth = "50%";
-    gridColCount = "7";
+    gridColCount = "6";
   }
 
   const MaskPageStyle = {
@@ -174,7 +174,7 @@ const Mask = () => {
     // padding: imgStylePadding,
     // width: imgStyleWidth,
     // height: imgStyleHeight,
-    width: "90%",
+    width: "80%",
     height: "auto",
     // overflow: "hidden",
   };

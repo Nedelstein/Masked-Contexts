@@ -72,8 +72,8 @@ const KeyphraseText = () => {
       <div ref={ref} id="keyphraseStyle">
         <div
           style={{
-            marginTop: "13%",
-            marginLeft: "1%",
+            marginTop: "10%",
+            marginLeft: "0%",
             marginRight: keyPhraseMargRight,
             marginBottom: "10%",
           }}

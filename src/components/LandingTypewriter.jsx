@@ -12,7 +12,7 @@ const scrollToRef = (ref) =>
 const LandingTypewriter = () => {
   const [keyphrases, setKeyphrases] = useState(null);
   const keyphraseRef = useRef(null);
-  const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 800);
+  const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 2000);
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 500px)",
   });
@@ -40,8 +40,9 @@ const LandingTypewriter = () => {
     display: "inline-block",
     position: "relative",
     // overflow: "auto",
-    color: "white",
-    backgroundColor: "black",
+    color: "black",
+    // backgroundColor: "black",
+    border: "1px solid black",
     fontFamily: "RobotoMono",
     fontSize: typeFontSize,
     textAlign: "left",
@@ -50,6 +51,7 @@ const LandingTypewriter = () => {
     width: typeWidth,
     left: "50%",
     transform: "translate(-50%, 0%)",
+    // left: "4%",
     marginTop: typeMarginTop,
     padding: "12px",
     zIndex: "1",
@@ -79,7 +81,7 @@ const LandingTypewriter = () => {
               .start();
           }}
           options={{
-            delay: 0,
+            delay: 16,
             // delay: 25
             autoStart: true,
             loop: true,

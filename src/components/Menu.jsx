@@ -28,10 +28,10 @@ const StyledMenu = styled.nav`
     text-transform: uppercase;
     padding: 0.3rem;
     letter-spacing: 0.1rem;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: #e2a87a;
     text-decoration: none;
-    transition: color 0.3s linear;
+    transition: color 0.3s, background-color 0.3s;
     margin-bottom: 66px;
     transform: rotate(90deg);
 
@@ -43,8 +43,8 @@ const StyledMenu = styled.nav`
       margin-bottom: 20px;
     }
     &:hover {
-      color: red;
-      background-color: cyan;
+      color: #7a49a5;
+      background-color: black;
     }
   }
 `;

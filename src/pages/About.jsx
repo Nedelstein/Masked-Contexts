@@ -76,7 +76,7 @@ const About = () => {
 
   const textLinkStyle = {
     position: "relative",
-    color: "red",
+    color: "#7a49a5",
     fontFamily: "RobotoMono",
     fontWeight: "normal",
     fontSize: textSize,
