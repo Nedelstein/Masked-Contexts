@@ -85,9 +85,7 @@ body {
 .Title-text {
   display: inline-block;
   position: absolute;
-  // background-color: rgba(67, 3, 84, 1);
-  background-color: black;
-  color: white;
+  color: black;
   margin-top: 1%;
   left: 4%;
   width: auto;
@@ -95,11 +93,9 @@ body {
   font-style: normal;
   overflow: hidden;
   padding: 2px;
-  // font-weight: bold;
   line-height: 50px;
   font-size: 32px;
   letter-spacing: 0.1em;
-  mix-blend-mode: difference;
   z-index: 999999;
   transition: background-color 300ms, color 300ms;
   cursor: pointer;
@@ -109,15 +105,13 @@ body {
   }
 }
 .Title-text:hover {
-  color: black;
-  background-color: white;
-  // mix-blend-mode: hard-light;
+  color: #f5f5dc;
+  background-color: black;
 }
 
 .Title-text-landing {
   display: inline-block;
   position: relative;
-  // background-color: rgba(67, 3, 84, 1);
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
 
@@ -125,7 +119,6 @@ body {
   margin-left: 50%;
   transform: translate(-50%, 0%);
   text-align: center;
-  // width: auto;
   font-family: Courier;
   font-style: normal;
   overflow: hidden;
@@ -133,30 +126,11 @@ body {
   text-transform: uppercase;
   font-size: 42px;
   letter-spacing: 0.07em;
-  // mix-blend-mode: color-burn;
   z-index: 999999;
   @media only screen and (max-width: 500px) {
     font-size: 20px;
     line-height: 30px;
   }
-}
-.Title-text-landing:hover {
-  // color: red;
-  // background-color: cyan;
-  // mix-blend-mode: hard-light;
-}
-
-.Subtitle-text {
-  position: absolute;
-  top: 15%;
-  left: 8%;
-  font-family: "Big Caslon";
-  font-style: normal;
-  font-weight: normal;
-  line-height: 58px;
-  font-size: 24px;
-  color: white;
-  text-align: center;
 }
 
 #openingText {
@@ -227,28 +201,28 @@ body {
   overflow: hidden;
 }
 
-.swiper-button-next {
-  color: rgba(255, 255, 255, 0.7) !important;
-  padding-right: 30%;
-  padding-top: 20% !important;
-  transition: color 0.5s;
-}
+// .swiper-button-next {
+//   color: rgba(255, 255, 255, 0.7) !important;
+//   padding-right: 30%;
+//   padding-top: 20% !important;
+//   transition: color 0.5s;
+// }
 
-.swiper-button-prev {
-  color: rgba(255, 255, 255, 0.7) !important;
-  padding-left: 30%;
-  padding-top: 20% !important;
+// .swiper-button-prev {
+//   color: rgba(255, 255, 255, 0.7) !important;
+//   padding-left: 30%;
+//   padding-top: 20% !important;
 
-  transition: color 0.5s;
-}
+//   transition: color 0.5s;
+// }
 
-.swiper-button-next:hover {
-  color: white !important;
-}
+// .swiper-button-next:hover {
+//   color: white !important;
+// }
 
-.swiper-button-prev:hover {
-  color: white !important;
-}
+// .swiper-button-prev:hover {
+//   color: white !important;
+// }
 
 #maskTextDiv {
   position: -webkit-sticky;
@@ -339,28 +313,28 @@ body {
   color: #7a49a5;
 }
 
-.cocoBtnStyle {
-  // display: table;
-  position: fixed;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  left: 62%;
-  top: 76%;
-  color: #fff;
-  padding: 6px;
-  background-color: #430354;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: color 300ms ease-out, background-color 300ms ease-out;
-}
+// .cocoBtnStyle {
+//   // display: table;
+//   position: fixed;
+//   text-transform: uppercase;
+//   text-align: center;
+//   font-weight: bold;
+//   font-size: 20px;
+//   left: 62%;
+//   top: 76%;
+//   color: #fff;
+//   padding: 6px;
+//   background-color: #430354;
+//   -webkit-box-decoration-break: clone;
+//   box-decoration-break: clone;
+//   transition: color 300ms ease-out, background-color 300ms ease-out;
+// }
 
-.cocoBtnStyle:hover {
-  background-color: yellow;
-  color: black;
-  cursor: help;
-}
+// .cocoBtnStyle:hover {
+//   background-color: yellow;
+//   color: black;
+//   cursor: help;
+// }
 
 .inActive {
   visibility: hidden !important;
