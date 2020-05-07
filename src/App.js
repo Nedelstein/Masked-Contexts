@@ -34,10 +34,6 @@ function App() {
           <Redirect to="/404" />
         </Switch>
       </Router>
-      <meta
-        property="og:description"
-        content="An exploration into the COCO dataset and a dialogue with the photographers whose images were scraped by the dataset's authors without their knowledge or consent."
-      />
     </ThemeProvider>
   );
 }
