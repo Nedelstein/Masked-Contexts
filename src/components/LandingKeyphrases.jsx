@@ -66,7 +66,7 @@ const KeyphraseText = () => {
 
   let keyPhraseMargRight;
 
-  isMobileDevice ? (keyPhraseMargRight = "0.5%") : (keyPhraseMargRight = "15%");
+  isMobileDevice ? (keyPhraseMargRight = "0.5%") : (keyPhraseMargRight = "18%");
   return (
     <>
       <div ref={ref} id="keyphraseStyle">

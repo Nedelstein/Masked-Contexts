@@ -105,7 +105,7 @@ const About = () => {
     position: "fixed",
     left: imgLeft,
     top: imgTop,
-    maxWidth: "40vw",
+    maxWidth: "37vw",
     height: "auto",
   };
 
