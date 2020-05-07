@@ -208,15 +208,19 @@ const Mask = () => {
           id={filenames[i]}
           src={IMG(filenames[i])}
           alt="whoops"
-          onMouseOver={() => {
+          onMouseEnter={(e) => {
             SpeakText(captions[i]);
-            setTimeout(() => typeText(captions[i]), 300);
+            typeText(captions[i], e);
+            // document.querySelectorAll(".maskImgs").innerHTML = "";
           }}
           onMouseLeave={() => {
             speechSynthesis.cancel();
-            typeText("");
             clearText();
           }}
+          // onMouseOut={() => {
+          //   speechSynthesis.cancel();
+          //   clearText();
+          // }}
         ></img>
         {/* </div> */}
       </>
