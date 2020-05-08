@@ -17,14 +17,14 @@ const ModalStyle = {
     top: "50%",
     right: "auto",
     bottom: "auto",
-    width: "100vw",
-    height: "100vh",
+    width: "105vw",
+    height: "105vh",
     paddingLeft: "10px",
     paddingRight: "10px",
     paddingTop: "0",
     paddingBottom: "0",
     left: "50%",
-    backgroundColor: "rgba(0,0,0,.9)",
+    backgroundColor: "rgba(0,0,0,.8)",
     // backgroundColor: "#fedcd2",
     border: "none",
   },
@@ -211,7 +211,6 @@ const Mask = () => {
           onMouseEnter={(e) => {
             SpeakText(captions[i]);
             typeText(captions[i], e);
-            // document.querySelectorAll(".maskImgs").innerHTML = "";
           }}
           onMouseLeave={() => {
             speechSynthesis.cancel();
