@@ -26,9 +26,9 @@ const About = () => {
     titleTextSize,
     textTitleMargTop;
 
-  let imgLeft, imgTop;
+  let imgLeft, imgTop, imgWidth;
 
-  let emailImgLeft, emailImgTop;
+  let emailImgLeft, emailImgTop, emailImgWidth;
 
   if (isMobileDevice) {
     textSize = "12px";
@@ -37,6 +37,12 @@ const About = () => {
     textWidth = "90%";
     titleTextSize = "16px";
     textTitleMargTop = "10%";
+    imgWidth = "50%";
+    imgLeft = "40%";
+    imgTop = "8%";
+    emailImgLeft = "10%";
+    emailImgTop = "8%";
+    emailImgWidth = "87vw";
   } else if (isBigScreen) {
     textSize = "22px";
     textLineHeight = "32px";
@@ -46,8 +52,10 @@ const About = () => {
     textTitleMargTop = "3%";
     imgLeft = "66%";
     imgTop = "17%";
+    imgWidth = "100%";
     emailImgLeft = "62%";
     emailImgTop = "25%";
+    emailImgWidth = "50vw";
   } else {
     textSize = "16px";
     textLineHeight = "30px";
@@ -56,9 +64,11 @@ const About = () => {
     titleTextSize = "24px";
     textTitleMargTop = "3%";
     imgLeft = "55%";
-    imgTop = "8%";
+    imgTop = "5%";
+    imgWidth = "34vw";
     emailImgLeft = "50%";
     emailImgTop = "20%";
+    emailImgWidth = "50vw";
   }
 
   const textStyle = {
@@ -105,7 +115,7 @@ const About = () => {
     position: "fixed",
     left: imgLeft,
     top: imgTop,
-    maxWidth: "37vw",
+    maxWidth: imgWidth,
     height: "auto",
   };
 
@@ -113,7 +123,7 @@ const About = () => {
     position: "fixed",
     left: emailImgLeft,
     top: emailImgTop,
-    maxWidth: "50vw",
+    maxWidth: emailImgWidth,
     height: "auto",
   };
 
