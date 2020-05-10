@@ -93,9 +93,9 @@ const LoadingOverlayText = (props) => {
 
   return (
     <>
-      <span id="landingMasonry">
+      <div id="landingMasonry">
         <LandingMasonry></LandingMasonry>
-      </span>
+      </div>
       {/* <header className="App-header"> */}
       <div id="openingText" style={{ width: "100%" }}>
         <div className="Title-text-landing">Masked Contexts</div>
