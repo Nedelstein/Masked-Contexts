@@ -6,13 +6,13 @@ import "../App.scss";
 // import Button from "./EnterButton";
 import LandingKeyphrases from "./LandingKeyphrases";
 
-const scrollToRef = (ref) =>
-  window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: "smooth" });
+// const scrollToRef = (ref) =>
+//   window.scrollTo({ left: 0, top: ref.current.offsetTop, behavior: "smooth" });
 
 const LandingTypewriter = () => {
   const [keyphrases, setKeyphrases] = useState(null);
   const keyphraseRef = useRef(null);
-  const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 2000);
+  // const executeScroll = () => setTimeout(() => scrollToRef(keyphraseRef), 2000);
   const isMobileDevice = useMediaQuery({
     query: "(max-device-width: 500px)",
   });
@@ -76,7 +76,7 @@ const LandingTypewriter = () => {
               )
               .callFunction(textAppear)
               .callFunction(opacityChange)
-              .callFunction(executeScroll)
+              // .callFunction(executeScroll)
               .pauseFor(9999999999999)
               .start();
           }}

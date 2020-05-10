@@ -109,6 +109,7 @@ const ResponseModal = (props) => {
     borderLeft: "1px solid black",
     borderTop: modalTextTopBorder,
     overflowY: "auto",
+    overflowX: "hidden",
     zIndex: "999",
   };
 
