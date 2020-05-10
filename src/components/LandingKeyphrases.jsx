@@ -38,6 +38,7 @@ const ModalStyle = {
     backgroundColor: "rgba(255,255,255,1)",
     // backgroundColor: "#fedcd2",
     border: "none",
+    overflowX: "hidden",
   },
   overlay: {
     background: "rgba(0,0,0,0.7)",
