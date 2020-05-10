@@ -216,6 +216,10 @@ body {
   background-color: yellow;
   z-index: 99999999999;
   padding-left: 0.5%;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 18px;
+  }
 }
 
 .maskImgs {
