@@ -9,19 +9,6 @@ import { LandingHoverImg } from "./LandingHoverImg";
 
 const classNames = require("classnames");
 
-const buttonStyle = {
-  // position: "-webkit-sticky",
-  // position: "sticky",
-  display: "inline",
-  top: "25px",
-  fontFamiily: "courier",
-  background: "none",
-  color: "black",
-  border: "none",
-  fontSize: "30px",
-  cursor: "pointer",
-};
-
 const ModalStyle = {
   content: {
     transform: "translate(-50%, -50%)",
@@ -61,13 +48,32 @@ const KeyphraseText = () => {
     query: "(max-device-width: 500px)",
   });
 
+  let keyPhraseMargRight;
+  let closeBtnTop;
+
+  if (isMobileDevice) {
+    keyPhraseMargRight = "0.5%";
+    closeBtnTop = "30px";
+  } else {
+    keyPhraseMargRight = "18%";
+    closeBtnTop = "25px";
+  }
+
+  const buttonStyle = {
+    display: "inline",
+    top: closeBtnTop,
+    fontFamiily: "courier",
+    background: "none",
+    color: "black",
+    border: "none",
+    fontSize: "30px",
+    cursor: "pointer",
+  };
+
   function closeModal() {
     setIsOpen(false);
   }
 
-  let keyPhraseMargRight;
-
-  isMobileDevice ? (keyPhraseMargRight = "0.5%") : (keyPhraseMargRight = "18%");
   return (
     <>
       <div ref={ref} id="keyphraseStyle">
@@ -90,14 +96,12 @@ const KeyphraseText = () => {
                   let arr = new Array(keyphrases.length).fill(true);
                   arr[index] = false;
                   setActive(arr);
-                  // document.getElementById("masonryGrid").style.display = "none";
                 }}
                 onMouseLeave={() => {
                   let arr = new Array(keyphrases.length);
                   arr[index] = false;
                   setHover(null);
                   setActive(arr);
-                  // document.getElementById("masonryGrid").style.display = "flex";
                 }}
                 onClick={() => {
                   setModal(conversations[index]);
