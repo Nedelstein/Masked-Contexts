@@ -117,7 +117,7 @@ const Mask = () => {
     pageMarginTop = "15%";
     textSize = "12px";
     textLineHeight = "24px";
-    textMarginTop = "50%";
+    textMarginTop = "17%";
     textWidth = "90%";
     gridColCount = "3";
   } else if (isBigScreen) {

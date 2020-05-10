@@ -20,6 +20,8 @@ const StyledMenu = styled.nav`
 
   @media (max-width: 500px) {
     width: 22%;
+    z-index: 99999999999;
+    margin-top: 13%;
   }
 
   a {
