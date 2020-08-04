@@ -189,7 +189,15 @@ const About = () => {
           <p style={textStyle}>
             Masked Contexts seeks to present a multi-layered glimpse into the
             process of converting personal images into universal pieces of big
-            data. This is a project by Noah Edelstein.
+            data. This is a project by{" "}
+            <a
+              style={textLinkStyle}
+              href="http://noahedelstein.co"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Noah Edelstein.
+            </a>
           </p>
           <p style={subtitleStyle}>Process</p>
           <p style={textStyle}>
