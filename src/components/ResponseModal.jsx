@@ -34,6 +34,8 @@ const ResponseModal = (props) => {
     toggleTextMargLeft,
     toggleTextWidth;
 
+  let captionTextWidth;
+
   if (isMobileDevice) {
     modalTextWidth = "90vw";
     modalTextTop = "58%";
@@ -41,6 +43,7 @@ const ResponseModal = (props) => {
     modalTextTopBorder = "1px solid black";
     modalTextSize = "12px";
     imgWidth = "90vw";
+    captionTextWidth = "fit-content(90vw)";
     imgHeight = "40vh";
     imgMargins = "";
     imgMargLeft = "50%";
@@ -53,6 +56,7 @@ const ResponseModal = (props) => {
     toggleTextTransform = "translate(-50%, 0)";
   } else if (isBigScreen) {
     imgWidth = "100%";
+    captionTextWidth = "fit-content(100%)";
     modalTextSize = "16px";
     toggleTextMargLeft = "2%";
 
@@ -76,6 +80,7 @@ const ResponseModal = (props) => {
     modalTextTopBorder = "none";
     modalTextSize = "12px";
     imgWidth = "40vw";
+    captionTextWidth = "fit-content(40vw)";
     imgHeight = "70vh";
     imgMargins = "-35% 35%";
     imgMargLeft = "35%";
@@ -137,7 +142,9 @@ const ResponseModal = (props) => {
     margin: "-35% 0%",
     top: "0px",
     left: "35%",
-    width: "fit-content",
+    // width: "fit-content",
+    display: "table",
+    // maxWidth: captionTextWidth,
     fontFamily: "Typewriter",
     fontSize: "16px",
     fontWeight: "bold",
@@ -248,16 +255,16 @@ const ResponseModal = (props) => {
             typewriter
               .callFunction(() => speakText(captions[indexNum]))
               .typeString(captions[indexNum])
-              .pauseFor(200)
+              .pauseFor(300)
               .deleteAll()
-              .pauseFor(100)
+              .pauseFor(200)
               .start();
           }}
           options={{
             delay: 70,
             autoStart: true,
             loop: false,
-            cursor: "*/",
+            // cursor: "|",
           }}
         />
       </div>
